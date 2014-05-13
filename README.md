@@ -27,19 +27,19 @@ Follow these steps to set up Cinnamon in your organization.
  * Selenium Port `80`
  * Sauce Username `<Your Sauce Username>`
  * Sauce Access Key `<Your Sauce Access Key>`
- ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/img/cinnamon_settings.png)
+ ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/cinnamon_settings.png)
 4. Go to **Setup -> Security Controls -> Remote Site Settings**.  Click Edit link on the **self** remote site.
  ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/self_remote_site2.png)
 5. Edit `self` setting to your instance
  * You can find your instance by checking the URL of  your organization.  For example, if the URL is `https://na15.salesforce.com`, your organization resides in the `na15` instance.
- ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/img/self_remote_site.png)
+ ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/self_remote_site.png)
 6. Click **Cinnamon Settings** tab and then the `Connect to Your Org Under Test` button
- ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/img/org_under_test.png)
+ ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/org_under_test.png)
 7. Log in to Your Org Under Test and click **Allow** button
- ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/img/login_dialogue.png)
+ ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/login_dialogue.png)
 
 After authentication is completed, you'll see Cinnamon being connected to your Org Under Test
- ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/img/org_under_test2.png)
+ ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/org_under_test2.png)
 
 Now, you are set up and ready to run a Cinnamon test.
 
@@ -48,11 +48,11 @@ Now, you are set up and ready to run a Cinnamon test.
 2. Create a class `TestSampleCinnamonTest`
 3. Paste the [sample code](https://gist.github.com/ryojiosawa/9750540)
 4. Click the **Test Console** tab.
- ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/img/testconsole.png)
+ ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/testconsole.png)
 5. Select the `TestSampleCinnamonTest` that now appears in the **Test Console** page, and then click the **Execute Test** button.  The test should be executed successfully.
- ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/img/test_passed.png)
+ ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/test_passed.png)
 6. Click the **Passed** link to view the test execution detail
- ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/img/testdetail.png)
+ ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/testdetail.png)
 
 ##Log and Track Issues and Bugs
 Use [Github Issues](https://github.com/forcedotcom/Cinnamon/issues) to log and track issues and bugs.
