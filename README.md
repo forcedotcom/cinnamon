@@ -43,15 +43,16 @@ After authentication is completed, you'll see Cinnamon being connected to your O
 
 Now, you are set up and ready to run a Cinnamon test.
 
-###Run a sample Cinnamon Test
-1. Go to `Setup -> Develop -> Apex Classes` and create a new Class `TestSampleCinnamonTest` and paste the following [sample code](https://gist.github.com/ryojiosawa/9750540)
-2. Go to `Test Console` tab
+##Run a Cinnamon Test
+1. Go to **Setup -> Develop -> Apex Classes**
+2. Create a class `TestSampleCinnamonTest`
+3. Paste the [sample code](https://gist.github.com/ryojiosawa/9750540)
+4. Click the **Test Console** tab.
 ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/testconsole.png)
-3. Select `TestSampleCinnamonTest` and click `Execute Test button`
-4. The sample test executed successfully
+5. Select the `TestSampleCinnamonTest` that now appears in the **Test Console** page, and then click the **Execute Test** button.  The test should be executed successfully.
 ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/test_passed.png)
-5. Click Pass link to view the test execution detail
+6. Click the **Passed** link to view the test execution detail
 ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/testdetail.png)
 
-##Issues/Bugs
-Use [Github Issues](https://github.com/forcedotcom/Cinnamon/issues) to log and track issues and bugs
+##Log and Track Issues and Bugs
+Use [Github Issues](https://github.com/forcedotcom/Cinnamon/issues) to log and track issues and bugs.
