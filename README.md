@@ -11,7 +11,7 @@ Cinnamon is a Force.com native app that enables you to build and execute Seleniu
 Cinnamon requiers installing the following two pacakges
 
 1. Install [Apex Selenium package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t30000001I916)
-2. Install [Cinnamon package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N0pW)
+2. Install [Cinnamon package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N1MX)
 
 ##Setup
 Select `Cinnamon` from App dropdown
@@ -50,4 +50,4 @@ Go to "Remote Site Settings" and update `self` setting to your instance
 ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/testdetail.png)
 
 ##Issues/Bugs
-Use [Github Issues](https://github.com/ryojiosawa/cinnamon/issues) to log and track issues and bugs
+Use [Github Issues](https://github.com/forcedotcom/Cinnamon/issues) to log and track issues and bugs
