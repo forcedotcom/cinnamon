@@ -1,43 +1,47 @@
-#Cinnamon
+#Welcome to Cinnamon!
 
-Cinnamon is a Force.com native app that enables you to build and execute Selenium-based GUI tests from within your Salesforce org to validate Visualforce pages in your Salesforce org.
+Cinnamon is a Force.com app that enables you to build and run Selenium tests to validate your custom UI pages with Visualforce or Javascript in your Salesforce organization.
 
-* Create and execute Selenium Tests from within your Salesforce org
-* Out-of-box integration with Sauce Labs which provides comprehensive OS/Browser coverage
-* Connect to any of your Salesforce DE or Sandbox org via OAuth authentication
-* Provide PageObject support to help develop maintainable test code to interact with your Visualforce pages
+With Cinnamon, you can
+
+* Create and execute Selenium Tests from within your Salesforce organization.
+* Get out-of-box integration with Sauce Labs, which provides comprehensive OS and browser coverage.
+* Connect to any of your Salesforce Developer Edition or sandbox organization via OAuth authentication.
+* Easily create PageObject classes to interact with your UI pages for your tests
+
+Before you can use Cinnamon, you'll need to install, setup and configure Cinnamon.  Please follow the instruction below to install and set up Cinnamon in your Salesforce organization.
 
 ##Install
-Cinnamon requiers installing the following two pacakges
+Cinnamon requiers you to install the following two pacakges
 
-1. Install [Apex Selenium package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t30000001I916)
-2. Install [Cinnamon package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N1MX)
+1. Install the [Apex Selenium package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t30000001I916).
+2. Install the [Cinnamon package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N1MX).
 
-##Setup
-Select `Cinnamon` from App dropdown
+##Set Up Cinnamon
+Follow these steps to set up Cinnamon in your organization.
 
-Go to "Settings" and provide the following Selenium config settings and enter your Sauce Labs username & access key
-
-* Selenium Proxy URL `ondemand.saucelabs.com`
-* Selenium Port `80`
-* Sauce Username `<Your Sauce Username>`
-* Sauce Access Key `<Your Sauce Access Key>`
-
-*Click [here](https://saucelabs.com/signup) to sign up a Free Sauce Labs account if you don't have one.
-
+1. Select **Cinnamon** from App drop-down list
+2. Go to **Settings** tab
+3. Provide the configuration settings that are shown in the following screenshot, and then enter your Sauce Labs username and access key
+ * Selenium Proxy URL `ondemand.saucelabs.com`
+ * Selenium Port `80`
+ * Sauce Username `<Your Sauce Username>`
+ * Sauce Access Key `<Your Sauce Access Key>`
 ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/cinnamon_settings.png)
-
-Go to "Remote Site Settings" and update `self` setting to your instance
- * You can find your instance by checking the URL of  your org.  For example, if the URL is `https://na15.salesforce.com`, your org resides in `na15` instance.
+4. Go to **Setup -> Security Controls -> Remote Site Settings**.  Click Edit link on the **self** remote site.
+ ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/self_remote_site2.png)
+5. Edit `self` setting to your instance
+ * You can find your instance by checking the URL of  your organization.  For example, if the URL is `https://na15.salesforce.com`, your organization resides in the `na15` instance.
  ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/self_remote_site.png)
-
-###Connect to your org under test
-1. Click `Connect to Your Org Under Test` button
+6. Click **Cinnamon Settings** tab and then the `Connect to Your Org Under Test` button
 ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/org_under_test.png)
-2. Login to Your Org Under Test and click `Allow` button
+7. Log in to Your Org Under Test and click **Allow** button
 ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/login_dialogue.png)
-3. After authentication is complete successfully, you will see Cinnamon being connected to your Org Under Test
+
+After authentication is completed, you'll see Cinnamon being connected to your Org Under Test
 ![](https://raw.githubusercontent.com/ryojiosawa/cinnamon/master/img/org_under_test2.png)
+
+Now, you are set up and ready to run a Cinnamon test.
 
 ###Run a sample Cinnamon Test
 1. Go to `Setup -> Develop -> Apex Classes` and create a new Class `TestSampleCinnamonTest` and paste the following [sample code](https://gist.github.com/ryojiosawa/9750540)
