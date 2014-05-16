@@ -1,3 +1,7 @@
+### Beta v.52 (May 16, 2014)
+* Remove CN_Context and CN_OrgUnderTest classes
+* Add batchSendKey method
+
 ### Beta v.51 Defect fixes (May 1, 2014)
 
 * Fix Click method issue with Firefox ([Issue 1](https://github.com/ryojiosawa/cinnamon/issues/1))
