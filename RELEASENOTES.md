@@ -1,3 +1,6 @@
+### Beta v.53 (May 29, 2014)
+* Add canned ExpectedConditions
+
 ### Beta v.52 (May 16, 2014)
 * Remove CN_Context and CN_OrgUnderTest classes
 * Add batchSendKey method
