@@ -1,0 +1,173 @@
+body{
+  font: 100% Verdana, Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*******************************************************************************
+ * the top page banner  */
+.topSection {
+  background-color: SteelBlue;
+  width: 100%;
+  height: 30px;
+  color: white;
+}
+.topSection td{
+  color: white;
+  padding: 8px;
+}
+.topSection h2 {
+  margin: 0px;
+}
+.topSection img {
+  /*border: 1px solid #000;*/
+}
+.topSection #logo {
+  max-height: 82px;
+}
+
+/*******************************************************************************
+ * section-title is the horizontal header that declares the classname, methods, etc. */
+.section-title {
+  background-color: SteelBlue;
+  /*border: 1px solid #A4BCD0;*/
+  color: white;
+  padding: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.section-title span {
+  float: right;
+  margin-top: -5px;
+}
+.section-title.methods {
+  background-color: #B5CDE1;
+  font-size: .9em;
+}
+tr {
+  vertical-align: top;
+}
+
+/*******************************************************************************
+ * display the tags like author, date, description, params, return value, etc. */
+.details {
+  /*border-color: lightgray;*/
+  width: 100%;
+}
+.details th{
+  background-color: whitesmoke;
+  color: black;
+  font-size: .7em;
+  padding: 6px 3px;
+  text-align: right;
+}
+.details th.paramHeader{
+  background-color: white;
+  color: black;
+  text-align: left;
+}
+.details th.param{
+  background-color: whitesmoke;
+  color: black;
+  padding-left: 10px;
+}
+.details td{
+  font-size: .7em;
+  width: 90%;
+}
+td.classCell {
+  padding-bottom: 40px;
+}
+pre, code {
+  font-size: 120%;
+}
+pre {
+  margin-left: 20px;
+}
+
+/*******************************************************************************
+ * properties is used to display the table of class properties */
+.properties {
+  /*border-color: lightgray;*/
+  width: 100%;
+}
+.properties td {
+  vertical-align: top;
+  width: 90%;
+}
+.clsPropertyName {
+  font-size: .7em;
+  font-weight: bold;
+  text-align: right;
+}
+.clsPropertyDeclaration {
+  font: normal .7em Courier;
+  color: SteelBlue;
+}
+.clsPropertyDescription {
+  font-size: .7em;
+  font-weight: normal;
+}
+
+/*******************************************************************************
+ * trigger is the set of styles to provide the expand/collapse bar */
+h2.trigger {
+  margin: 0 0 2 0;
+  background-color: #ccc;
+  /*border: 1px solid #bbb;*/
+  font-size: .8em;
+  font-weight: bold;
+  padding: 2px;
+}
+h2.trigger a {
+  color: #888;
+  text-decoration: none;
+}
+h2.trigger a:hover {
+  color: whitesmoke;
+}
+h2.trigger input {
+  width: 24px;
+}
+h2.active {
+  background-position: left bottom;
+} /*--When toggle is triggered, it will shift the image to the bottom to show its "opened" state--*/
+
+/*******************************************************************************
+ * section that gets shown/hidden when the trigger is expanded/collapsed */
+.toggle_container {
+  padding: 10px;
+}
+.toggle_container_subtitle {
+  font: normal .8em Courier;
+  color: SteelBlue;
+  padding-bottom: 5px;
+}
+
+/*******************************************************************************
+ * styles for the menu of class names */
+.leftmenus{
+  vertical-align: top;
+  width: 20%;
+}
+.leftmenus div{
+  font-size: .7em;
+  font-weight: bold;
+  background-color: #e6e6e6;
+  /*border-bottom: 1px solid #ccc;*/
+  padding: 5px;
+  cursor: pointer;
+}
+.leftmenus div:hover{
+  font-size: .75em;
+  font-weight: bold;
+  background-color: whitesmoke;
+}
+
+/*******************************************************************************
+ * the footer */
+#footer {
+  font-size: 10px;
+}
+}
