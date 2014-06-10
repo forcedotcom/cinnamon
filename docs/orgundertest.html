@@ -1,0 +1,212 @@
+<html lang="en">
+	<meta charset="utf-8">
+	<script type='text/javascript' src='../javascripts/jquery-latest.js'></script>
+	<script type='text/javascript' src='../javascripts/util.js'></script>
+	<link rel='stylesheet' type='text/css' href='../stylesheets/styles.css' />
+	<script>
+		$(document).ready(function() {
+			$('.toggle_container').show();
+			$('h2.trigger input').each(function() {
+				$(this).val('-');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class='topSection'></div>
+	<table width='100%'>
+		<tr>
+			<td class='leftmenus' rowspan='100'>
+				<div onclick="gotomenu('index.html');">Home</div>
+				<div onclick="gotomenu('assert.html');">Assert</div>
+				<div onclick="gotomenu('basetest.html');">BaseTest</div>
+				<div onclick="gotomenu('context.html');">Context</div>
+				<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
+				<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
+				<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
+				<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
+				<div onclick="gotomenu('pageobject.html');">PageObject</div>
+				<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+				<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
+				<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+				<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+				<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
+				<div onclick="gotomenu('wait.html');">Wait</div>
+				<div onclick="gotomenu('webelement.html');">WebElement</div>
+			</td>
+			<td class='classCell'>
+				<h2 class='section-title'>
+					OrgUnderTest
+					<span>
+						<input type='button' value='+/- all' onclick='ToggleAll(this);' />
+					</span>
+				</h2>
+				<div class='toggle_container_subtitle'>
+					global with sharing class
+					<a href='orgundertest.html'>OrgUnderTest</a>
+				</div>
+				<table class='details' rules='all' border='1' cellpadding='6'>
+					<tr>
+						<th>Description</th>
+						<td>
+							OrgUnderTest is a class that provides a set of utility methods to execute operations against an org under test. All operations from this class are executed via Salesforce Tooling or REST API
+							<p>
+								This class must be used when an org that tests are running against is differnt from the one where Cinnamon is installed.
+							</td>
+						</tr>
+					</table>
+					<h2 class='section-title methods'>Methods</h2>
+					<h2 class='trigger'>
+						<input type='button' value='+'/>
+						&nbsp;&nbsp;
+						<a href='#'>executeApexScript</a>
+					</h2>
+					<div class='toggle_container'>
+						<div class='toggle_container_subtitle'>
+							global
+							<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+							</a>
+							executeApexScript(
+							<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+							</a>
+							script)
+						</div>
+						<table class='details' rules='all' border='1' cellpadding='6'>
+							<tr>
+								<th>Description</th>
+								<td>
+									Executes arbritrary Apex code against a remote org under test
+								</td>
+							</tr>
+							<tr>
+								<th>Returns</th>
+								<td>a response body of the executed Apex code</td>
+							</tr>
+							<tr>
+								<th colspan='2' class='paramHeader'>Parameters</th>
+							</tr>
+							<tr>
+								<th class='param'>script</th>
+								<td>Apex script to be executed against a remote org under test</td>
+							</tr>
+						</table>
+					</div>
+					<h2 class='trigger'>
+						<input type='button' value='+'/>
+						&nbsp;&nbsp;
+						<a href='#'>executeSoqlQuery</a>
+					</h2>
+					<div class='toggle_container'>
+						<div class='toggle_container_subtitle'>
+							global
+							<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+							</a>
+							executeSoqlQuery(
+							<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+							</a>
+							query)
+						</div>
+						<table class='details' rules='all' border='1' cellpadding='6'>
+							<tr>
+								<th>Description</th>
+								<td>Execute SOQL query against a remote org under test</td>
+							</tr>
+							<tr>
+								<th>Returns</th>
+								<td>a response body of the executed SOQL query</td>
+							</tr>
+							<tr>
+								<th colspan='2' class='paramHeader'>Parameters</th>
+							</tr>
+							<tr>
+								<th class='param'>query</th>
+								<td>a SOQL query to be executed against a remote org under test</td>
+							</tr>
+						</table>
+					</div>
+					<h2 class='trigger'>
+						<input type='button' value='+'/>
+						&nbsp;&nbsp;
+						<a href='#'>executeSoqlQueryMore</a>
+					</h2>
+					<div class='toggle_container'>
+						<div class='toggle_container_subtitle'>
+							global
+							<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+							</a>
+							executeSoqlQueryMore(
+							<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+							</a>
+							query)
+						</div>
+						<table class='details' rules='all' border='1' cellpadding='6'>
+							<tr>
+								<th>Description</th>
+								<td>
+									Retrieves more records from previous query from a remote org under test
+								</td>
+							</tr>
+							<tr>
+								<th>Returns</th>
+								<td>a response body of the executed SOQL query</td>
+							</tr>
+							<tr>
+								<th colspan='2' class='paramHeader'>Parameters</th>
+							</tr>
+							<tr>
+								<th class='param'>query</th>
+								<td>a SOQL query to be executed against a remote org under test</td>
+							</tr>
+						</table>
+					</div>
+					<h2 class='trigger'>
+						<input type='button' value='+'/>
+						&nbsp;&nbsp;
+						<a href='#'>parseQueryResult</a>
+					</h2>
+					<div class='toggle_container'>
+						<div class='toggle_container_subtitle'>
+							global List&lt;Object&gt; parseQueryResult(
+							<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+							queryResult)
+						</div>
+						<table class='details' rules='all' border='1' cellpadding='6'>
+							<tr>
+								<th>Description</th>
+								<td>
+									Returns a list of returned records from a given QueryResult object
+								</td>
+							</tr>
+							<tr>
+								<th>Returns</th>
+								<td>a list of parsed objects from a given SOQL query</td>
+							</tr>
+							<tr>
+								<th colspan='2' class='paramHeader'>Parameters</th>
+							</tr>
+							<tr>
+								<th class='param'>queryResult</th>
+								<td>queryResult object to be parsed and returend</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<center id='footer'>
+<a href='https://gitlab.com/StevenWCox/sfapexdoc/wikis/Home'>Powered By SfApexDoc version 1.2.4</a>
+</center>
+</body>
+</html>

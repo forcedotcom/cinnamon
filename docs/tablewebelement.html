@@ -1,0 +1,188 @@
+<html lang="en">
+	<meta charset="utf-8">
+	<script type='text/javascript' src='../javascripts/jquery-latest.js'></script>
+	<script type='text/javascript' src='../javascripts/util.js'></script>
+	<link rel='stylesheet' type='text/css' href='../stylesheets/styles.css' />
+	<script>
+		$(document).ready(function() {
+			$('.toggle_container').show();
+			$('h2.trigger input').each(function() {
+				$(this).val('-');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class='topSection'></div>
+	<table width='100%'>
+		<tr>
+			<td class='leftmenus' rowspan='100'>
+				<div onclick="gotomenu('index.html');">Home</div>
+				<div onclick="gotomenu('assert.html');">Assert</div>
+				<div onclick="gotomenu('basetest.html');">BaseTest</div>
+				<div onclick="gotomenu('context.html');">Context</div>
+				<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
+				<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
+				<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
+				<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
+				<div onclick="gotomenu('pageobject.html');">PageObject</div>
+				<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+				<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
+				<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+				<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+				<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
+				<div onclick="gotomenu('wait.html');">Wait</div>
+				<div onclick="gotomenu('webelement.html');">WebElement</div>
+			</td>
+			<td class='classCell'>
+				<h2 class='section-title'>
+					TableWebElement
+					<span>
+						<input type='button' value='+/- all' onclick='ToggleAll(this);' />
+					</span>
+				</h2>
+				<div class='toggle_container_subtitle'>
+					global class
+					<a href='tablewebelement.html'>TableWebElement</a>
+				</div>
+				<table class='details' rules='all' border='1' cellpadding='6'>
+					<tr>
+						<th>Description</th>
+						<td>
+							TableWebElement is a class that represents a HTML Table element
+						</td>
+					</tr>
+				</table>
+				<h2 class='section-title methods'>Methods</h2>
+				<h2 class='trigger'>
+					<input type='button' value='+'/>
+					&nbsp;&nbsp;
+					<a href='#'>getColumn</a>
+				</h2>
+				<div class='toggle_container'>
+					<div class='toggle_container_subtitle'>
+						global
+						<a href='webelement.html'>
+							<a href='webelement.html'>WebElement</a>
+						</a>
+						getColumn(
+						<a href='webelement.html'>
+							<a href='webelement.html'>WebElement</a>
+						</a>
+						row,
+						<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>integer</a>
+						index)
+					</div>
+					<table class='details' rules='all' border='1' cellpadding='6'>
+						<tr>
+							<th>Description</th>
+							<td>
+								Returns a WebElement that refers to a table column element from a given TableWebElement
+							</td>
+						</tr>
+						<tr>
+							<th>Returns</th>
+							<td>a WebElement that refers to a table column element</td>
+						</tr>
+						<tr>
+							<th colspan='2' class='paramHeader'>Parameters</th>
+						</tr>
+						<tr>
+							<th class='param'>row</th>
+							<td>a row index used to specify which table row to be returned</td>
+						</tr>
+						<tr>
+							<th class='param'>index</th>
+							<td>a column index used to specify which column to be returned</td>
+						</tr>
+					</table>
+				</div>
+				<h2 class='trigger'>
+					<input type='button' value='+'/>
+					&nbsp;&nbsp;
+					<a href='#'>getRows</a>
+				</h2>
+				<div class='toggle_container'>
+					<div class='toggle_container_subtitle'>
+						global List&lt;
+						<a href='webelement.html'>WebElement</a>
+						&gt; getRows()
+					</div>
+					<table class='details' rules='all' border='1' cellpadding='6'>
+						<tr>
+							<th>Description</th>
+							<td>
+								Returns a list of WebElements that refer to all table rows for a given TableWebElement
+							</td>
+						</tr>
+						<tr>
+							<th>Returns</th>
+							<td>a list of WebElements for a given TableWebElement</td>
+						</tr>
+					</table>
+				</div>
+				<h2 class='trigger'>
+					<input type='button' value='+'/>
+					&nbsp;&nbsp;
+					<a href='#'>getWebElement</a>
+				</h2>
+				<div class='toggle_container'>
+					<div class='toggle_container_subtitle'>
+						global
+						<a href='webelement.html'>WebElement</a>
+						getWebElement()
+					</div>
+					<table class='details' rules='all' border='1' cellpadding='6'>
+						<tr>
+							<th>Description</th>
+							<td>
+								Returns a standard WebElement that refers to this table element
+							</td>
+						</tr>
+						<tr>
+							<th>Returns</th>
+							<td>a WebElement that refers to this table element</td>
+						</tr>
+					</table>
+				</div>
+				<h2 class='trigger'>
+					<input type='button' value='+'/>
+					&nbsp;&nbsp;
+					<a href='#'>TableWebElement</a>
+				</h2>
+				<div class='toggle_container'>
+					<div class='toggle_container_subtitle'>
+						global
+						<a href='tablewebelement.html'>TableWebElement</a>
+						(
+						<a href='webelement.html'>WebElement</a>
+						table)
+					</div>
+					<table class='details' rules='all' border='1' cellpadding='6'>
+						<tr>
+							<th>Description</th>
+							<td>A constructor for TableWebElement class</td>
+						</tr>
+						<tr>
+							<th colspan='2' class='paramHeader'>Parameters</th>
+						</tr>
+						<tr>
+							<th class='param'>table</th>
+							<td>a WebElement that represents a HTML table element</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<center id='footer'>
+<a href='https://gitlab.com/StevenWCox/sfapexdoc/wikis/Home'>Powered By SfApexDoc version 1.2.4</a>
+</center>
+</body>
+</html>

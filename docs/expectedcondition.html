@@ -1,0 +1,94 @@
+<html lang="en">
+	<meta charset="utf-8">
+	<script type='text/javascript' src='../javascripts/jquery-latest.js'></script>
+	<script type='text/javascript' src='../javascripts/util.js'></script>
+	<link rel='stylesheet' type='text/css' href='../stylesheets/styles.css' />
+	<script>
+		$(document).ready(function() {
+			$('.toggle_container').show();
+			$('h2.trigger input').each(function() {
+				$(this).val('-');
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class='topSection'></div>
+	<table width='100%'>
+		<tr>
+			<td class='leftmenus' rowspan='100'>
+				<div onclick="gotomenu('index.html');">Home</div>
+				<div onclick="gotomenu('assert.html');">Assert</div>
+				<div onclick="gotomenu('basetest.html');">BaseTest</div>
+				<div onclick="gotomenu('context.html');">Context</div>
+				<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
+				<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
+				<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
+				<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
+				<div onclick="gotomenu('pageobject.html');">PageObject</div>
+				<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+				<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
+				<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+				<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+				<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
+				<div onclick="gotomenu('wait.html');">Wait</div>
+				<div onclick="gotomenu('webelement.html');">WebElement</div>
+			</td>
+			<td class='classCell'>
+				<h2 class='section-title'>
+					ExpectedCondition
+					<span>
+						<input type='button' value='+/- all' onclick='ToggleAll(this);' />
+					</span>
+				</h2>
+				<div class='toggle_container_subtitle'>
+					global interface
+					<a href='expectedcondition.html'>ExpectedCondition</a>
+				</div>
+				<table class='details' rules='all' border='1' cellpadding='6'>
+					<tr>
+						<th>Description</th>
+						<td>ExpectedCondition for tests to wait for. see Wait.until()</td>
+					</tr>
+				</table>
+				<h2 class='section-title methods'>Methods</h2>
+				<h2 class='trigger'>
+					<input type='button' value='+'/>
+					&nbsp;&nbsp;
+					<a href='#'>apply</a>
+				</h2>
+				<div class='toggle_container'>
+					<div class='toggle_container_subtitle'>
+						<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+						apply()
+					</div>
+					<table class='details' rules='all' border='1' cellpadding='6'>
+						<tr>
+							<th>Description</th>
+							<td>
+								The string returned is a javascript snippet to be executed on selenium server. The javascript should test for the expected condition and be formatted as an anonymous, self-executing function, explicitly returning a boolean. For example: to test if an element is inthe DOM: (function(){var el = selenium.browserbot.findElementOrNull('#id'); return (el != null);}())
+							</td>
+						</tr>
+						<tr>
+							<th>Returns</th>
+							<td>
+								String - a javascript snippet to be executed on selenium server.
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<center id='footer'>
+<a href='https://gitlab.com/StevenWCox/sfapexdoc/wikis/Home'>Powered By SfApexDoc version 1.2.4</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<html lang="en">
+	<meta charset="utf-8">
+	<script type='text/javascript' src='../javascripts/jquery-latest.js'></script>
+	<script type='text/javascript' src='../javascripts/util.js'></script>
+	<link rel='stylesheet' type='text/css' href='../stylesheets/styles.css' />
+	<script>
+		$(document).ready(function() {
+			$('.toggle_container').show();
+			$('h2.trigger input').each(function() {
+				$(this).val('-');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class='topSection'></div>
+	<table width='100%'>
+		<tr>
+			<td class='leftmenus' rowspan='100'>
+				<div onclick="gotomenu('index.html');">Home</div>
+				<div onclick="gotomenu('assert.html');">Assert</div>
+				<div onclick="gotomenu('basetest.html');">BaseTest</div>
+				<div onclick="gotomenu('context.html');">Context</div>
+				<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
+				<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
+				<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
+				<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
+				<div onclick="gotomenu('pageobject.html');">PageObject</div>
+				<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+				<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
+				<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+				<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+				<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
+				<div onclick="gotomenu('wait.html');">Wait</div>
+				<div onclick="gotomenu('webelement.html');">WebElement</div>
+			</td>
+			<td class='classCell'>
+				<h2 class='section-title'>
+					PageObject
+					<span>
+						<input type='button' value='+/- all' onclick='ToggleAll(this);' />
+					</span>
+				</h2>
+				<div class='toggle_container_subtitle'>
+					global virtual with sharing class
+					<a href='pageobject.html'>PageObject</a>
+				</div>
+				<table class='details' rules='all' border='1' cellpadding='6'>
+					<tr>
+						<th>Description</th>
+						<td>
+							PageObject is an abstract base class that is used to define a PageObject class for a given UI page. All PageObject classes in Cinnamon must inherit from this class.
+							<p>
+								To instantiate a PageObject class,
+								<code>Context.getPageObject</code>
+								method must be used with the type of a PageObject class being passed in to the method as an argument
+							</td>
+						</tr>
+					</table>
+					<p></p>
+					<h2 class='trigger'>
+						<input type='button' value='+'/>
+						&nbsp;&nbsp;
+						<a href='#'>Properties</a>
+					</h2>
+					<div class='toggle_container'>
+						<table class='properties' border='1' rules='all' cellpadding='6'>
+							<tr>
+								<th class='clsPropertyName'>selenium</th>
+								<td>
+									<div class='clsPropertyDeclaration'>global selenium1.DefaultSelenium selenium</div>
+									<div class='clsPropertyDescription'>selenium client used to issue selenium commands</div>
+								</tr>
+							</table>
+						</div>
+						<h2 class='section-title methods'>Methods</h2>
+						<h2 class='trigger'>
+							<input type='button' value='+'/>
+							&nbsp;&nbsp;
+							<a href='#'>getDeclaredWebElements</a>
+						</h2>
+						<div class='toggle_container'>
+							<div class='toggle_container_subtitle'>
+								global virtual List&lt;
+								<a href='webelement.html'>WebElement</a>
+								&gt; getDeclaredWebElements()
+							</div>
+							<table class='details' rules='all' border='1' cellpadding='6'>
+								<tr>
+									<th>Returns</th>
+									<td>a list of WebElements to be declared</td>
+								</tr>
+							</table>
+						</div>
+						<h2 class='trigger'>
+							<input type='button' value='+'/>
+							&nbsp;&nbsp;
+							<a href='#'>getElement</a>
+						</h2>
+						<div class='toggle_container'>
+							<div class='toggle_container_subtitle'>
+								global
+								<a href='webelement.html'>WebElement</a>
+								getElement(
+								<a href='elementlocator.html'>ElementLocator</a>
+								locator)
+							</div>
+							<table class='details' rules='all' border='1' cellpadding='6'>
+								<tr>
+									<th>Description</th>
+									<td>
+										Returns a WebElement that represents a UI component or DOM element to use
+									</td>
+								</tr>
+								<tr>
+									<th>Returns</th>
+									<td>a WebElement object to be used</td>
+								</tr>
+								<tr>
+									<th colspan='2' class='paramHeader'>Parameters</th>
+								</tr>
+								<tr>
+									<th class='param'>locator</th>
+									<td>ElementLocator used to locate a UI component to be returned</td>
+								</tr>
+							</table>
+						</div>
+						<h2 class='trigger'>
+							<input type='button' value='+'/>
+							&nbsp;&nbsp;
+							<a href='#'>getElement</a>
+						</h2>
+						<div class='toggle_container'>
+							<div class='toggle_container_subtitle'>
+								global
+								<a href='webelement.html'>
+									<a href='webelement.html'>WebElement</a>
+								</a>
+								getElement(
+								<a href='elementlocator.html'>ElementLocator</a>
+								locator,
+								<a href='webelement.html'>
+									<a href='webelement.html'>WebElement</a>
+								</a>
+								parent)
+							</div>
+							<table class='details' rules='all' border='1' cellpadding='6'>
+								<tr>
+									<th>Description</th>
+									<td>
+										Returns a WebElement that represents a UI component or DOM element to use
+									</td>
+								</tr>
+								<tr>
+									<th>Returns</th>
+									<td>a WebElement object to be used</td>
+								</tr>
+								<tr>
+									<th colspan='2' class='paramHeader'>Parameters</th>
+								</tr>
+								<tr>
+									<th class='param'>locator</th>
+									<td>ElementLocator used to locate a UI component to be returned</td>
+								</tr>
+								<tr>
+									<th class='param'>parent</th>
+									<td>a parent WebElement</td>
+								</tr>
+							</table>
+						</div>
+						<h2 class='trigger'>
+							<input type='button' value='+'/>
+							&nbsp;&nbsp;
+							<a href='#'>getLocation</a>
+						</h2>
+						<div class='toggle_container'>
+							<div class='toggle_container_subtitle'>
+								global virtual
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+								getLocation()
+							</div>
+							<table class='details' rules='all' border='1' cellpadding='6'>
+								<tr>
+									<th>Description</th>
+									<td>Returns the absolute URL of the current page</td>
+								</tr>
+								<tr>
+									<th>Returns</th>
+									<td>the absolute URL of the current page</td>
+								</tr>
+							</table>
+						</div>
+						<h2 class='trigger'>
+							<input type='button' value='+'/>
+							&nbsp;&nbsp;
+							<a href='#'>getPageObjectInstanceFor</a>
+						</h2>
+						<div class='toggle_container'>
+							<div class='toggle_container_subtitle'>
+								global
+								<a href='pageobject.html'>PageObject</a>
+								getPageObjectInstanceFor(Type pageObjectType)
+							</div>
+							<table class='details' rules='all' border='1' cellpadding='6'></table>
+						</div>
+						<h2 class='trigger'>
+							<input type='button' value='+'/>
+							&nbsp;&nbsp;
+							<a href='#'>getPathAndQuery</a>
+						</h2>
+						<div class='toggle_container'>
+							<div class='toggle_container_subtitle'>
+								global virtual
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+								getPathAndQuery()
+							</div>
+							<table class='details' rules='all' border='1' cellpadding='6'></table>
+						</div>
+						<h2 class='trigger'>
+							<input type='button' value='+'/>
+							&nbsp;&nbsp;
+							<a href='#'>getPathAndQuery</a>
+						</h2>
+						<div class='toggle_container'>
+							<div class='toggle_container_subtitle'>
+								global virtual
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+									<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+										<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+									</a>
+								</a>
+								getPathAndQuery(Map&lt;
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+									<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+										<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+									</a>
+								</a>
+								,
+								<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+									<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>
+										<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+									</a>
+								</a>
+								&gt; params)
+							</div>
+							<table class='details' rules='all' border='1' cellpadding='6'>
+								<tr>
+									<th>Description</th>
+									<td>
+										Return the initial url path and query part for the Page Object. This method is often used to implement BaseTest.getStartingPath to indicate what is the first url to be loaded by the browser
+									</td>
+								</tr>
+								<tr>
+									<th colspan='2' class='paramHeader'>Parameters</th>
+								</tr>
+								<tr>
+									<th class='param'>params</th>
+									<td>
+										is a Map
+										<String, String>
+											that contains values that maybe used during the construction of the url. For example: public with sharing class TeamDetailPageObject extends cinnamon.PageObject{ public override String getPathAndQuery(Map
+											<String, String>
+												params){ PageReference page = new ApexPages.StandardController(params.get('team')).edit(); return page.getUrl(); } } public abstract with sharing class ScrumTeamBaseTest extends cinnamon.BaseTest{ public static String TEAM_NAME = 'Cinnamon'; public override void setup(cinnamon.Context context) { String teamId = MyTestUtil.createTeam(TEAM_NAME); context.put('teamId', teamId); } public override String getStartingPath(cinnamon.Context context) { Map
+												<String, String>
+													params = new Map
+													<String, String>
+														(); params.put('team', context.get('teamId')); return getPageObject(context).getPathAndQuery(params); } }
+													</td>
+												</tr>
+											</table>
+										</div>
+										<h2 class='trigger'>
+											<input type='button' value='+'/>
+											&nbsp;&nbsp;
+											<a href='#'>getRemoteWebDriver</a>
+										</h2>
+										<div class='toggle_container'>
+											<div class='toggle_container_subtitle'>
+												global
+												<a href='remotewebdriver.html'>RemoteWebDriver</a>
+												getRemoteWebDriver()
+											</div>
+											<table class='details' rules='all' border='1' cellpadding='6'></table>
+										</div>
+										<h2 class='trigger'>
+											<input type='button' value='+'/>
+											&nbsp;&nbsp;
+											<a href='#'>getWait</a>
+										</h2>
+										<div class='toggle_container'>
+											<div class='toggle_container_subtitle'>
+												global
+												<a href='wait.html'>Wait</a>
+												getWait()
+											</div>
+											<table class='details' rules='all' border='1' cellpadding='6'></table>
+										</div>
+										<h2 class='trigger'>
+											<input type='button' value='+'/>
+											&nbsp;&nbsp;
+											<a href='#'>initializePageObject</a>
+										</h2>
+										<div class='toggle_container'>
+											<div class='toggle_container_subtitle'>global virtual void initializePageObject()</div>
+											<table class='details' rules='all' border='1' cellpadding='6'>
+												<tr>
+													<th>Description</th>
+													<td>
+														Initialize this PageObject object This method must be invoked if this PageObject needs to be initialized after being instantiated
+													</td>
+												</tr>
+											</table>
+										</div>
+										<h2 class='trigger'>
+											<input type='button' value='+'/>
+											&nbsp;&nbsp;
+											<a href='#'>testElementSelectors</a>
+										</h2>
+										<div class='toggle_container'>
+											<div class='toggle_container_subtitle'>
+												global Map&lt;
+												<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+												,
+												<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>boolean</a>
+												&gt; testElementSelectors()
+											</div>
+											<table class='details' rules='all' border='1' cellpadding='6'></table>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<hr/>
+		<center id='footer'>
+			<a href='https://gitlab.com/StevenWCox/sfapexdoc/wikis/Home'>Powered By SfApexDoc version 1.2.4</a>
+		</center>
+</body>
+	</html>

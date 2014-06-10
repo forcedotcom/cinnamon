@@ -1,0 +1,105 @@
+<html lang="en">
+	<meta charset="utf-8">
+	<script type='text/javascript' src='../javascripts/jquery-latest.js'></script>
+	<script type='text/javascript' src='../javascripts/util.js'></script>
+	<link rel='stylesheet' type='text/css' href='../stylesheets/styles.css' />
+	<script>
+		$(document).ready(function() {
+			$('.toggle_container').show();
+			$('h2.trigger input').each(function() {
+				$(this).val('-');
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class='topSection'></div>
+	<table width='100%'>
+		<tr>
+			<td class='leftmenus' rowspan='100'>
+				<div onclick="gotomenu('index.html');">Home</div>
+				<div onclick="gotomenu('assert.html');">Assert</div>
+				<div onclick="gotomenu('basetest.html');">BaseTest</div>
+				<div onclick="gotomenu('context.html');">Context</div>
+				<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
+				<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
+				<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
+				<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
+				<div onclick="gotomenu('pageobject.html');">PageObject</div>
+				<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+				<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
+				<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+				<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+				<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
+				<div onclick="gotomenu('wait.html');">Wait</div>
+				<div onclick="gotomenu('webelement.html');">WebElement</div>
+			</td>
+			<td class='classCell'>
+				<h2 class='section-title'>
+					Assert
+					<span>
+						<input type='button' value='+/- all' onclick='ToggleAll(this);' />
+					</span>
+				</h2>
+				<div class='toggle_container_subtitle'>
+					global class
+					<a href='assert.html'>Assert</a>
+				</div>
+				<table class='details' rules='all' border='1' cellpadding='6'>
+					<tr>
+						<th>Description</th>
+						<td>
+							A set of assertion methods useful for writing Cinnamon tests It is desirable to use Cinnamon's assert methods to assert a condition in your Cinnamon test, rather than using the standard Apex's System.assert methods.
+						</td>
+					</tr>
+				</table>
+				<h2 class='section-title methods'>Methods</h2>
+				<h2 class='trigger'>
+					<input type='button' value='-'/>
+					&nbsp;&nbsp;<a href='#'>assert</a>
+				</h2>
+				<div class='toggle_container'>
+					<div class='toggle_container_subtitle'>
+						global static void
+						<a href='assert.html'>assert</a>
+						(
+						<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+						message,
+						<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>Boolean</a>
+						condition)
+					</div>
+					<table class='details' rules='all' border='1' cellpadding='6'>
+						<tr>
+							<th>Description</th>
+							<td>
+								Asserts that the specified condition is true.  If it is not, an error is returned that causes Cinnamon test execution to halt. The tearDown method in your Cinnamon test still gets executed even when its execution stops due to assertion failure.
+							</td>
+						</tr>
+						<tr>
+							<th colspan='2' class='paramHeader'>Parameters</th>
+						</tr>
+						<tr>
+							<th class='param'>message</th>
+							<td>- custom message displayed as part of the error message</td>
+						</tr>
+						<tr>
+							<th class='param'>condition</th>
+							<td>- the condition to be evaluated</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+<hr/>
+<center id='footer'>
+<a href='https://gitlab.com/StevenWCox/sfapexdoc/wikis/Home'>Powered By SfApexDoc version 1.2.4</a>
+</center>
+</body>
+</html>
