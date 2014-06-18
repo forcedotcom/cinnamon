@@ -1,0 +1,35 @@
+{% include top.html %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.css"/>
+    <link rel='stylesheet' href='{{ site.baseurl }}/assets/css/doc.css'/>
+</head>
+
+<body>
+	<script>
+		$(document).ready(function() {
+			$('.toggle_container').show();
+			$('h2.trigger input').each(function() {
+				$(this).val('-');
+			});
+		});
+	</script>
+
+	<div class="container">
+		{% include header.html %}
+		<table class="table">
+			<tr><h1>Cinnamon Documentation</h1></tr>
+			{{ content }}
+		</table>
+		
+		<hr/>
+		<center id='footer'>
+		<a href='https://gitlab.com/StevenWCox/sfapexdoc/wikis/Home'>Powered By SfApexDoc version 1.2.4</a>
+		</center>
+		<div class="footer">
+		    <p>&copy; Salesforce.com Inc. 2014</p>
+		</div>
+	</div>
+
+    <script src='{{ site.baseurl }}/assets/js/jquery-latest.js'></script>
+    <script src='{{ site.baseurl }}/assets/js/util.js'></script>
+</body>
+</html>

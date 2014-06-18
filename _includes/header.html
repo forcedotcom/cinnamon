@@ -1,0 +1,12 @@
+<header>
+  <nav role="navigation">
+    <div class="container">
+		<ul class="nav nav-pills navbar-right">
+		  <li class="{% if page.home %} active {% endif %}"><a href="/cinnamon/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+		  <li class="{% if page.url contains '/news/' %} active {% endif %}"><a href="/cinnamon/news/"><span class="glyphicon glyphicon-star"></span> News</a></li>
+		  <li class="{% if page.url contains '/docs/' %} active {% endif %}"><a href="/cinnamon/docs/"><span class="glyphicon glyphicon-book"></span> Documentation</a></li>
+		  <li><a href="{{ site.repository }}">View on Github</a></li>
+		</ul>
+    </div>
+  </nav>
+</header>
