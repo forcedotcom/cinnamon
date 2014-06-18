@@ -1,183 +1,126 @@
-<html lang="en">
-	<meta charset="utf-8">
-	<script type='text/javascript' src='../javascripts/jquery-latest.js'></script>
-	<script type='text/javascript' src='../javascripts/util.js'></script>
-	<link rel='stylesheet' type='text/css' href='../stylesheets/doc-styles.css'/>
-	<script>
-		$(document).ready(function() {
-			$('.toggle_container').show();
-			$('h2.trigger input').each(function() {
-				$(this).val('-');
-			});
-		});
-	</script>
-</head>
-
-<body>
-	<div class='topSection'></div>
-	<table width='100%'>
-		<tr>
-			<td class='leftmenus' rowspan='100'>
-				<div onclick="gotomenu('index.html');">Home</div>
-				<div onclick="gotomenu('assert.html');">Assert</div>
-				<div onclick="gotomenu('basetest.html');">BaseTest</div>
-				<div onclick="gotomenu('context.html');">Context</div>
-				<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
-				<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
-				<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
-				<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
-				<div onclick="gotomenu('pageobject.html');">PageObject</div>
-				<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
-				<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
-				<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
-				<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
-				<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
-				<div onclick="gotomenu('wait.html');">Wait</div>
-				<div onclick="gotomenu('webelement.html');">WebElement</div>
-			</td>
-			<td class='classCell'>
-				<h2 class='section-title'>
-					BaseTest
-					<span>
-						<input type='button' value='+/- all' onclick='ToggleAll(this);' />
-					</span>
-				</h2>
+---
+layout: doc
+title: Cinnamon Documentation Page
+---
+<tr>
+	<td class='leftmenus' rowspan='100'>
+		<div onclick="gotomenu('assert.html');">Assert</div>
+		<div onclick="gotomenu('basetest.html');">BaseTest</div>
+		<div onclick="gotomenu('context.html');">Context</div>
+		<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
+		<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
+		<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
+		<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
+		<div onclick="gotomenu('pageobject.html');">PageObject</div>
+		<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+		<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
+		<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+		<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+		<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
+		<div onclick="gotomenu('wait.html');">Wait</div>
+		<div onclick="gotomenu('webelement.html');">WebElement</div>
+	</td>
+	<td class='classCell'>
+		<h2 class='section-title'>
+			BaseTest
+			<span>
+				<input type='button' value='+/- all' onclick='ToggleAll(this);' />
+			</span>
+		</h2>
+		<div class='toggle_container_subtitle'>
+			global abstract class
+			<a href='basetest.html'>BaseTest</a>
+		</div>
+		<table class='details' rules='all' border='1' cellpadding='6'>
+			<tr>
+				<th>Description</th>
+				<td>
+					BaseTest is an abstract base class that defines a single test in Cinnamon.
+					<p>
+						When a Cinnamon test runs, Cinnamon framework manages the entire lifecycle of a test execution and executes the following methods (setup, test and teardown) during the test execution. Context context must be used to store and retrieve test fixture used during test execution.
+					</td>
+				</tr>
+			</table>
+			<h2 class='section-title methods'>Methods</h2>
+			<h2 class='trigger'>BaseTest</h2>
+			<div class='toggle_container'>
 				<div class='toggle_container_subtitle'>
-					global abstract class
+					global
 					<a href='basetest.html'>BaseTest</a>
+					()
 				</div>
-				<table class='details' rules='all' border='1' cellpadding='6'>
-					<tr>
-						<th>Description</th>
-						<td>
-							BaseTest is an abstract base class that defines a single test in Cinnamon.
-							<p>
-								When a Cinnamon test runs, Cinnamon framework manages the entire lifecycle of a test execution and executes the following methods (setup, test and teardown) during the test execution. Context context must be used to store and retrieve test fixture used during test execution.
-							</td>
-						</tr>
-					</table>
-					<h2 class='section-title methods'>Methods</h2>
-					<h2 class='trigger'>
-						<input type='button' value='+'/>
-						&nbsp;&nbsp;
-						<a href='#'>BaseTest</a>
-					</h2>
-					<div class='toggle_container'>
-						<div class='toggle_container_subtitle'>
-							global
-							<a href='basetest.html'>BaseTest</a>
-							()
-						</div>
-						<table class='details' rules='all' border='1' cellpadding='6'></table>
-					</div>
-					<h2 class='trigger'>
-						<input type='button' value='+'/>
-						&nbsp;&nbsp;
-						<a href='#'>getStartingPath</a>
-					</h2>
-					<div class='toggle_container'>
-						<div class='toggle_container_subtitle'>
-							global virtual
-							<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-							getStartingPath(
-							<a href='<a href='context.html'>context</a>
-							.html'>Context
-						</a>
-						<a href='context.html'>context</a>
-						)
-					</div>
-					<table class='details' rules='all' border='1' cellpadding='6'>
-						<tr>
-							<th>Description</th>
-							<td>
-								Returns a relative URL of the first page that loads to after login
-							</td>
-						</tr>
-						<tr>
-							<th>Returns</th>
-							<td>a relative URL of the page that loads after login</td>
-						</tr>
-						<tr>
-							<th colspan='2' class='paramHeader'>Parameters</th>
-						</tr>
-						<tr>
-							<th class='param'>context</th>
-							<td>Context object used to retrive test fixtures or PageObjects</td>
-						</tr>
-					</table>
-				</div>
-				<h2 class='trigger'>
-					<input type='button' value='+'/>
-					&nbsp;&nbsp;
-					<a href='#'>getStartingPathExpectedCondition</a>
-				</h2>
-				<div class='toggle_container'>
-					<div class='toggle_container_subtitle'>
-						global virtual
-						<a href='expectedcondition.html'>ExpectedCondition</a>
-						getStartingPathExpectedCondition(
-						<a href='<a href='context.html'>context</a>
-						.html'>Context
-					</a>
-					<a href='context.html'>context</a>
-					)
-				</div>
-				<table class='details' rules='all' border='1' cellpadding='6'>
-					<tr>
-						<th>Description</th>
-						<td>
-							Returns an expected condition that will be evaluated during the test start up after we request the url determined by BaseTest.getStartingPath() The base implemenation is return ExpectedConditions.visibilityOf(new ElementLocator('body.sfdcBody')); This implementation works well for visualforce pages that have simple page load events Test authors with more complex pages will benefit from overriding this method and providing a more specific condition that should be met before the test starts
-						</td>
-					</tr>
-				</table>
+				<table class='details' rules='all' border='1' cellpadding='6'></table>
 			</div>
-			<h2 class='trigger'>
-				<input type='button' value='+'/>
-				&nbsp;&nbsp;
-				<a href='#'>getWaitTimeout</a>
-			</h2>
+			<h2 class='trigger'>getStartingPath</h2>
 			<div class='toggle_container'>
 				<div class='toggle_container_subtitle'>
 					global virtual
-					<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>Integer</a>
-					getWaitTimeout(
-					<a href='<a href='context.html'>context</a>
-					.html'>Context
-				</a>
-				<a href='context.html'>context</a>
-				)
-			</div>
+					<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
+					getStartingPath(<a href='context.html'>Context</a> context)
+				</div>
 			<table class='details' rules='all' border='1' cellpadding='6'>
 				<tr>
 					<th>Description</th>
 					<td>
-						Indicates the amount of time (in seconds) for the initial page load
+						Returns a relative URL of the first page that loads to after login
 					</td>
+				</tr>
+				<tr>
+					<th>Returns</th>
+					<td>a relative URL of the page that loads after login</td>
 				</tr>
 				<tr>
 					<th colspan='2' class='paramHeader'>Parameters</th>
 				</tr>
 				<tr>
-					<th class='param'>number</th>
-					<td>
-						of seconds to wait for condition specified in getStartingPathExpectedCondition
-					</td>
+					<th class='param'>context</th>
+					<td>Context object used to retrive test fixtures or PageObjects</td>
 				</tr>
 			</table>
 		</div>
-		<h2 class='trigger'>
-			<input type='button' value='+'/>
-			&nbsp;&nbsp;
-			<a href='#'>setUp</a>
-		</h2>
+		<h2 class='trigger'>getStartingPathExpectedCondition</h2>
 		<div class='toggle_container'>
 			<div class='toggle_container_subtitle'>
-				global virtual void setUp(
-				<a href='<a href='context.html'>context</a>
-				.html'>Context
-			</a>
-			<a href='context.html'>context</a>
-			)
+				global virtual
+				<a href='expectedcondition.html'>ExpectedCondition</a>
+				getStartingPathExpectedCondition(<a href='context.html'>Context</a> context)
+		</div>
+		<table class='details' rules='all' border='1' cellpadding='6'>
+			<tr>
+				<th>Description</th>
+				<td>
+					Returns an expected condition that will be evaluated during the test start up after we request the url determined by BaseTest.getStartingPath() The base implemenation is return ExpectedConditions.visibilityOf(new ElementLocator('body.sfdcBody')); This implementation works well for visualforce pages that have simple page load events Test authors with more complex pages will benefit from overriding this method and providing a more specific condition that should be met before the test starts
+				</td>
+			</tr>
+		</table>
+		<h2 class='trigger'>getWaitTimeout</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global virtual
+				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>Integer</a>
+				getWaitTimeout(<a href='context.html'>Context</a> context)
+		</div>
+		<table class='details' rules='all' border='1' cellpadding='6'>
+			<tr>
+				<th>Description</th>
+				<td>
+					Indicates the amount of time (in seconds) for the initial page load
+				</td>
+			</tr>
+			<tr>
+				<th colspan='2' class='paramHeader'>Parameters</th>
+			</tr>
+			<tr>
+				<th class='param'>number</th>
+				<td>
+					of seconds to wait for condition specified in getStartingPathExpectedCondition
+				</td>
+			</tr>
+		</table>
+		<h2 class='trigger'>setUp</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global virtual void setUp(<a href='context.html'>Context</a> context)
 		</div>
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
@@ -192,78 +135,45 @@
 				<td>Context object used to store test fixtures</td>
 			</tr>
 		</table>
-	</div>
-	<h2 class='trigger'>
-		<input type='button' value='+'/>
-		&nbsp;&nbsp;
-		<a href='#'>tearDown</a>
-	</h2>
-	<div class='toggle_container'>
-		<div class='toggle_container_subtitle'>
-			global virtual void tearDown(
-			<a href='<a href='context.html'>context</a>
-			.html'>Context
-		</a>
-		<a href='context.html'>context</a>
-		)
-	</div>
-	<table class='details' rules='all' border='1' cellpadding='6'>
-		<tr>
-			<th>Description</th>
-			<td>
-				Tears down the fixture, for example, delete an Account record. This method is always invoked after test method regardless of whether test method executed successfully or failed due to error or exception
-			</td>
-		</tr>
-		<tr>
-			<th colspan='2' class='paramHeader'>Parameters</th>
-		</tr>
-		<tr>
-			<th class='param'>context</th>
-			<td>Context object used to retrieve test fixtures or PageObjects</td>
-		</tr>
-	</table>
-</div>
-<h2 class='trigger'>
-	<input type='button' value='+'/>
-	&nbsp;&nbsp;
-	<a href='#'>test</a>
-</h2>
-<div class='toggle_container'>
-	<div class='toggle_container_subtitle'>
-		global virtual void test(
-		<a href='<a href='context.html'>context</a>
-		.html'>Context
-	</a>
-	<a href='context.html'>context</a>
-	)
-</div>
-<table class='details' rules='all' border='1' cellpadding='6'>
-	<tr>
-		<th>Description</th>
-		<td>
-			Executes the test code for a Cinnamon test This method must be implemented to execute the code to validate a UI page in an application under test
-		</td>
-	</tr>
-	<tr>
-		<th colspan='2' class='paramHeader'>Parameters</th>
-	</tr>
-	<tr>
-		<th class='param'>context</th>
-		<td>Context object used to retrieve test fixtures or PageObjects</td>
-	</tr>
-</table>
-</div>
-</td>
+		<h2 class='trigger'>tearDown</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global virtual void tearDown(<a href='context.html'>Context</a> context)
+		</div>
+		<table class='details' rules='all' border='1' cellpadding='6'>
+			<tr>
+				<th>Description</th>
+				<td>
+					Tears down the fixture, for example, delete an Account record. This method is always invoked after test method regardless of whether test method executed successfully or failed due to error or exception
+				</td>
+			</tr>
+			<tr>
+				<th colspan='2' class='paramHeader'>Parameters</th>
+			</tr>
+			<tr>
+				<th class='param'>context</th>
+				<td>Context object used to retrieve test fixtures or PageObjects</td>
+			</tr>
+		</table>
+		<h2 class='trigger'>test</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global virtual void test(<a href='context.html'>Context</a> context)
+		</div>
+		<table class='details' rules='all' border='1' cellpadding='6'>
+			<tr>
+				<th>Description</th>
+				<td>
+					Executes the test code for a Cinnamon test This method must be implemented to execute the code to validate a UI page in an application under test
+				</td>
+			</tr>
+			<tr>
+				<th colspan='2' class='paramHeader'>Parameters</th>
+			</tr>
+			<tr>
+				<th class='param'>context</th>
+				<td>Context object used to retrieve test fixtures or PageObjects</td>
+			</tr>
+		</table>
+	</td>
 </tr>
-</table>
-</div>
-</div>
-</td>
-</tr>
-</table>
-<hr/>
-<center id='footer'>
-<a href='https://gitlab.com/StevenWCox/sfapexdoc/wikis/Home'>Powered By SfApexDoc version 1.2.4</a>
-</center>
-</body>
-</html>

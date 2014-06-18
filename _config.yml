@@ -1,0 +1,6 @@
+baseurl: /cinnamon
+markdown: redcarpet
+highlighter: pygments
+permalink: /cinnamon/news/:year/:month/:day/:title/
+timezone: America/Los_Angeles
+repository: https://github.com/forcedotcom/cinnamon

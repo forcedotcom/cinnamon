@@ -1,128 +1,28 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Cinnamon by forcedotcom</title>
+---
+layout: default
+title: Cinnamon Home Page
+home: true
+---
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Cinnamon</h1>
-        <p>Cinnamon is a Force.com app that enables you to build and run Selenium tests to validate custom UI pages with Visualforce/Javascript in your Salesforce org.</p>
-
-        <p class="view"><a href="https://github.com/forcedotcom/cinnamon">View the Project on GitHub <small>forcedotcom/cinnamon</small></a></p>
-
-
-        <ul>
-          <li><a href="docs/"><strong>API Docs</strong></a></li>
-          <li><a href="https://github.com/forcedotcom/cinnamon">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="welcome-to-cinnamon" class="anchor" href="#welcome-to-cinnamon"><span class="octicon octicon-link"></span></a>Welcome to Cinnamon!</h1>
-
-<p>Cinnamon is a Force.com app that enables you to build and run Selenium tests to validate your custom UI pages with Visualforce or Javascript in your Salesforce organization.</p>
-
-<p>With Cinnamon, you can</p>
-
-<ul>
-<li>Create and execute Selenium Tests from within your Salesforce organization.</li>
-<li>Get out-of-box integration with Sauce Labs, which provides comprehensive OS and browser coverage.</li>
-<li>Connect to any of your Salesforce Developer Edition or sandbox organization via OAuth authentication.</li>
-<li>Easily create PageObject classes to interact with your UI pages for your tests</li>
-</ul><p>Before you can use Cinnamon, you'll need to install, setup and configure Cinnamon.  Please follow the instruction below to install and set up Cinnamon in your Salesforce organization.</p>
-
-<h2>
-<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
-
-<p>Cinnamon requiers you to install the following two pacakges</p>
-
-<ol>
-<li>Install the <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t30000001I916">Apex Selenium package</a>.</li>
-<li>Install the <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N1do">Cinnamon package</a>.</li>
-</ol><h2>
-<a name="set-up-cinnamon" class="anchor" href="#set-up-cinnamon"><span class="octicon octicon-link"></span></a>Set Up Cinnamon</h2>
-
-<p>Follow these steps to set up Cinnamon in your organization.</p>
-
-<ol>
-<li>Select <strong>Cinnamon</strong> from App drop-down list</li>
-<li>Go to <strong>Settings</strong> tab</li>
-<li>Provide the configuration settings that are shown in the following screenshot, and then enter your Sauce Labs username and access key
-
-<ul>
-<li>Selenium Proxy URL <code>ondemand.saucelabs.com</code>
-</li>
-<li>Selenium Port <code>80</code>
-</li>
-<li>Sauce Username <code>&lt;Your Sauce Username&gt;</code>
-</li>
-<li>Sauce Access Key <code>&lt;Your Sauce Access Key&gt;</code>
-<img src="https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/cinnamon_settings.png" alt="">
-</li>
-</ul>
-</li>
-<li>Go to <strong>Setup -&gt; Security Controls -&gt; Remote Site Settings</strong>.  Click Edit link on the <strong>self</strong> remote site.
-<img src="https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/self_remote_site2.png" alt="">
-</li>
-<li>Edit <code>self</code> setting to your instance
-
-<ul>
-<li>You can find your instance by checking the URL of  your organization.  For example, if the URL is <code>https://na15.salesforce.com</code>, your organization resides in the <code>na15</code> instance.
-<img src="https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/self_remote_site.png" alt="">
-</li>
-</ul>
-</li>
-<li>Click <strong>Cinnamon Settings</strong> tab and then the <code>Connect to Your Org Under Test</code> button
-<img src="https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/org_under_test.png" alt="">
-</li>
-<li>Log in to Your Org Under Test and click <strong>Allow</strong> button
-<img src="https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/login_dialogue.png" alt="">
-</li>
-</ol><p>After authentication is completed, you'll see Cinnamon being connected to your Org Under Test
- <img src="https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/org_under_test2.png" alt=""></p>
-
-<p>Now, you are set up and ready to run a Cinnamon test.</p>
-
-<h2>
-<a name="run-a-cinnamon-test" class="anchor" href="#run-a-cinnamon-test"><span class="octicon octicon-link"></span></a>Run a Cinnamon Test</h2>
-
-<ol>
-<li>Go to <strong>Setup -&gt; Develop -&gt; Apex Classes</strong>
-</li>
-<li>Create a class <code>TestSampleCinnamonTest</code>
-</li>
-<li>Paste the <a href="https://gist.github.com/ryojiosawa/9750540">sample code</a>
-</li>
-<li>Click the <strong>Test Console</strong> tab.
-<img src="https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/testconsole.png" alt="">
-</li>
-<li>Select the <code>TestSampleCinnamonTest</code> that now appears in the <strong>Test Console</strong> page, and then click the <strong>Execute Test</strong> button.  The test should be executed successfully.
-<img src="https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/test_passed.png" alt="">
-</li>
-<li>Click the <strong>Passed</strong> link to view the test execution detail
-<img src="https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/testdetail.png" alt="">
-</li>
-</ol><h2>
-<a name="log-and-track-issues-and-bugs" class="anchor" href="#log-and-track-issues-and-bugs"><span class="octicon octicon-link"></span></a>Log and Track Issues and Bugs</h2>
-
-<p>Use <a href="https://github.com/forcedotcom/Cinnamon/issues">Github Issues</a> to log and track issues and bugs.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/forcedotcom">forcedotcom</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<link rel='stylesheet' href='{{ site.baseurl }}/assets/css/justified-nav.css'/>
+<div class="jumbotron">
+  <h1>Welcome to Cinnamon!</h1>
+  <p>
+  <p class="lead">Cinnamon is an automated testing framework for Salesforce.  It provides a set of functionalities that allow you to build and run Selenium tests for GUI-based integration, end-to-end, and browser-compatibility testing.</p>
+  <p><a class="btn btn-lg btn-success" href="{{ site.repository }}/blob/master/README.md" role="button">Get started!</a></p>
+</div>
+  
+<div class="row">
+    <div class="col-lg-4">
+      <h3>Write Selenium tests in Apex</h3>
+        <p>Cinnamon is a Force.com package that you can install into your Salesforce organization from AppExchange.  It provides a set of functionalities that help you write Selenium tests using Apex programming language.</p>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
-</html>
+    <div class="col-lg-4">
+      <h3>Out-of-box integration with Sauce Labs</h3>
+      <p>Cinnamon provides out-of-box integration with <a href="https://saucelabs.com/">Sauce Labs</a>, which means you can run Cinnamon tests to test your Salesforce custom pages against 150+ different OS/browser combinations without having any hardware setup required.</p>
+    </div>
+    <div class="col-lg-4">
+      <h3>Easy integration with Continuous Integration with API</h3>
+      <p>Cinnamon provides a set of simple REST APIs.  Using a thin Java client program (cinnamon cli), you can use your favorite continuous integration tool to set up a job to automatically trigger your Cinnamon test suite or define a scheduled test run.</p>
+    </div>
+</div>
