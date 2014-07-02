@@ -1,3 +1,6 @@
+### Beta v.56 (Jul 2, 2014)
+* Add ability to retry failed tests
+
 ### Beta v.53 (May 29, 2014)
 * Add canned ExpectedConditions
 
