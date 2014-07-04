@@ -34,9 +34,19 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>
-					ElementLocator tells WebElement class which HTML element it should refer to. CSS selector must be used as the value of a locator.
-				</td>
+                <td>ElementLocator specifies which element a WebElement object should refer to.<br/>
+                    A valid CSS selector must be provided to ElementLocator constructor when instantiating an ElementLocator object.
+                    <p>For example, if you want to instantiate a WebElement object that refers to an INPUT field
+                        with class "foo" for a custom HTML page, you can use ElementLocator as follows:
+                    <pre><code>
+public with sharing class CustomObjectPageObject extends PageObject {
+    WebElement inputField;
+    public void initializePageObject() {
+        inputField = getElement(new ElementLocator('input.foo'));
+    }
+}
+                    </code></pre>
+                </td>
 			</tr>
 		</table>
 		<h2 class='section-title methods'>Methods</h2>
@@ -48,8 +58,20 @@ title: Cinnamon Documentation Page
 				(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
 				locator)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
-		</div>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Constructor</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>locator</th>
+                    <td>a string value that represents the CSS selector used to locate a given element</td>
+                </tr>
+            </table>
+        </div>
 		<h2 class='trigger'>ElementLocator</h2>
 		<div class='toggle_container'>
 			<div class='toggle_container_subtitle'>
@@ -60,7 +82,27 @@ title: Cinnamon Documentation Page
 				<a href='visualforcebyidlocator.html'>VisualforceByIdLocator</a>
 				parentLocator)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Constructor</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>locator</th>
+                    <td>a string value that represents the CSS selector used to locate a given element</td>
+                </tr>
+                <tr>
+                    <th class='param'>parentLocator</th>
+                    <td>Use the parent locator when instantiating an ElementLocator object for an element which is a child of the parent locator</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='visualforcebyidlocator.html'>VisualforceByIdLocator</a></td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>getLocator</h2>
 		<div class='toggle_container'>
@@ -69,7 +111,16 @@ title: Cinnamon Documentation Page
 				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
 				getLocator()
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Returns the CSS selector associated with this ElementLocator object</td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>a string value that represents the CSS selector associated with this ElementLocator object</td>
+                </tr>
+            </table>
 		</div>
 	</td>
 </tr>

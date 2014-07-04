@@ -34,13 +34,21 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>
-					PageObject is an abstract base class that is used to define a PageObject class for a given UI page. All PageObject classes in Cinnamon must inherit from this class.
-					<p>
-					To instantiate a PageObject class,
-					<code>Context.getPageObject</code>
-					method must be used with the type of a PageObject class being passed in to the method as an argument
-				</td>
+                <td>PageObject is an abstract base class used to define a PageObject class for a given UI page.  All PageObject classes in Cinnamon must inherit from this class.<br><br>
+                    To instantiate a PageObject class, <code>Context.getPageObject</code> method must be used with the type of a PageObject class being passed in to the method as an argument.<p>
+                    <pre><code>
+public class TestCustomPage extends BaseTest {
+    private CustomPageObject customPage;
+
+    public override void setUp(Context context) {
+        customPage = (CustomPageObject) context.getPageObject(CustomPageObject.class);
+        customPage.initializePageObject();
+    }
+
+    public override void test(Context context) {}
+}
+                    </code></pre>
+                </td>
 			</tr>
 		</table>
 		<h2 class='trigger'>Properties</h2>
@@ -168,7 +176,14 @@ title: Cinnamon Documentation Page
 				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
 				getPathAndQuery()
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Returns the initial URL path for the PageObject. This method is often used to implement
+                        BaseTest.getStartingPath to indicate what is the first url to be loaded by the browser
+                    </td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>getPathAndQuery</h2>
 		<div class='toggle_container'>
@@ -178,25 +193,44 @@ title: Cinnamon Documentation Page
 				getPathAndQuery(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_map.htm'>Map</a>&lt;<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
 				, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>&gt; params)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'>
-				<tr>
-					<th>Description</th>
-					<td>
-						Return the initial url path and query part for the Page Object. This method is often used to implement BaseTest.getStartingPath to indicate what is the first url to be loaded by the browser
-					</td>
-				</tr>
-				<tr>
-					<th colspan='2' class='paramHeader'>Parameters</th>
-				</tr>
-				<tr>
-					<th class='param'>params</th>
-					<td>
-						is a Map
-						&lt;String, String&gt;
-							that contains values that maybe used during the construction of the url
-					</td>
-				</tr>
-			</table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Return the initial URL path and query part for the Page Object. This method is often used to
+                        implement BaseTest.getStartingPath to indicate what is the first url to be loaded by the
+                        browser. For example:<p>
+                        <pre><code>
+public with sharing class TeamDetailPageObject extends cinnamon.PageObject{
+    public override String getPathAndQuery(Map&lt;String, String&gt; params) {
+        PageReference page = new ApexPages.StandardController(params.get('team')).edit();
+        return page.getUrl();
+    }
+}
+
+public abstract with sharing class ScrumTeamBaseTest extends cinnamon.BaseTest{
+    public static String TEAM_NAME = 'Cinnamon';
+        public override void setup(cinnamon.Context context) {
+        String teamId = MyTestUtil.createTeam(TEAM_NAME);
+        context.put('teamId', teamId);
+    }
+
+    public override String getStartingPath(cinnamon.Context context) {
+        Map&lt;String, String&gt; params = new Map&lt;String, String&gt;();
+        params.put('team', context.get('teamId'));
+        return getPageObject(context).getPathAndQuery(params);
+    }
+}
+                        </code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>params</th>
+                    <td>a Map that contains values that maybe used during the construction of the url</td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>getRemoteWebDriver</h2>
 		<div class='toggle_container'>
@@ -205,7 +239,20 @@ title: Cinnamon Documentation Page
 				<a href='remotewebdriver.html'>RemoteWebDriver</a>
 				getRemoteWebDriver()
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Returns RemoteWebDriver object</td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>RemoteWebDriver object</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='remotewebdriver.html'>RemoteWebDriver</a></td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>getWait</h2>
 		<div class='toggle_container'>
@@ -214,19 +261,32 @@ title: Cinnamon Documentation Page
 				<a href='wait.html'>Wait</a>
 				getWait()
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Returns a Wait object</td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>Wait object used for explicit waits</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='wait.html'>Wait</a></td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>initializePageObject</h2>
 		<div class='toggle_container'>
 			<div class='toggle_container_subtitle'>global virtual void initializePageObject()</div>
-			<table class='details' rules='all' border='1' cellpadding='6'>
-				<tr>
-					<th>Description</th>
-					<td>
-						Initialize this PageObject object This method must be invoked if this PageObject needs to be initialized after being instantiated
-					</td>
-				</tr>
-			</table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Initialize this PageObject object This method must be invoked if this PageObject needs to be
+                        initialized after being instantiated
+                    </td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>testElementSelectors</h2>
 		<div class='toggle_container'>

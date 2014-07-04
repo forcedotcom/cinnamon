@@ -34,22 +34,58 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>
-					BaseTest is an abstract base class that defines a single test in Cinnamon.
-					<p>
-						When a Cinnamon test runs, Cinnamon framework manages the entire lifecycle of a test execution and executes the following methods (setup, test and teardown) during the test execution. Context context must be used to store and retrieve test fixture used during test execution.
-					</td>
-				</tr>
-			</table>
-			<h2 class='section-title methods'>Methods</h2>
-			<h2 class='trigger'>BaseTest</h2>
-			<div class='toggle_container'>
-				<div class='toggle_container_subtitle'>
-					global
-					<a href='basetest.html'>BaseTest</a>
-					()
-				</div>
-				<table class='details' rules='all' border='1' cellpadding='6'></table>
+                <td>BaseTest is an abstract base class that defines a single test in Cinnamon.
+                    <p>When a Cinnamon test runs, Cinnamon framework manages the entire lifecycle of a test execution and executes the following methods (setup, test and teardown) during the test execution.
+                        Context context must be used to store and retrieve test fixture used during test execution.</p>
+                    <pre><code>
+public class TestAccountPage extends BaseTest {
+
+    // Create an account record as a test fixture
+    public override void setUp(Context context) {
+        Account acc = new Account();
+        acc.name = 'account_' + System.currentTimeMillis();
+        acc.site = 'San Francisco';
+        insert acc;
+        context.put('accId', acc.Id);
+    }
+
+    // Setting the URL to start for this test
+    public override String getStartingPath(Context context) {
+        String accId = (String) context.get('accId');
+        return '/apex/EditAccount?id=' + accId;
+    }
+
+    // All test logic should be in this method
+    public override void test(Context context) {
+        String accId = (String) context.get('accId');
+
+        AccountDetailPageObject accountPage = (AccountDetailPageObject)
+                        context.getPageObject(AccountDetailPageObject.class);
+        accountPage.typeAccountSiteField('New York');
+        accountPage.clickSave();
+
+        Account acc = [select Id, name, site from Account where Id = :accId];
+        System.assert(acc.site.equalsIgnoreCase('New York'), 'site does not match');
+    }
+
+    // Clean up the account record at the end of test execution
+    public override void tearDown(Context context) {
+        List&lt;ID&gt; Ids = new List&lt;ID&gt;();
+        Ids.add((String) context.get('accId'));
+        Database.delete(Ids);
+    }
+}
+                    </code></pre>
+                </td>
+			</tr>
+		</table>
+		<h2 class='section-title methods'>Methods</h2>
+		<h2 class='trigger'>BaseTest</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global<a href='basetest.html'>BaseTest</a>()
+			</div>
+		<table class='details' rules='all' border='1' cellpadding='6'></table>
 			</div>
 			<h2 class='trigger'>getStartingPath</h2>
 			<div class='toggle_container'>
@@ -74,7 +110,7 @@ title: Cinnamon Documentation Page
 				</tr>
 				<tr>
 					<th class='param'>context</th>
-					<td>Context object used to retrive test fixtures or PageObjects</td>
+					<td>Context object used to retrieve test fixtures or PageObjects</td>
 				</tr>
 			</table>
 		</div>
@@ -88,9 +124,13 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>
-					Returns an expected condition that will be evaluated during the test start up after we request the url determined by BaseTest.getStartingPath() The base implemenation is return ExpectedConditions.visibilityOf(new ElementLocator('body.sfdcBody')); This implementation works well for visualforce pages that have simple page load events Test authors with more complex pages will benefit from overriding this method and providing a more specific condition that should be met before the test starts
-				</td>
+                <td>Returns an expected condition that will be evaluated during the test start up after we
+                    request the url determined by BaseTest.getStartingPath().  The base implementation is: <p>
+                        <pre>return ExpectedConditions.visibilityOf(new ElementLocator('body.sfdcBody'));</pre>
+                    <p>This implementation works well for Visualforce pages that have simple page load events Test authors with more
+                    complex pages will benefit from overriding this method and providing a more specific
+                    condition that should be met before the test starts</p>
+                </td>
 			</tr>
 		</table>
 		<h2 class='trigger'>getWaitTimeout</h2>

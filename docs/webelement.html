@@ -31,12 +31,22 @@ title: Cinnamon Documentation Page
 			global with sharing class
 			<a href='webelement.html'>WebElement</a>
 		</div>
-		<table class='details' rules='all' border='1' cellpadding='6'>
-			<tr>
-				<th>Description</th>
-				<td>WebElement is a class that represents an HTML element.</td>
-			</tr>
-		</table>
+        <table class='details' rules='all' border='1' cellpadding='6'>
+            <tr>
+                <th>Description</th>
+                <td>WebElement is a class that represents an HTML element. This class provides a set of methods that allow you to interact with a page.
+                    For example, below is a sample code which locates an input element (Save button) and use WebElement.click method to click the button:
+                    <p>
+                    <pre><code>
+public void clickSaveButton() {
+    cinnamon.WebElement saveButton = getElement(new
+    cinnamon.VisualforceLocator('apex:commandButton', 'saveBtn'));
+    saveButton.click();
+}
+                    </code></pre>
+                </td>
+            </tr>
+        </table>
 		<h2 class='section-title methods'>Methods</h2>
 		<h2 class='trigger'>clear</h2>
 		<div class='toggle_container'>

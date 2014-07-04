@@ -34,10 +34,17 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>
-					A utility class to allow tests to wait until some ExpectedCondition is true. Tests can get an instance from PageObject.getWait().
-				</td>
-			</tr>
+                <td>Wait is a class that allows tests to wait until some ExpectedCondition turns true.
+                    See the sample code below on how to use this class:<p>
+                    <pre><code>
+cinnamon.ExpectedCondition condition =
+    cinnamon.ExpectedConditions.textToBePresentInElement(locator, 'h1.title');
+cinnamon.Wait wait = accountPageObject.getWait();
+wait.until(condition);
+                    </code></pre>
+                    Tests can get a Wait object by invoking PageObject.getWait() method.
+                </td>
+            </tr>
 		</table>
 		<h2 class='section-title methods'>Methods</h2>
 		<h2 class='trigger'>until</h2>
@@ -46,7 +53,23 @@ title: Cinnamon Documentation Page
 				global void until(<a href='expectedcondition.html'>ExpectedCondition</a>
 				condition)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Until method keeps waiting until the specified condition turns true or time runs out.</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>condition</th>
+                    <td>the condition to be evaluated</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='expectedcondition.html'>ExpectedCondition</a></td>
+                </tr>
+            </table>
 		</div>
 	</td>
 </tr>

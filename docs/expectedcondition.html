@@ -34,7 +34,9 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>ExpectedCondition for tests to wait for. see Wait.until()</td>
+                <td>ExpectedCondition models a condition that is expected to eventually evaluate to something that turns true or false.<br>
+                    Examples include determining if a web page has loaded or that a certain element becomes visible or invisible.
+                </td>
 			</tr>
 		</table>
 		<h2 class='section-title methods'>Methods</h2>
@@ -47,14 +49,22 @@ title: Cinnamon Documentation Page
 			<table class='details' rules='all' border='1' cellpadding='6'>
 				<tr>
 					<th>Description</th>
-					<td>
-						The string returned is a javascript snippet to be executed on selenium server. The javascript should test for the expected condition and be formatted as an anonymous, self-executing function, explicitly returning a boolean. For example: to test if an element is inthe DOM: (function(){var el = selenium.browserbot.findElementOrNull('#id'); return (el != null);}())
-					</td>
+                    <td>This method returns a javascript snippet that gets sent and executed on a remote selenium server. The javascript should test for the expected condition and be formatted as an anonymous,
+                        self-executing function, explicitly returning a boolean.<br><br>
+                        <p>
+                        For example: to test if an element is in the DOM:</p>
+                        <pre><code>
+(function(){
+    var el = selenium.browserbot.findElementOrNull('#id');
+    return (el != null);
+}())
+                        </code></pre>
+                    </td>
 				</tr>
 				<tr>
 					<th>Returns</th>
 					<td>
-						String - a javascript snippet to be executed on selenium server.
+						a string value that represents a javascript snippet to be executed on selenium server.
 					</td>
 				</tr>
 			</table>
