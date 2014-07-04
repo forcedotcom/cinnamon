@@ -31,14 +31,41 @@ title: Cinnamon Documentation Page
 			global with sharing class
 			<a href='expectedconditions.html'>ExpectedConditions</a>
 		</div>
-		<table class='details' rules='all' border='1' cellpadding='6'>
-			<tr>
-				<th>Description</th>
-				<td>
-					Canned ExpectedConditions which tests can wait for. Modeled after those in selenium webdriver ExpectedConditions.
-				</td>
-			</tr>
-		</table>
+        <table class='details' rules='all' border='1' cellpadding='6'>
+            <tr>
+                <th>Description</th>
+                <td>ExpectedConditions is a utility class that provides a list of canned ExpectedConditions which
+                    can be used when a test needs to wait for a certain condition to become true or false.  ExpectedConditions are modeled after those in Selenium Webdriver ExpectedConditions class.<br><br>
+                    For example, if your test is looking for a certain element or text in a given page after making some action, you can use one of the ExpectedConditions method to make your test wait until the condition you specified turns true. See a sample code below.
+                    <p>
+                    <pre><code>
+public class TestWithExpectedCondition extends cinnamon.BaseTest {
+    private CustomPageObject customPage;
+
+    public override void setUp(cinnamon.Context context) {
+        customPage = (CustomPageObject) context.getPageObject(CustomPageObject.class);
+        customPage.initializePageObject();
+    }
+
+    public override void test(cinnamon.Context context) {
+        cinnamon.ElementLocator locator = new cinnamon.ElementLocator('div.title');
+        customPage.fillForm();
+        customPage.clickSave();
+
+        // this condition waits until div.title element that contains the text 'Hello World' appears
+        cinnamon.ExpectedCondition condition =
+            cinnamon.ExpectedConditions.textToBePresentInElement(locator, 'Hello World!');
+        customPage.getWait().until(condition);
+    }
+}
+                    </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <th>See</th>
+                <td><a href='expectedcondition.html'>ExpectedCondition</a></td>
+            </tr>
+        </table>
 		<h2 class='section-title methods'>Methods</h2>
 		<h2 class='trigger'>invisibilityOfElementLocated</h2>
 		<div class='toggle_container'>
@@ -48,7 +75,30 @@ title: Cinnamon Documentation Page
 				invisibilityOfElementLocated(<a href='elementlocator.html'>ElementLocator</a>
 				locator)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>An expectation for checking that a given element that matches the locator is either
+                        invisible or not present on the DOM. Visibility means that the element is not only displayed
+                        but also has a height and width that is greater than 0.
+                    </td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>ExpectedCondition which can be passed to Wait.until method</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>locator</th>
+                    <td>a locator element used to find the element</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>invisibilityOfElementWithText</h2>
 		<div class='toggle_container'>
@@ -60,7 +110,34 @@ title: Cinnamon Documentation Page
 				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
 				text)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Checks that element with innertext is not in the DOM, or that it has height and width = 0 An
+                        expectation for checking that a given element with text is either invisible or not present
+                        on the DOM.
+                    </td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>ExpectedCondition which can be passed to Wait.until method</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>locator</th>
+                    <td>a locator element used to find the element</td>
+                </tr>
+                <tr>
+                    <th class='param'>text</th>
+                    <td>a string representing the text to be present in the element</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>negate</h2>
 		<div class='toggle_container'>
@@ -70,7 +147,27 @@ title: Cinnamon Documentation Page
 				negate(<a href='expectedcondition.html'>ExpectedCondition</a>
 				condition)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Returns the logical opposite of the ExpectedCondition passed to this method.</td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>ExpectedCondition which can be passed to Wait.until method</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>condition</th>
+                    <td>an expectation to be negated</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>textToBePresentInElement</h2>
 		<div class='toggle_container'>
@@ -82,7 +179,34 @@ title: Cinnamon Documentation Page
 				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
 				text)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>An expectation for checking if the given text is present in the element that matches the
+                        given locator Note that this condition evalutes to true when the given element is present in
+                        the DOM and its innertext value matches the text
+                    </td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>ExpectedCondition which can be passed to Wait.until method</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>locator</th>
+                    <td>a locator element used to find the element</td>
+                </tr>
+                <tr>
+                    <th class='param'>text</th>
+                    <td>a string representing the text to be present in the element</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>textToBePresentInElementLocated</h2>
 		<div class='toggle_container'>
@@ -94,7 +218,34 @@ title: Cinnamon Documentation Page
 				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
 				text)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>An expectation for checking if the given text is present in the element that matches the
+                        given locator Note that this condition evalutes to true when the given element is present in
+                        the DOM and its innertext value matches the text
+                    </td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>ExpectedCondition which can be passed to Wait.until method</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>locator</th>
+                    <td>a locator element used to find the element</td>
+                </tr>
+                <tr>
+                    <th class='param'>text</th>
+                    <td>a string representing the text to be present in the element</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>visibilityOf</h2>
 		<div class='toggle_container'>
@@ -104,7 +255,30 @@ title: Cinnamon Documentation Page
 				visibilityOf(<a href='elementlocator.html'>ElementLocator</a>
 				locator)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>An expectation for checking that a given element is in the DOM and visible. Visibility means
+                        that the element is not only displayed but also has a height and width that is greater than
+                        0.
+                    </td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>ExpectedCondition which can be passed to Wait.until method</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>locator</th>
+                    <td>a locator element used to find the element</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
+                </tr>
+            </table>
 		</div>
 		<h2 class='trigger'>visibilityOfElementLocated</h2>
 		<div class='toggle_container'>
@@ -114,7 +288,30 @@ title: Cinnamon Documentation Page
 				visibilityOfElementLocated(<a href='elementlocator.html'>ElementLocator</a>
 				locator)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>An expectation for checking that a given element is in the DOM and visible. Visibility means
+                        that the element is not only displayed but also has a height and width that is greater than
+                        0.
+                    </td>
+                </tr>
+                <tr>
+                    <th>Returns</th>
+                    <td>ExpectedCondition which can be passed to Wait.until method</td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>locator</th>
+                    <td>a locator element used to find the element</td>
+                </tr>
+                <tr>
+                    <th>See</th>
+                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
+                </tr>
+            </table>
 		</div>
 	</td>
 </tr>

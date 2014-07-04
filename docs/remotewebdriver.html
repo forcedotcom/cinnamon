@@ -31,14 +31,13 @@ title: Cinnamon Documentation Page
 			global with sharing class
 			<a href='remotewebdriver.html'>RemoteWebDriver</a>
 		</div>
-		<table class='details' rules='all' border='1' cellpadding='6'>
-			<tr>
-				<th>Description</th>
-				<td>
-					wrapper class for use by PageObjects, insulation against planned changes from Selenium to WebDriver
-				</td>
-			</tr>
-		</table>
+        <table class='details' rules='all' border='1' cellpadding='6'>
+            <tr>
+                <th>Description</th>
+                <td>RemoteWebDriver is a wrapper class for use by PageObjects, insulation against planned changes from Selenium to WebDriver
+                </td>
+            </tr>
+        </table>
 		<h2 class='section-title methods'>Methods</h2>
 		<h2 class='trigger'>batchSendKeys</h2>
 		<div class='toggle_container'>
@@ -46,23 +45,21 @@ title: Cinnamon Documentation Page
 				global void batchSendKeys(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_map.htm'>Map</a>&lt;<a href='webelement.html'>WebElement</a>
 				, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>&gt; mapOfWebElements)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'>
-				<tr>
-					<th>Description</th>
-					<td>
-						Convenience method to, for example, fill out a form in one call. If a WebElement in the map is not found, the method aborts and returns the element locator in an error message.
-					</td>
-				</tr>
-				<tr>
-					<th colspan='2' class='paramHeader'>Parameters</th>
-				</tr>
-				<tr>
-					<th class='param'>mapOfWebElements</th>
-					<td>
-						- maps WebElements with the String that should be sendKey'ed to it
-					</td>
-				</tr>
-			</table>
+            <table class='details' rules='all' border='1' cellpadding='6'>
+                <tr>
+                    <th>Description</th>
+                    <td>Convenience method to, for example, fill out a form in one call. If a WebElement in the map
+                        is not found, the method aborts and returns the element locator in an error message.
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan='2' class='paramHeader'>Parameters</th>
+                </tr>
+                <tr>
+                    <th class='param'>mapOfWebElements</th>
+                    <td>a map of WebElements that are to be sendKey'ed with a string value as input</td>
+                </tr>
+            </table>
 		</div>
 	</td>
 </tr>
