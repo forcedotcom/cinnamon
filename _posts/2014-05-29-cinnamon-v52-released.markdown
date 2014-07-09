@@ -1,6 +1,7 @@
 ---
 layout: news_item
-title: 'Cinnamon v.52 Released'
+title: 'Cinnamon v.52 is released!'
+sub-title: 'Cinnamon v.52'
 date: 2014-05-16
 author: ryojiosawa
 version: v52.0

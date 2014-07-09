@@ -1,153 +1,181 @@
 a {
-  text-decoration: none;
-  font-size: 1em;
-  text-decoration: none;
+    text-decoration: none;
+    font-size: 1em;
+    text-decoration: none;
 }
+
 a:visited {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 a:focus {
-  text-decoration: underline;
+    text-decoration: underline;
 }
+
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /*******************************************************************************
  *  section-title is the horizontal header that declares the classname, methods, etc. */
 .section-title {
-  background-color: SteelBlue;
-  /*border: 1px solid #A4BCD0;*/
-  color: white;
-  padding: 10px;
-  font-size: 2em;
-  font-weight: bold;
-  margin-top: 0px;
-  margin-bottom: 20px;
+    background-color: SteelBlue;
+    /*border: 1px solid #A4BCD0;*/
+    color: white;
+    padding: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
+
 .section-title span {
-  float: right;
-  margin-top: -5px;
+    float: right;
+    margin-top: -5px;
 }
+
 .section-title.methods {
-  background-color: #7CAED8;
-  font-size: 1.5em;
-  margin-top: 20px;
-  margin-bottom: 0px;
+    background-color: #7CAED8;
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
+
 .section-title input {
-  display: none;
+    display: none;
 }
+
 tr {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 /*******************************************************************************
  * display the tags like author, date, description, params, return value, etc. */
 .details {
-  /*border-color: lightgray;*/
-  width: 100%;
+    /*border-color: lightgray;*/
+    width: 100%;
 }
-.details th{
-  background-color: whitesmoke;
-  color: black;
-  padding: 6px 3px;
-  text-align: right;
+
+.details th {
+    background-color: whitesmoke;
+    color: black;
+    padding: 6px 3px;
+    text-align: right;
 }
-.details th.paramHeader{
-  background-color: white;
-  color: black;
-  text-align: left;
+
+.details th.paramHeader {
+    background-color: white;
+    color: black;
+    text-align: left;
 }
-.details th.param{
-  background-color: whitesmoke;
-  color: black;
-  padding-left: 10px;
+
+.details th.param {
+    background-color: whitesmoke;
+    color: black;
+    padding-left: 10px;
 }
-.details td{
-  width: 90%;
-  padding: 6px 3px;
+
+.details td {
+    width: 90%;
+    padding: 6px 3px;
+    text-align: left;
 }
+
 td.classCell {
-  padding-bottom: 40px;
+    padding-bottom: 40px;
 }
+
+/*
 pre {
-  margin-left: 20px;
+    margin-left: 5px;
 }
+*/
 
 /*******************************************************************************
  * properties is used to display the table of class properties */
 
 .properties {
-  /*border-color: lightgray;*/
-  width: 100%;
+    /*border-color: lightgray;*/
+    width: 100%;
 }
-.properties td {
-  vertical-align: top;
-  width: 90%;
-}
-.clsPropertyName {
-  /*font-size: .7em;*/
-  font-weight: bold;
-  text-align: right;
 
-  padding: 6px 3px;
+.properties td {
+    vertical-align: top;
+    width: 90%;
 }
+
+.clsPropertyName {
+    /*font-size: .7em;*/
+    font-weight: bold;
+    text-align: right;
+
+    padding: 6px 3px;
+}
+
 .clsPropertyDeclaration {
-  /*font: normal .7em Courier;*/
-  /*color: SteelBlue;*/
-  padding: 6px 3px;  
+    /*font: normal .7em Courier;*/
+    /*color: SteelBlue;*/
+    padding: 6px 3px;
 }
+
 .clsPropertyDescription {
-  /*font-size: .7em;*/
-  font-weight: normal;
+    /*font-size: .7em;*/
+    font-weight: normal;
 }
 
 /*******************************************************************************
  * trigger is the set of styles to provide the expand/collapse bar */
 h2.trigger {
-  margin: 0 0 2 0;
-  background-color: #ccc;
-  font-size: 1.5em;
-  /*border: 1px solid #bbb;*/
-  /*font-weight: bold;*/
-  padding: 5px 10px;
+    margin: 0 0 2 0;
+    background-color: #ccc;
+    font-size: 1.5em;
+    /*border: 1px solid #bbb;*/
+    /*font-weight: bold;*/
+    padding: 5px 10px;
 }
+
 h2.trigger a {
-  color: #888;
-  /*font-size: 0.7em;*/
+    color: #888;
+    /*font-size: 0.7em;*/
 }
+
 h2.trigger a:hover {
-  color: whitesmoke;
+    color: whitesmoke;
 }
+
 h2.trigger input {
-  /*width: 24px;*/
-  display: none;
+    /*width: 24px;*/
+    display: none;
 }
+
 h2.active {
-  background-position: left bottom;
-} /*--When toggle is triggered, it will shift the image to the bottom to show its "opened" state--*/
+    background-position: left bottom;
+}
+
+/*--When toggle is triggered, it will shift the image to the bottom to show its "opened" state--*/
 
 /*******************************************************************************
  * section that gets shown/hidden when the trigger is expanded/collapsed */
 .toggle_container_subtitle {
-  font: normal 1.1em Courier;
-  /*color: SteelBlue;*/
-  padding-bottom: 8px;
+    font: normal 1.1em Courier;
+    /*color: SteelBlue;*/
+    padding-bottom: 8px;
 }
 
 /*******************************************************************************
  * styles for the menu of class names */
-.leftmenus{
-  vertical-align: top;
-  width: 20%;
+.leftmenus {
+    vertical-align: top;
+    width: 20%;
 }
-.leftmenus div{
-  font-weight: bold;
-  padding: 5px;
-  cursor: pointer;
+
+.leftmenus div {
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
 }
-.leftmenus div:hover{
-  font-weight: bold;
-  background-color: whitesmoke;
+
+.leftmenus div:hover {
+    font-weight: bold;
+    background-color: whitesmoke;
 }

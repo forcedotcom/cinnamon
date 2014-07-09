@@ -4,20 +4,20 @@ layout: news
 
 <article>
   <h2 class="blog-post-title">
-    <a href="{{ post.url }}">
-      {{ post.title }}
+    <a href="{{ site.baseurl }}{{ page.url }}">
+      {{ page.title }}
     </a>
   </h2>
   <div class="blog-post-meta">
     <span>
-      {{ post.date | date: '%B %d, %Y' }}
+      {{ page.date | date: '%B %d, %Y' }}
     </span>
-    <a href="https://github.com/{{ post.author }}">
-      <img src="https://github.com/{{ post.author }}.png" alt="{{ post.author }}" width="24" height="24">
-      {{ post.author }}
+    <a href="https://github.com/{{ page.author }}">
+      <img src="https://github.com/{{ page.author }}.png" alt="{{ page.author }}" width="24" height="24">
+      {{ page.author }}
     </a>
   </div>
   <div class="blog-post">
-    {{ post.content }}
+    {{ content }}
   </div>
 </article>
