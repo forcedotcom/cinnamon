@@ -1,3 +1,6 @@
+### Beta v.58 (Aug 6, 2014)
+* Fix to improve TestConsole load time
+
 ### Beta v.56 (Jul 2, 2014)
 * Add ability to retry failed tests
 
