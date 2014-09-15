@@ -190,7 +190,7 @@ public override void test(cinnamon.Context context) {
     page.initializePageObject();
             </code></pre>
             <p>
-                This is a long method, so let's take a breather. Again, this method overrides the <code>test()</code> method in the <code>BaseTest</code> class and takes a <code>Context</code> object as a parameter. Inside the method, you retrieve the Account <code>Id</code> from the context map and cast it to a String because the <code>get()</code> method returns a generic object. Now you'll need to use the <code>EditAccountPageObject</code> that ou created earlier, instantiating it by calling <code>context.getPageObject()</code>. Then you initialize the page object, which allows you to interact with the user interface in your tests. Let's keep moving.
+                This is a long method, so let's take a breather. Again, this method overrides the <code>test()</code> method in the <code>BaseTest</code> class and takes a <code>Context</code> object as a parameter. Inside the method, you retrieve the Account <code>Id</code> from the context map and cast it to a String because the <code>get()</code> method returns a generic object. Now you'll need to use the <code>EditAccountPageObject</code> that you created earlier, instantiating it by calling <code>context.getPageObject()</code>. Then you initialize the page object, which allows you to interact with the user interface in your tests. Let's keep moving.
             </p>
             <pre><code>
     page.typeAccountSite('San Francisco')
