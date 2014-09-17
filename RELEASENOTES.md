@@ -1,3 +1,6 @@
+### Beta v.59 (Sep 17, 2014)
+* Fix to allow switching frames and sending non-text keys
+
 ### Beta v.58 (Aug 6, 2014)
 * Fix to improve TestConsole load time
 
