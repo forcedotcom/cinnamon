@@ -35,8 +35,8 @@ title: Cinnamon Documentation Page
 			<tr>
 				<th>Description</th>
                 <td>BaseTest is an abstract base class that defines a single test in Cinnamon.
-                    <p>When a Cinnamon test runs, Cinnamon framework manages the entire lifecycle of a test execution and executes the following methods (setup, test and teardown) during the test execution.
-                        Context context must be used to store and retrieve test fixture used during test execution.</p>
+                    <p>When you run a Cinnamon test, the Cinnamon framework manages the entire test lifecycle and executes the <code>setup()</code>, <code>test()</code> and <code>teardown()</code> methods during test execution.
+                        The <code>Context context</code> parameter must be used to store and retrieve test fixture used during test execution.</p>
                     <pre><code>
 public class TestAccountPage extends BaseTest {
 
@@ -49,7 +49,7 @@ public class TestAccountPage extends BaseTest {
         context.put('accId', acc.Id);
     }
 
-    // Setting the URL to start for this test
+    // Set the URL to start for this test
     public override String getStartingPath(Context context) {
         String accId = (String) context.get('accId');
         return '/apex/EditAccount?id=' + accId;
@@ -83,7 +83,7 @@ public class TestAccountPage extends BaseTest {
 		<h2 class='trigger'>BaseTest</h2>
 		<div class='toggle_container'>
 			<div class='toggle_container_subtitle'>
-				global<a href='basetest.html'>BaseTest</a>()
+				global <a href='basetest.html'>BaseTest</a>()
 			</div>
 		<table class='details' rules='all' border='1' cellpadding='6'></table>
 			</div>
@@ -98,19 +98,19 @@ public class TestAccountPage extends BaseTest {
 				<tr>
 					<th>Description</th>
 					<td>
-						Returns a relative URL of the first page that loads to after login
+						Returns the relative URL of the first page that you want to load after login.
 					</td>
 				</tr>
 				<tr>
 					<th>Returns</th>
-					<td>a relative URL of the page that loads after login</td>
+					<td>The relative URL of the page you want to load after login.</td>
 				</tr>
 				<tr>
 					<th colspan='2' class='paramHeader'>Parameters</th>
 				</tr>
 				<tr>
 					<th class='param'>context</th>
-					<td>Context object used to retrieve test fixtures or PageObjects</td>
+					<td>Context object used to retrieve test fixtures or PageObjects.</td>
 				</tr>
 			</table>
 		</div>
@@ -124,12 +124,11 @@ public class TestAccountPage extends BaseTest {
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-                <td>Returns an expected condition that will be evaluated during the test start up after we
-                    request the url determined by BaseTest.getStartingPath().  The base implementation is: <p>
+                <td>Returns an expected condition that will be evaluated during the test after getting the starting URL from <code>BaseTest.getStartingPath()</code>.  The base implementation is: <p>
                         <pre>return ExpectedConditions.visibilityOf(new ElementLocator('body.sfdcBody'));</pre>
-                    <p>This implementation works well for Visualforce pages that have simple page load events Test authors with more
+                    <p>This implementation works well for Visualforce pages that have simple page load events. Tests written for more
                     complex pages will benefit from overriding this method and providing a more specific
-                    condition that should be met before the test starts</p>
+                    condition that should be met before the test starts.</p>
                 </td>
 			</tr>
 		</table>
@@ -144,7 +143,7 @@ public class TestAccountPage extends BaseTest {
 			<tr>
 				<th>Description</th>
 				<td>
-					Indicates the amount of time (in seconds) for the initial page load
+					Indicates the amount of time (in seconds) for the initial page load.
 				</td>
 			</tr>
 			<tr>
@@ -153,7 +152,7 @@ public class TestAccountPage extends BaseTest {
 			<tr>
 				<th class='param'>number</th>
 				<td>
-					of seconds to wait for condition specified in getStartingPathExpectedCondition
+					The number of seconds to wait for condition specified in <code>getStartingPathExpectedCondition()</code>.
 				</td>
 			</tr>
 		</table>
@@ -165,14 +164,14 @@ public class TestAccountPage extends BaseTest {
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>Sets up the fixture, for example, create an Account record</td>
+				<td>Sets up the test fixture.</td>
 			</tr>
 			<tr>
 				<th colspan='2' class='paramHeader'>Parameters</th>
 			</tr>
 			<tr>
 				<th class='param'>context</th>
-				<td>Context object used to store test fixtures</td>
+				<td>Context object used to retrieve test fixtures or PageObjects.</td>
 			</tr>
 		</table>
 		<h2 class='trigger'>tearDown</h2>
@@ -184,7 +183,7 @@ public class TestAccountPage extends BaseTest {
 			<tr>
 				<th>Description</th>
 				<td>
-					Tears down the fixture, for example, delete an Account record. This method is always invoked after test method regardless of whether test method executed successfully or failed due to error or exception
+					Tears down the test fixture. This method is always invoked after test method regardless of whether test method executed successfully or failed due to error or exception.
 				</td>
 			</tr>
 			<tr>
@@ -192,7 +191,7 @@ public class TestAccountPage extends BaseTest {
 			</tr>
 			<tr>
 				<th class='param'>context</th>
-				<td>Context object used to retrieve test fixtures or PageObjects</td>
+				<td>Context object used to retrieve test fixtures or PageObjects.</td>
 			</tr>
 		</table>
 		<h2 class='trigger'>test</h2>
@@ -204,7 +203,7 @@ public class TestAccountPage extends BaseTest {
 			<tr>
 				<th>Description</th>
 				<td>
-					Executes the test code for a Cinnamon test This method must be implemented to execute the code to validate a UI page in an application under test
+					Executes the test code for a Cinnamon test. This method must be implemented to validate a UI page in the application under test.
 				</td>
 			</tr>
 			<tr>
@@ -212,7 +211,7 @@ public class TestAccountPage extends BaseTest {
 			</tr>
 			<tr>
 				<th class='param'>context</th>
-				<td>Context object used to retrieve test fixtures or PageObjects</td>
+				<td>Context object used to retrieve test fixtures or PageObjects.</td>
 			</tr>
 		</table>
 	</td>

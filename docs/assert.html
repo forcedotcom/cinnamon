@@ -31,7 +31,7 @@ title: Cinnamon Documentation Page
 			<tr>
 				<th>Description</th>
 				<td>
-					A set of assertion methods useful for writing Cinnamon tests It is desirable to use Cinnamon's assert methods to assert a condition in your Cinnamon test, rather than using the standard Apex's System.assert methods.
+					A set of assertion methods for writing Cinnamon tests. You should use Cinnamon's <code>assert</code> methods to assert a condition in your Cinnamon tests rather than using Apex's standard <code>System.assert</code> methods.
 				</td>
 			</tr>
 		</table>
@@ -51,7 +51,7 @@ title: Cinnamon Documentation Page
 				<tr>
 					<th>Description</th>
 					<td>
-						Asserts that the specified condition is true.  If it is not, an error is returned that causes Cinnamon test execution to halt. The tearDown method in your Cinnamon test still gets executed even when its execution stops due to assertion failure.
+						Asserts that the specified condition is true.  If it is not, the method returns an error that causes Cinnamon test execution to halt. The <code>tearDown()</code> method in your Cinnamon test still gets executed even when the assertion failure halts test execution.
 					</td>
 				</tr>
 				<tr>
@@ -59,11 +59,11 @@ title: Cinnamon Documentation Page
 				</tr>
 				<tr>
 					<th class='param'>message</th>
-					<td>- custom message displayed as part of the error message</td>
+					<td>Custom message displayed as part of the error message.</td>
 				</tr>
 				<tr>
 					<th class='param'>condition</th>
-					<td>- the condition to be evaluated</td>
+					<td>The condition to be evaluated.</td>
 				</tr>
 			</table>
 		</div>
