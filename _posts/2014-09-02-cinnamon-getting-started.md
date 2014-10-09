@@ -72,27 +72,14 @@ public class EditAccountPageObject extends cinnamon.PageObject {
     }
 
     public EditAccountPageObject clickSave() {
-        if (saveBtn == null) {
-            saveBtn = getElement(new cinnamon.VisualforceLocator('apex:commandButton', 'saveBtn'));
-        }
         saveBtn.click();
         selenium.waitForPageToLoad('3000');
         return this;
     }
 
-    public EditAccountPageObject typeAccountName(String data) {
-        if (accountName == null) {
-            accountName = getElement(new cinnamon.VisualforceLocator('apex:inputField', 'name'));
-        }
-        accountName.sendKeys(data);
-        return this;
-    }
-
     public EditAccountPageObject typeAccountSite(String data) {
-        if (site == null) {
-            accountName = getElement(new cinnamon.VisualforceLocator('apex:inputField', 'site'));
-        }
         site.sendKeys(data);
+        clickSave();
         return this;
     }
 }
@@ -100,7 +87,7 @@ public class EditAccountPageObject extends cinnamon.PageObject {
         </li>
         <li>Click <b>Save</b>.
     </ol>
-    Let's quickly explore this class. First, notice that it extends the abstract <code>cinnamon.PageObject</code> class that provides methods for interacting with a page's UI. There are fields for each element on the page. The values of these fields are assigned in the <code>initializePageObject()</code> method by calling <code>getElement()</code> and using Cinnamon's built-in <code>VisualforceLocator</code> to determine the position of the elements on your page. The remaining methods in this class define different actions that a user might perform such as <code>clickSave()</code> and <code>typeAccountSite</code>. The return type of the method must simulate the page that the user sees after performing that action. For this example, any action that a user performs keeps the user on the Account's Edit page, so all of the methods return an <code>EditAccountPageObject</code>.
+    Let's quickly explore this class. First, notice that it extends the abstract <code>cinnamon.PageObject</code> class that provides methods for interacting with a page's UI. There are fields for each element on the page. The values of these fields are assigned in the <code>initializePageObject()</code> method by calling <code>getElement()</code> and using Cinnamon's built-in <code>VisualforceLocator</code> to determine the position of the elements on your page. The remaining methods in this class define different actions that a user might perform such as <code>clickSave()</code> and <code>typeAccountSite()</code>. Notice that <code>typeAccountSite()</code> includes a call to <code>clickSave</code>, so you don't have to worry about calling the save operation manually in your tests. The return type of the method must simulate the page that the user sees after performing that action. For this example, any action that a user performs keeps the user on the Account's Edit page, so all of the methods return an <code>EditAccountPageObject</code>.
 </p>
 
 <p>
@@ -132,10 +119,8 @@ public class TestEditAccountPage extends cinnamon.BaseTest {
         String accId = (String) context.get('accId');
 
         EditAccountPageObject page = (EditAccountPageObject) context.getPageObject(EditAccountPageObject.class);
-        page.initializePageObject();
 
-        page.typeAccountSite('San Francisco')
-            .clickSave();
+        page.typeAccountSite('San Francisco');
 
         Account a = [select name, site, rating from Account where Id = :accId];
         System.assert(a != null);
@@ -187,17 +172,15 @@ public override String getStartingPath(cinnamon.Context context) {
 public override void test(cinnamon.Context context) {
     String accId = (String) context.get('accId');
     EditAccountPageObject page = (EditAccountPageObject) context.getPageObject(EditAccountPageObject.class);
-    page.initializePageObject();
             </code></pre>
             <p>
-                This is a long method, so let's take a breather. Again, this method overrides the <code>test()</code> method in the <code>BaseTest</code> class and takes a <code>Context</code> object as a parameter. Inside the method, you retrieve the Account <code>Id</code> from the context map and cast it to a String because the <code>get()</code> method returns a generic object. Now you'll need to use the <code>EditAccountPageObject</code> that you created earlier, instantiating it by calling <code>context.getPageObject()</code>. Then you initialize the page object, which allows you to interact with the user interface in your tests. Let's keep moving.
+                This is a long method, so let's take a breather. Again, this method overrides the <code>test()</code> method in the <code>BaseTest</code> class and takes a <code>Context</code> object as a parameter. Inside the method, you retrieve the Account <code>Id</code> from the context map and cast it to a String because the <code>get()</code> method returns a generic object. Now you'll need to use the <code>EditAccountPageObject</code> that you created earlier, instantiating it by calling <code>context.getPageObject()</code>. Note that the <code>initializePageObject()</code> method is called automatically by the Cinnamon framework. Let's keep moving.
             </p>
             <pre><code>
-    page.typeAccountSite('San Francisco')
-      .clickSave();
+    page.typeAccountSite('San Francisco');
             </code></pre>
             <p>
-                Finally, you call methods from your PageObject to execute the UI's services. Here, we are changing the Account's site to "San Francisco" and then clicking the Save button. Remember that any action that you want to perform in the UI needs to be defined in the associated PageObject class. Now it's time to check whether performing these actions worked the way that you expected.
+                Finally, you call methods from your PageObject to execute the UI's services. Here, we are changing the Account's site to "San Francisco," a change that is saved by the call to <code>clickSave()</code> in the <code>typeAccountSite()</code> method in your PageObject class. Remember that any action that you want to perform in the UI needs to be defined in the associated PageObject class. Now it's time to check whether performing these actions worked the way that you expected.
             </p>
             <pre><code>
     Account a = [SELECT name, site rating FROM Account WHERE Id = :accId];

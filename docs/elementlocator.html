@@ -34,8 +34,8 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-                <td>ElementLocator specifies which element a WebElement object should refer to.<br/>
-                    A valid CSS selector must be provided to ElementLocator constructor when instantiating an ElementLocator object.
+                <td>ElementLocator specifies which element a WebElement object refers to.<br/>
+                    A valid CSS selector must be provided to the ElementLocator constructor when instantiating an ElementLocator object.
                     <p>For example, if you want to instantiate a WebElement object that refers to an INPUT field
                         with class "foo" for a custom HTML page, you can use ElementLocator as follows:
                     <pre><code>
@@ -68,7 +68,7 @@ public with sharing class CustomObjectPageObject extends PageObject {
                 </tr>
                 <tr>
                     <th class='param'>locator</th>
-                    <td>a string value that represents the CSS selector used to locate a given element</td>
+                    <td>A String that represents the CSS selector used to locate a given element.</td>
                 </tr>
             </table>
         </div>
@@ -92,11 +92,11 @@ public with sharing class CustomObjectPageObject extends PageObject {
                 </tr>
                 <tr>
                     <th class='param'>locator</th>
-                    <td>a string value that represents the CSS selector used to locate a given element</td>
+                    <td>A String that represents the CSS selector used to locate a given element.</td>
                 </tr>
                 <tr>
                     <th class='param'>parentLocator</th>
-                    <td>Use the parent locator when instantiating an ElementLocator object for an element which is a child of the parent locator</td>
+                    <td>Use the parent locator when instantiating an ElementLocator object for an element which is a child of another element.</td>
                 </tr>
                 <tr>
                     <th>See</th>
@@ -114,11 +114,11 @@ public with sharing class CustomObjectPageObject extends PageObject {
             <table class='details' rules='all' border='1' cellpadding='6'>
                 <tr>
                     <th>Description</th>
-                    <td>Returns the CSS selector associated with this ElementLocator object</td>
+                    <td>Returns the CSS selector associated with this ElementLocator object.</td>
                 </tr>
                 <tr>
                     <th>Returns</th>
-                    <td>a string value that represents the CSS selector associated with this ElementLocator object</td>
+                    <td>A String that represents the CSS selector associated with this ElementLocator object.</td>
                 </tr>
             </table>
 		</div>

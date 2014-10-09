@@ -36,7 +36,7 @@ title: Cinnamon Documentation Page
 			<tr>
 				<th>Description</th>
 				<td>
-					Context class holds values across test execution phases. Current implementation only support primitive data types
+					The <code>Context</code> class holds values across test execution phases. Only support primitive data types.
 				</td>
 			</tr>
 		</table>
@@ -58,14 +58,14 @@ title: Cinnamon Documentation Page
 							<a href='orgundertest.html'>OrgUnderTest</a>
 							inOrgUnderTest
 						</div>
-						<div class='clsPropertyDescription'>Returns OrgUnderTest object to access an org under test</div>
+						<div class='clsPropertyDescription'>Returns an OrgUnderTest object to access the organization that you're testing.</div>
 					</td>
 				</tr>
 				<tr>
 					<th class='clsPropertyName'>seProxy</th>
 					<td>
 						<div class='clsPropertyDeclaration'>global selenium1.DefaultSelenium seProxy</div>
-						<div class='clsPropertyDescription'>selenium client used to execute selenium commands</div>
+						<div class='clsPropertyDescription'>The Selenium client used to execute Selenium commands.</div>
 					</td>
 				</tr>
 			</table>
@@ -79,18 +79,18 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>Returns an object stored in context map</td>
+				<td>Returns the target object stored from the context map.</td>
 			</tr>
 			<tr>
 				<th>Returns</th>
-				<td>an object to be returned from context map</td>
+				<td>The target object from the context map.</td>
 			</tr>
 			<tr>
 				<th colspan='2' class='paramHeader'>Parameters</th>
 			</tr>
 			<tr>
 				<th class='param'>key</th>
-				<td>a key used to retrieve a value from context map</td>
+				<td>A key used to retrieve the object from the context map.</td>
 			</tr>
 		</table>
 		<h2 class='trigger'>getPageObject</h2>
@@ -103,18 +103,18 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>Returns a PageObject object to be used</td>
+				<td>Returns a PageObject object representing the page you're testing.</td>
 			</tr>
 			<tr>
 				<th>Returns</th>
-				<td>PageObject object to be instantiated and used</td>
+				<td>The PageObject object to be instantiated and used.</td>
 			</tr>
 			<tr>
 				<th colspan='2' class='paramHeader'>Parameters</th>
 			</tr>
 			<tr>
 				<th class='param'>t</th>
-				<td>a type of PageObject class to be instantiated</td>
+				<td>The type of PageObject class to be instantiated.</td>
 			</tr>
 		</table>
 		<h2 class='trigger'>getString</h2>
@@ -128,18 +128,18 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>Returns a string value stored in context map</td>
+				<td>Returns a string value stored in context map.</td>
 			</tr>
 			<tr>
 				<th>Returns</th>
-				<td>a string value to be returned</td>
+				<td>A string value to be returned.</td>
 			</tr>
 			<tr>
 				<th colspan='2' class='paramHeader'>Parameters</th>
 			</tr>
 			<tr>
 				<th class='param'>key</th>
-				<td>a key used to retrieve a value from context map</td>
+				<td>The key used to retrieve the value from context map.</td>
 			</tr>
 		</table>
 		<h2 class='trigger'>put</h2>
@@ -151,19 +151,19 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>Puts a value into context map</td>
+				<td>Puts a value in to the context map.</td>
 			</tr>
 			<tr>
 				<th colspan='2' class='paramHeader'>Parameters</th>
 			</tr>
 			<tr>
 				<th class='param'>key</th>
-				<td>a key used to store a value into context map</td>
+				<td>The key used to store a value in the context map.</td>
 			</tr>
 			<tr>
 				<th class='param'>value</th>
 				<td>
-					an object to be stored in context map. valid types are: String, Integer
+					The object to store in the context map. Valid types are String and Integer.
 				</td>
 			</tr>
 		</table>

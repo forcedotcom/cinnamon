@@ -34,8 +34,8 @@ title: Cinnamon Documentation Page
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-                <td>PageObject is an abstract base class used to define a PageObject class for a given UI page.  All PageObject classes in Cinnamon must inherit from this class.<br><br>
-                    To instantiate a PageObject class, <code>Context.getPageObject</code> method must be used with the type of a PageObject class being passed in to the method as an argument.<p>
+                <td>PageObject is an abstract base class used to define a Selenium PageObject class for a given UI page.  All PageObject classes in Cinnamon must inherit from this class.<br><br>
+                    To instantiate a PageObject class, call the <code>Context.getPageObject()</code> method with the type of PageObject class passed in as an argument.<p>
                     <pre><code>
 public class TestCustomPage extends BaseTest {
     private CustomPageObject customPage;
@@ -58,7 +58,7 @@ public class TestCustomPage extends BaseTest {
 					<th class='clsPropertyName'>selenium</th>
 					<td>
 						<div class='clsPropertyDeclaration'>global selenium1.DefaultSelenium selenium</div>
-						<div class='clsPropertyDescription'>selenium client used to issue selenium commands</div>
+						<div class='clsPropertyDescription'>The Selenium client used to issue Selenium commands.</div>
 					</td>
 				</tr>
 			</table>
@@ -72,11 +72,11 @@ public class TestCustomPage extends BaseTest {
 			<table class='details' rules='all' border='1' cellpadding='6'>
 				<tr>
 					<th>Returns</th>
-					<td>a list of WebElements to be declared</td>
+					<td>A list of WebElements to be declared.</td>
 				</tr>
 			</table>
 		</div>
-		<h2 class='trigger'>getElement</h2>
+		<h2 class='trigger'>getElement</h2>s
 		<div class='toggle_container'>
 			<div class='toggle_container_subtitle'>
 				global
@@ -88,19 +88,19 @@ public class TestCustomPage extends BaseTest {
 				<tr>
 					<th>Description</th>
 					<td>
-						Returns a WebElement that represents a UI component or DOM element to use
+						Returns the WebElement that represents the UI component or DOM element from the ElementLocator.
 					</td>
 				</tr>
 				<tr>
 					<th>Returns</th>
-					<td>a WebElement object to be used</td>
+					<td>A WebElement object.</td>
 				</tr>
 				<tr>
 					<th colspan='2' class='paramHeader'>Parameters</th>
 				</tr>
 				<tr>
 					<th class='param'>locator</th>
-					<td>ElementLocator used to locate a UI component to be returned</td>
+					<td>The ElementLocator object used to locate the specified UI component.</td>
 				</tr>
 			</table>
 		</div>
@@ -122,23 +122,23 @@ public class TestCustomPage extends BaseTest {
 				<tr>
 					<th>Description</th>
 					<td>
-						Returns a WebElement that represents a UI component or DOM element to use
+						Returns a WebElement that represents a UI component or DOM element.
 					</td>
 				</tr>
 				<tr>
 					<th>Returns</th>
-					<td>a WebElement object to be used</td>
+					<td>A WebElement object.</td>
 				</tr>
 				<tr>
 					<th colspan='2' class='paramHeader'>Parameters</th>
 				</tr>
 				<tr>
 					<th class='param'>locator</th>
-					<td>ElementLocator used to locate a UI component to be returned</td>
+					<td>ElementLocator used to locate the UI component.</td>
 				</tr>
 				<tr>
 					<th class='param'>parent</th>
-					<td>a parent WebElement</td>
+					<td>A parent WebElement.</td>
 				</tr>
 			</table>
 		</div>
@@ -152,11 +152,11 @@ public class TestCustomPage extends BaseTest {
 			<table class='details' rules='all' border='1' cellpadding='6'>
 				<tr>
 					<th>Description</th>
-					<td>Returns the absolute URL of the current page</td>
+					<td>Returns the absolute URL of the current page.</td>
 				</tr>
 				<tr>
 					<th>Returns</th>
-					<td>the absolute URL of the current page</td>
+					<td>The absolute URL of the current page.</td>
 				</tr>
 			</table>
 		</div>
@@ -180,7 +180,7 @@ public class TestCustomPage extends BaseTest {
                 <tr>
                     <th>Description</th>
                     <td>Returns the initial URL path for the PageObject. This method is often used to implement
-                        BaseTest.getStartingPath to indicate what is the first url to be loaded by the browser
+                        <code>BaseTest.getStartingPath()</code> to indicate the first URL the browser loads.
                     </td>
                 </tr>
             </table>
@@ -197,8 +197,7 @@ public class TestCustomPage extends BaseTest {
                 <tr>
                     <th>Description</th>
                     <td>Return the initial URL path and query part for the Page Object. This method is often used to
-                        implement BaseTest.getStartingPath to indicate what is the first url to be loaded by the
-                        browser. For example:<p>
+                        implement <code>BaseTest.getStartingPath()</code> to indicate the first URL the browser loads. For example:<p>
                         <pre><code>
 public with sharing class TeamDetailPageObject extends cinnamon.PageObject{
     public override String getPathAndQuery(Map&lt;String, String&gt; params) {
@@ -228,7 +227,7 @@ public abstract with sharing class ScrumTeamBaseTest extends cinnamon.BaseTest{
                 </tr>
                 <tr>
                     <th class='param'>params</th>
-                    <td>a Map that contains values that maybe used during the construction of the url</td>
+                    <td>A Map that contains values that may be used during the construction of the URL.</td>
                 </tr>
             </table>
 		</div>
@@ -242,11 +241,11 @@ public abstract with sharing class ScrumTeamBaseTest extends cinnamon.BaseTest{
             <table class='details' rules='all' border='1' cellpadding='6'>
                 <tr>
                     <th>Description</th>
-                    <td>Returns RemoteWebDriver object</td>
+                    <td>Returns a RemoteWebDriver object.</td>
                 </tr>
                 <tr>
                     <th>Returns</th>
-                    <td>RemoteWebDriver object</td>
+                    <td>A RemoteWebDriver object.</td>
                 </tr>
                 <tr>
                     <th>See</th>
@@ -264,11 +263,11 @@ public abstract with sharing class ScrumTeamBaseTest extends cinnamon.BaseTest{
             <table class='details' rules='all' border='1' cellpadding='6'>
                 <tr>
                     <th>Description</th>
-                    <td>Returns a Wait object</td>
+                    <td>Returns a Wait object.</td>
                 </tr>
                 <tr>
                     <th>Returns</th>
-                    <td>Wait object used for explicit waits</td>
+                    <td>Wait object used for explicit waits.</td>
                 </tr>
                 <tr>
                     <th>See</th>
@@ -282,8 +281,8 @@ public abstract with sharing class ScrumTeamBaseTest extends cinnamon.BaseTest{
             <table class='details' rules='all' border='1' cellpadding='6'>
                 <tr>
                     <th>Description</th>
-                    <td>Initialize this PageObject object This method must be invoked if this PageObject needs to be
-                        initialized after being instantiated
+                    <td>Initializes this PageObject object. This method must be invoked if this PageObject needs to be
+                        initialized after being instantiated.
                     </td>
                 </tr>
             </table>
