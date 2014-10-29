@@ -14,7 +14,7 @@ Before you can use Cinnamon, you'll need to install, setup and configure Cinnamo
 ##Install
 Cinnamon requiers you to install the following two pacakges
 
-1. Install the [Apex Selenium package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t30000001I916).
+1. Install the [Apex Selenium package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N3DE).
 2. Install the [Cinnamon package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N2tI).
 
 ##Set Up Cinnamon
