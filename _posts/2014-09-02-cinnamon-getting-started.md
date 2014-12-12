@@ -1,6 +1,7 @@
 ---
 layout: news_item
 title: 'Getting Started with Cinnamon Testing'
+sub-title: 'Getting Started with Cinnamon Testing'
 date: 2014-09-02
 author: jheritagesf
 ---
@@ -14,7 +15,7 @@ Now that you've set up your Cinnamon environment, it's time to start writing som
 
 <p>
     After you decide which page you're testing, you need to design and create a PageObject class to represent the page. A PageObject is an interface between your custom page and your test classes that provides a set of methods or services to manipulate UI components.<br />
-    <div align="center"><img src="./img/interfaceDiagram.png" alt="Diagram of the interaction between Cinnamon tests and UI pages" width="500"/></div><br/>
+    <div align="center"><img src="/cinnamon/news/img/interfaceDiagram.png" alt="Diagram of the interaction between Cinnamon tests and UI pages" width="500"/></div><br/>
      Every UI page needs an associated PageObject but a single PageObject can be used in multiple tests, so you'll never need to duplicate the code that controls the UI. Additionally, if the UI changes, you only need to edit the PageObject class instead of every test class that's associated with that page in the UI. See the Selenium <a href="https://code.google.com/p/selenium/wiki/PageObjects" target="_blank">PageObject reference</a> and <a href="https://github.com/ryojiosawa/cinnamon/wiki/PageObject-in-Cinnamon" target="_blank">PageObject in Cinnamon</a> for more details.
 </p>
 
@@ -44,7 +45,7 @@ Now that you've set up your Cinnamon environment, it's time to start writing som
 &lt;/apex:page>
     </code></pre>
     This definition creates this custom page:<br/><br/>
-    <div align="center"><img src="./img/editAccount-ss.png" alt="Custom Visualforce Account Edit page." width="600"/></div><br/>
+    <div align="center"><img src="/cinnamon/news/img/editAccount-ss.png" alt="Custom Visualforce Account Edit page." width="600"/></div><br/>
     For this page, you might want to test whether entering a value in the <samp>Site</samp> field and then clicking <b>Save</b> actually changes the site value for that Account object. To do this, you need to use PageObjects.
 </p>
 
@@ -212,11 +213,11 @@ public override void tearDown(cinnamon.Context context) {
     <li>To execute your new test, all you need to do is navigate to the Test Console, then select the checkbox next to <b>TestEditAccountPage</b>, and select the browser and operating system combination on which you want your tests to run.
     </li>
     <li> Finally, click <b>Execute Tests</b>. You'll see that the execution status immediately changes to "Scheduled." <br/>
-    <img src="./img/test_scheduled.png" alt="Test scheduled view" width="600"/><br/>
+    <img src="/cinnamon/news/img/test_scheduled.png" alt="Test scheduled view" width="600"/><br/>
     The status changes to Running, and terminates with a status of Passed, Failed, or Error.<br/>
-    <img src="./img/test_passed.png" alt="Test passed view" width="600"/><br/>
+    <img src="/cinnamon/news//img/test_passed.png" alt="Test passed view" width="600"/><br/>
      You can view details about the test by clicking on its name. At the bottom of the details page under Test Executions, you can see information about individual executions of the test.<br/>
-    <img src="./img/test_detail.png" alt="Test execution detail page" width="600"/>
+    <img src="/cinnamon/news/img/test_detail.png" alt="Test execution detail page" width="600"/>
     </li>
 </p>
 <p>
