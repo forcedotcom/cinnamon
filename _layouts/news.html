@@ -16,12 +16,23 @@ title: Cinnamon News
 
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
         <div class="sidebar-module">
-            <h3>Recent Posts</h3>
+            <h3>Information</h3>
             <ul class="list-unstyled">
                 {% for post in site.posts limit:10 %}
-                <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.sub-title }}</a></li>
+                  {% if post.categories[0] == release %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.sub-title }}</a></li>
+                  {% endif %}
                 {% endfor %}
             </ul>
+            <h3>Releases</h3>
+            <ul class="list-unstyled">
+                {% for post in site.posts limit:10 %}
+                  {% if post.categories[0] != release %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.sub-title }}</a></li>
+                  {% endif %}
+                {% endfor %}
+            </ul>
+            
         </div>
     </div>
     <!-- /.news-sidebar -->
