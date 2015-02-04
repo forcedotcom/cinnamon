@@ -46,7 +46,7 @@ Now, you are set up and ready to run a Cinnamon test.
 ##Run a Cinnamon Test
 1. Go to **Setup -> Develop -> Apex Classes**
 2. Create two classes `TestCinnamonSampleTest` and `AccountPageObject`
-3. Paste the sample classes: [TestCinnamonSampleTest](https://gist.github.com/ryojiosawa/9750540) and [AccountPageObject](https://gist.github.com/ryojiosawa/c1955d4f9e3761a53422)
+3. Paste the sample classes: [TestCinnamonSampleTest](https://gist.github.com/jheritagesf/7a4b0d6ae4011f9d0098) and [AccountPageObject](https://gist.github.com/ryojiosawa/c1955d4f9e3761a53422)
 4. Click the **Test Console** tab.
  ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/testconsole.png)
 5. Select the `TestCinnamonSampleTest` that now appears in the **Test Console** page, and then click the **Execute Test** button.  The test should be executed successfully.
