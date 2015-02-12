@@ -1,0 +1,18 @@
+<apex:page showHeader="true" sidebar="true" standardController="Account">
+	<apex:form >
+		<apex:pageBlock title="Account Edit">
+			<apex:pageMessages id="errorMsg" />
+			<apex:pageBlockButtons >
+				<apex:commandButton id="saveBtn" value="Save" action="{!save}" />
+			</apex:pageBlockButtons>
+
+			<apex:pageBlockSection >
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Account Name" for="name"/>
+					<apex:inputField id="name" value="{!account.name}" />
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>
