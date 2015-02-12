@@ -12,19 +12,16 @@ With Cinnamon, you can
 Before you can use Cinnamon, you'll need to install, setup and configure Cinnamon.  Please follow the instruction below to install and set up Cinnamon in your Salesforce organization.
 
 ##Install
-Cinnamon requiers you to install the following two pacakges
+Cinnamon requires you to install the following package
 
-1. Install the [Apex Selenium package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t30000001I916).
-2. Install the [Cinnamon package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N3DE).
+1. Install the [Cinnamon package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N3DE).
 
 ##Set Up Cinnamon
 Follow these steps to set up Cinnamon in your organization.
 
 1. Select **Cinnamon** from App drop-down list
 2. Go to **Settings** tab
-3. Provide the configuration settings that are shown in the following screenshot, and then enter your Sauce Labs username and access key
- * Selenium Proxy URL `ondemand.saucelabs.com`
- * Selenium Port `80`
+3. Provide the configuration settings that are shown in the WebDriver Service Provider Settings section (for this example we are using Saucelabs)
  * Sauce Username `<Your Sauce Username>`
  * Sauce Access Key `<Your Sauce Access Key>`
  ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/cinnamon_settings.png)
