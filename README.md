@@ -45,7 +45,6 @@ Now, you are set up and ready to run a Cinnamon test.
 2. Create the classes [TestNewAccount](https://github.com/yudiatsfdc/cinnamon/blob/master/src/classes/TestNewAccount.cls) and [NewAccountPageObject](https:///github.com/yudiatsfdc/cinnamon/blob/master/src/classes/NewAccountPageObject.cls)
 3. Create the Visualforce Page [NewAccountPage](https://github.com/yudiatsfdc/cinnamon/blob/master/src/pages/NewAccountPage.page)
 4. Click the **Test Console** tab.
- ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/testconsole.png)
 5. Select the `TestCinnamonSampleTest` that now appears in the **Test Console** page, and then click the **Execute Test** button.  The test should be executed successfully.
  ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/test_passed.png)
 6. Click the **Passed** link to view the test execution detail

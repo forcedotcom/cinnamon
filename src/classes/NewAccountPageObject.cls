@@ -3,8 +3,8 @@ public with sharing class NewAccountPageObject extends cinnamon.PageObject{
 	cinnamon.WebElement accountNameInput;
 	
 	public override void initializePageObject() {
-		saveButton = getElement(new cinnamon.VisualforceLocator('apex:commandButton', 'saveBtn'));
-		accountNameInput = getElement(new cinnamon.VisualforceLocator('apex:inputField', 'name'));
+		saveButton = getElement(new cinnamon.VisualforceLocator(cinnamon.VisualforceTag.APEX_COMMANDBUTTON, 'saveBtn'));
+		accountNameInput = getElement(new cinnamon.VisualforceLocator(cinnamon.VisualforceTag.APEX_INPUTFIELD, 'name'));
 	}
 	
 	public void saveNewAccount(String accountName) {
