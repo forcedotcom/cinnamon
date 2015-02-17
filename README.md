@@ -12,19 +12,17 @@ With Cinnamon, you can
 Before you can use Cinnamon, you'll need to install, setup and configure Cinnamon.  Please follow the instruction below to install and set up Cinnamon in your Salesforce organization.
 
 ##Install
-Cinnamon requiers you to install the following two pacakges
+Cinnamon requires you to install the following package
 
-1. Install the [Apex Selenium package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t30000001I916).
-2. Install the [Cinnamon package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N3DE).
+* Install the [Cinnamon package on a Developer Edition Org] (https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N4Fs)
+* Install the [Cinnamon package on a Sandbox Org] (https://test.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N4Fs)
 
 ##Set Up Cinnamon
 Follow these steps to set up Cinnamon in your organization.
 
 1. Select **Cinnamon** from App drop-down list
 2. Go to **Settings** tab
-3. Provide the configuration settings that are shown in the following screenshot, and then enter your Sauce Labs username and access key
- * Selenium Proxy URL `ondemand.saucelabs.com`
- * Selenium Port `80`
+3. Provide the configuration settings that are shown in the WebDriver Service Provider Settings section (for this example we are using Saucelabs)
  * Sauce Username `<Your Sauce Username>`
  * Sauce Access Key `<Your Sauce Access Key>`
  ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/cinnamon_settings.png)
@@ -45,13 +43,14 @@ Now, you are set up and ready to run a Cinnamon test.
 
 ##Run a Cinnamon Test
 1. Go to **Setup -> Develop -> Apex Classes**
-2. Create two classes `TestCinnamonSampleTest` and `AccountPageObject`
-3. Paste the sample classes: [TestCinnamonSampleTest](https://gist.github.com/jheritagesf/7a4b0d6ae4011f9d0098) and [AccountPageObject](https://gist.github.com/ryojiosawa/c1955d4f9e3761a53422)
-4. Click the **Test Console** tab.
+2. Create the PageObject class [NewAccountPageObject](https:///github.com/yudiatsfdc/cinnamon/blob/master/src/classes/NewAccountPageObject.cls)
+3. Create the Visualforce Page [NewAccountPage](https://github.com/yudiatsfdc/cinnamon/blob/master/src/pages/NewAccountPage.page)
+4. Create the Test class [TestNewAccount](https://github.com/yudiatsfdc/cinnamon/blob/master/src/classes/TestNewAccount.cls) 
+5. Click the **Test Console** tab.
  ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/testconsole.png)
-5. Select the `TestCinnamonSampleTest` that now appears in the **Test Console** page, and then click the **Execute Test** button.  The test should be executed successfully.
+6. Select the `TestNewAccount` that now appears in the **Test Console** page, and then click the **Execute Test** button.  The test should be executed successfully.
  ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/test_passed.png)
-6. Click the **Passed** link to view the test execution detail
+7. Click the **Passed** link to view the test execution detail
  ![](https://raw.githubusercontent.com/forcedotcom/cinnamon/master/images/testdetail.png)
 
 ##Log and Track Issues and Bugs
