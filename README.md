@@ -14,7 +14,8 @@ Before you can use Cinnamon, you'll need to install, setup and configure Cinnamo
 ##Install
 Cinnamon requires you to install the following package
 
-1. Install the [Cinnamon package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N3DE).
+* Install the [Cinnamon package on a Developer Edition Org] (https://login.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N4Fs)
+* Install the [Cinnamon package on a Sandbox Org] (https://test.salesforce.com/packaging/installPackage.apexp?p0=04td0000000N4Fs)
 
 ##Set Up Cinnamon
 Follow these steps to set up Cinnamon in your organization.
