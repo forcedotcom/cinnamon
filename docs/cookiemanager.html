@@ -35,30 +35,61 @@ title: Cinnamon Documentation Page
 	</td>
 	<td class='classCell'>
 		<h2 class='section-title'>
-			ElementLocator
+			CookieManager
 			<span>
 				<input type='button' value='+/- all' onclick='ToggleAll(this);' />
 			</span>
 		</h2>
 		<div class='toggle_container_subtitle'>
-			global abstract with sharing class <a href='elementlocator.html'>ElementLocator</a>
+			global with sharing class <a href='cookiemanager.html'>CookieManager</a>
 		</div>
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>ElementLocator is an abstract class that represents locators for DOM nodes in a page. Subclasses should abstract away the complexities of mapping high-level abstraction nodes, such as apex:inputField, to low-level specifications of how nodes are located in WebDriver.</td>
+				<td>Implements WebDriver's Cookie interface. See <a href="https://dvcs.w3.org/hg/webdriver/raw-file/tip/webdriver-spec.html#cookies" target="_blank">this page</a> for more information.</td>
 			</tr>
 		</table>
 		<h2 class='section-title methods'>Methods</h2>
 		<h2 class='trigger'>
 			<input type='button' value='+'/>&nbsp;&nbsp;
-			<a href='#'>getLocator</a>
+			<a href='#'>addCookie</a>
 		</h2>
 		<div class='toggle_container'>
 			<div class='toggle_container_subtitle'>
-				global virtual <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> getLocator()
+				global void addCookie(<a href='<a href='cookie.html'>cookie</a>.html'>Cookie</a> <a href='cookie.html'>cookie</a>)
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Adds a cookie to the RemoteWebDriver.</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>cookie</th>
+					<td>The cookie to add. </td>
+				</tr>
+			</table>
+		</div>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>getCookies</a>
+		</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global List&lt;<a href='cookie.html'>Cookie</a>&gt; getCookies()
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Returns a list of the cookies for this browser session.</td>
+				</tr> 
+				<tr>
+					<th>Returns</th>
+					<td>A list of cookies.</td>
+				</tr> 
+			</table>
 		</div>
 	</td>
 </tr>

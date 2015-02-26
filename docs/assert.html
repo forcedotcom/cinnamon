@@ -2,70 +2,84 @@
 layout: doc
 title: Cinnamon Documentation Page
 ---
-
 <tr>
 	<td class='leftmenus' rowspan='100'>
 		<div onclick="gotomenu('assert.html');">Assert</div>
+		<div onclick="gotomenu('baseexplicitwaittest.html');">BaseExplicitWaitTest</div>
 		<div onclick="gotomenu('basetest.html');">BaseTest</div>
+		<div onclick="gotomenu('capabilities.html');">Capabilities</div>
 		<div onclick="gotomenu('context.html');">Context</div>
+		<div onclick="gotomenu('cookie.html');">Cookie</div>
+		<div onclick="gotomenu('cookiemanager.html');">CookieManager</div>
+		<div onclick="gotomenu('csslocator.html');">CSSLocator</div>
 		<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
 		<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
 		<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
 		<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
 		<div onclick="gotomenu('pageobject.html');">PageObject</div>
+		<div onclick="gotomenu('remotealert.html');">RemoteAlert</div>
+		<div onclick="gotomenu('remotemouse.html');">RemoteMouse</div>
+		<div onclick="gotomenu('remotetouch.html');">RemoteTouch</div>
 		<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+		<div onclick="gotomenu('remotewebdriverserviceprovider.html');">RemoteWebDriverServiceProvider</div>
 		<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
-		<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
-		<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+		<div onclick="gotomenu('standardlayoutlocator.html');">StandardLayoutLocator</div>
+        <div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+        <div onclick="gotomenu('testutil.html');">TestUtil</div>
+		<div onclick="gotomenu('visualforcebyhtmltaglocator.html');">VisualforceByHtmlTagLocator</div>
+		<div onclick="gotomenu('visualforcechildlocator.html');">VisualforceChildLocator</div>
 		<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
 		<div onclick="gotomenu('wait.html');">Wait</div>
 		<div onclick="gotomenu('webelement.html');">WebElement</div>
+		<div onclick="gotomenu('windowsize.html');">WindowSize</div>
 	</td>
+
 	<td class='classCell'>
-		<h2 class='section-title'>Assert</h2>
-		<div class='toggle_container_subtitle'>
-			global class
+		<h2 class='section-title'>
+			Assert
+			<span>
+				<input type='button' value='+/- all' onclick='ToggleAll(this);' />
+			</span>
+		</h2>
+		<div class='toggle_container_subtitle'>global class 
 			<a href='assert.html'>Assert</a>
 		</div>
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>
-					A set of assertion methods for writing Cinnamon tests. You should use Cinnamon's <code>assert</code> methods to assert a condition in your Cinnamon tests rather than using Apex's standard <code>System.assert</code> methods.
-				</td>
+					<td>A set of assertion methods for writing Cinnamon tests. You should use Cinnamon's assert methods to assert a condition in your Cinnamon test, rather than using Apex's standard System.assert methods.</td>
 			</tr>
 		</table>
-		<h2 class='section-title methods'>Methods</h2>
-		<h2 class='trigger'>assert</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global static void
-				<a href='assert.html'>assert</a>
-				(
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-				message,
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>Boolean</a>
-				condition)
-			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'>
-				<tr>
-					<th>Description</th>
-					<td>
-						Asserts that the specified condition is true.  If it is not, the method returns an error that causes Cinnamon test execution to halt. The <code>tearDown()</code> method in your Cinnamon test still gets executed even when the assertion failure halts test execution.
-					</td>
-				</tr>
-				<tr>
-					<th colspan='2' class='paramHeader'>Parameters</th>
-				</tr>
-				<tr>
-					<th class='param'>message</th>
-					<td>Custom message displayed as part of the error message.</td>
-				</tr>
-				<tr>
-					<th class='param'>condition</th>
-					<td>The condition to be evaluated.</td>
-				</tr>
-			</table>
-		</div>
-	</td>
+			<h2 class='section-title methods'>Methods</h2>
+				<h2 class='trigger'>
+					<input type='button' value='+'/>&nbsp;&nbsp;
+						<a href='#'>assert</a>
+				</h2>
+				<div class='toggle_container'>
+					<div class='toggle_container_subtitle'>global static void 
+						<a href='assert.html'>assert</a>
+						(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> 
+						message, 
+						<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>Boolean</a> condition)
+					</div>
+					<table class='details' rules='all' border='1' cellpadding='6'>
+						<tr>
+							<th>Description</th>
+							<td>Asserts that the specified condition is true.  If it's not, the method returns an error that halts execution of the Cinnamon test. The tearDown method in your Cinnamon test still gets executed even when an assertion failure halts the test.</td>
+						</tr> 
+						<tr>
+							<th colspan='2' class='paramHeader'>Parameters</th>
+						</tr> 
+						<tr>
+							<th class='param'>message</th>
+								<td>Custom message displayed as part of the error message. </td>
+						</tr>
+						<tr>
+							<th class='param'>condition</th>
+								<td>The condition to be evaluated. </td>
+						</tr>
+					</table>
+				</div>
+
+		</td>
 </tr>

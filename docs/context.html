@@ -5,168 +5,178 @@ title: Cinnamon Documentation Page
 <tr>
 	<td class='leftmenus' rowspan='100'>
 		<div onclick="gotomenu('assert.html');">Assert</div>
+		<div onclick="gotomenu('baseexplicitwaittest.html');">BaseExplicitWaitTest</div>
 		<div onclick="gotomenu('basetest.html');">BaseTest</div>
+		<div onclick="gotomenu('capabilities.html');">Capabilities</div>
 		<div onclick="gotomenu('context.html');">Context</div>
+		<div onclick="gotomenu('cookie.html');">Cookie</div>
+		<div onclick="gotomenu('cookiemanager.html');">CookieManager</div>
+		<div onclick="gotomenu('csslocator.html');">CSSLocator</div>
 		<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
 		<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
 		<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
 		<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
 		<div onclick="gotomenu('pageobject.html');">PageObject</div>
+		<div onclick="gotomenu('remotealert.html');">RemoteAlert</div>
+		<div onclick="gotomenu('remotemouse.html');">RemoteMouse</div>
+		<div onclick="gotomenu('remotetouch.html');">RemoteTouch</div>
 		<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+		<div onclick="gotomenu('remotewebdriverserviceprovider.html');">RemoteWebDriverServiceProvider</div>
 		<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
 		<div onclick="gotomenu('standardlayoutlocator.html');">StandardLayoutLocator</div>
-		<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
-		<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+        <div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+        <div onclick="gotomenu('testutil.html');">TestUtil</div>
+		<div onclick="gotomenu('visualforcebyhtmltaglocator.html');">VisualforceByHtmlTagLocator</div>
+		<div onclick="gotomenu('visualforcechildlocator.html');">VisualforceChildLocator</div>
 		<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
 		<div onclick="gotomenu('wait.html');">Wait</div>
 		<div onclick="gotomenu('webelement.html');">WebElement</div>
+		<div onclick="gotomenu('windowsize.html');">WindowSize</div>
 	</td>
+	
 	<td class='classCell'>
-		<h2 class='section-title'>
-			Context
+		<h2 class='section-title'>Context
 			<span>
 				<input type='button' value='+/- all' onclick='ToggleAll(this);' />
 			</span>
 		</h2>
 		<div class='toggle_container_subtitle'>
-			global class
-			<a href='context.html'>Context</a>
+			global with sharing class <a href='context.html'>Context</a>
 		</div>
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-				<td>
-					The <code>Context</code> class holds values across test execution phases. Only support primitive data types.
-				</td>
+				<td>Stores values across each phase of test execution. The current implementation only supports primitive data types.</td>
 			</tr>
 		</table>
-		<h2 class='trigger'>Properties</h2>
-		<div class='toggle_container'>
-			<table class='properties' border='1' rules='all' cellpadding='6'>
-				<tr>
-					<th class='clsPropertyName'>extendedSelenium</th>
-					<td>
-						<div class='clsPropertyDeclaration'>global ExtendedSelenium extendedSelenium</div>
-						<div class='clsPropertyDescription'></div>
-					</td>
-				</tr>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>Properties</a>
+		</h2>
+		<div class='toggle_container'> 
+			<table class='properties' border='1' rules='all' cellpadding='6'> 
 				<tr>
 					<th class='clsPropertyName'>inOrgUnderTest</th>
 					<td>
 						<div class='clsPropertyDeclaration'>
-							global
-							<a href='orgundertest.html'>OrgUnderTest</a>
-							inOrgUnderTest
+							global <a href='orgundertest.html'>OrgUnderTest</a> inOrgUnderTest
 						</div>
-						<div class='clsPropertyDescription'>Returns an OrgUnderTest object to access the organization that you're testing.</div>
+						<div class='clsPropertyDescription'>Returns an OrgUnderTest object to access the org under test.</div>
 					</td>
 				</tr>
 				<tr>
-					<th class='clsPropertyName'>seProxy</th>
+					<th class='clsPropertyName'>remoteWebDriver</th>
 					<td>
-						<div class='clsPropertyDeclaration'>global selenium1.DefaultSelenium seProxy</div>
-						<div class='clsPropertyDescription'>The Selenium client used to execute Selenium commands.</div>
+						<div class='clsPropertyDeclaration'>global <a href='remotewebdriver.html'>RemoteWebDriver</a> <a href='remotewebdriver.html'>remoteWebDriver</a></div>
+						<div class='clsPropertyDescription'></div>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<h2 class='section-title methods'>Methods</h2>
-		<h2 class='trigger'>get</h2>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>get</a>
+		</h2>
 		<div class='toggle_container'>
-		<div class='toggle_container_subtitle'>
-			global Object get(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> key)
+			<div class='toggle_container_subtitle'>
+				global Object get(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> key)
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Returns an object stored in the context map.</td>
+				</tr> 
+				<tr>
+					<th>Returns</th>
+					<td>An object to return from the context map.</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>key</th>
+					<td>A key used to retrieve a value from the context map. </td>
+				</tr>
+			</table>
 		</div>
-		<table class='details' rules='all' border='1' cellpadding='6'>
-			<tr>
-				<th>Description</th>
-				<td>Returns the target object stored from the context map.</td>
-			</tr>
-			<tr>
-				<th>Returns</th>
-				<td>The target object from the context map.</td>
-			</tr>
-			<tr>
-				<th colspan='2' class='paramHeader'>Parameters</th>
-			</tr>
-			<tr>
-				<th class='param'>key</th>
-				<td>A key used to retrieve the object from the context map.</td>
-			</tr>
-		</table>
-		<h2 class='trigger'>getPageObject</h2>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>getPageObject</a>
+		</h2>
 		<div class='toggle_container'>
-		<div class='toggle_container_subtitle'>
-			global
-			<a href='pageobject.html'>PageObject</a>
-			getPageObject(Type t)
+			<div class='toggle_container_subtitle'>
+				global <a href='pageobject.html'>PageObject</a> getPageObject(Type t)
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Returns the PageObject to use.</td>
+				</tr> 
+				<tr>
+					<th>Returns</th>
+					<td>PageObject to be instantiated and used.</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>t</th>
+					<td>The type of the PageObject class to be instantiated. </td>
+				</tr>
+			</table>
 		</div>
-		<table class='details' rules='all' border='1' cellpadding='6'>
-			<tr>
-				<th>Description</th>
-				<td>Returns a PageObject object representing the page you're testing.</td>
-			</tr>
-			<tr>
-				<th>Returns</th>
-				<td>The PageObject object to be instantiated and used.</td>
-			</tr>
-			<tr>
-				<th colspan='2' class='paramHeader'>Parameters</th>
-			</tr>
-			<tr>
-				<th class='param'>t</th>
-				<td>The type of PageObject class to be instantiated.</td>
-			</tr>
-		</table>
-		<h2 class='trigger'>getString</h2>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>getString</a>
+		</h2>
 		<div class='toggle_container'>
-		<div class='toggle_container_subtitle'>
-			global
-			<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-			getString(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-			key)
+			<div class='toggle_container_subtitle'>
+				global <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a> getString(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a> key)
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Returns a string value stored in the context map.</td>
+				</tr> 
+				<tr>
+					<th>Returns</th>
+					<td>A string value to return.</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>key</th>
+					<td>A key used to retrieve a value from the context map. </td>
+				</tr>
+			</table>
 		</div>
-		<table class='details' rules='all' border='1' cellpadding='6'>
-			<tr>
-				<th>Description</th>
-				<td>Returns a string value stored in context map.</td>
-			</tr>
-			<tr>
-				<th>Returns</th>
-				<td>A string value to be returned.</td>
-			</tr>
-			<tr>
-				<th colspan='2' class='paramHeader'>Parameters</th>
-			</tr>
-			<tr>
-				<th class='param'>key</th>
-				<td>The key used to retrieve the value from context map.</td>
-			</tr>
-		</table>
-		<h2 class='trigger'>put</h2>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>put</a>
+		</h2>
 		<div class='toggle_container'>
-		<div class='toggle_container_subtitle'>
-			global void put(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-			key, Object value)
+			<div class='toggle_container_subtitle'>
+				global void put(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> key, Object value)
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Puts a value into the context map.</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>key</th>
+					<td>A key used to store a value in the context map. </td>
+				</tr>
+				<tr>
+					<th class='param'>value</th>
+					<td>An object to store in the context map. Valid types are String and Integer. </td>
+				</tr>
+			</table>
 		</div>
-		<table class='details' rules='all' border='1' cellpadding='6'>
-			<tr>
-				<th>Description</th>
-				<td>Puts a value in to the context map.</td>
-			</tr>
-			<tr>
-				<th colspan='2' class='paramHeader'>Parameters</th>
-			</tr>
-			<tr>
-				<th class='param'>key</th>
-				<td>The key used to store a value in the context map.</td>
-			</tr>
-			<tr>
-				<th class='param'>value</th>
-				<td>
-					The object to store in the context map. Valid types are String and Integer.
-				</td>
-			</tr>
-		</table>
-	</div>
-</td>
+	</td>
 </tr>

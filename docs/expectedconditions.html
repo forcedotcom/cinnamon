@@ -3,315 +3,51 @@ layout: doc
 title: Cinnamon Documentation Page
 ---
 <tr>
-	<td class='leftmenus' rowspan='100'>
-		<div onclick="gotomenu('assert.html');">Assert</div>
-		<div onclick="gotomenu('basetest.html');">BaseTest</div>
-		<div onclick="gotomenu('context.html');">Context</div>
-		<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
-		<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
-		<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
-		<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
-		<div onclick="gotomenu('pageobject.html');">PageObject</div>
-		<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
-		<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
-		<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
-		<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
-		<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
-		<div onclick="gotomenu('wait.html');">Wait</div>
-		<div onclick="gotomenu('webelement.html');">WebElement</div>
-	</td>
-	<td class='classCell'>
-		<h2 class='section-title'>
-			ExpectedConditions
-			<span>
-				<input type='button' value='+/- all' onclick='ToggleAll(this);' />
-			</span>
-		</h2>
-		<div class='toggle_container_subtitle'>
-			global with sharing class
-			<a href='expectedconditions.html'>ExpectedConditions</a>
-		</div>
-        <table class='details' rules='all' border='1' cellpadding='6'>
-            <tr>
-                <th>Description</th>
-                <td>ExpectedConditions is a utility class that provides a list of canned ExpectedConditions which
-                    can be used when a test needs to wait for a certain condition to become true or false.  ExpectedConditions are modeled after those in Selenium Webdriver ExpectedConditions class.<br><br>
-                    For example, if your test is looking for a certain element or text in a given page after making some action, you can use one of the ExpectedConditions method to make your test wait until the condition you specified turns true. See a sample code below.
-                    <p>
-                    <pre><code>
-public class TestWithExpectedCondition extends cinnamon.BaseTest {
+  <td class='leftmenus' rowspan='100'>
+    <div onclick="gotomenu('assert.html');">Assert</div>
+    <div onclick="gotomenu('baseexplicitwaittest.html');">BaseExplicitWaitTest</div>
+    <div onclick="gotomenu('basetest.html');">BaseTest</div>
+    <div onclick="gotomenu('capabilities.html');">Capabilities</div>
+    <div onclick="gotomenu('context.html');">Context</div>
+    <div onclick="gotomenu('cookie.html');">Cookie</div>
+    <div onclick="gotomenu('cookiemanager.html');">CookieManager</div>
+    <div onclick="gotomenu('csslocator.html');">CSSLocator</div>
+    <div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
+    <div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
+    <div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
+    <div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
+    <div onclick="gotomenu('pageobject.html');">PageObject</div>
+    <div onclick="gotomenu('remotealert.html');">RemoteAlert</div>
+    <div onclick="gotomenu('remotemouse.html');">RemoteMouse</div>
+    <div onclick="gotomenu('remotetouch.html');">RemoteTouch</div>
+    <div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+    <div onclick="gotomenu('remotewebdriverserviceprovider.html');">RemoteWebDriverServiceProvider</div>
+    <div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
+    <div onclick="gotomenu('standardlayoutlocator.html');">StandardLayoutLocator</div>
+        <div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+        <div onclick="gotomenu('testutil.html');">TestUtil</div>
+    <div onclick="gotomenu('visualforcebyhtmltaglocator.html');">VisualforceByHtmlTagLocator</div>
+    <div onclick="gotomenu('visualforcechildlocator.html');">VisualforceChildLocator</div>
+    <div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
+    <div onclick="gotomenu('wait.html');">Wait</div>
+    <div onclick="gotomenu('webelement.html');">WebElement</div>
+    <div onclick="gotomenu('windowsize.html');">WindowSize</div>
+  </td>
+    
+	<td class='classCell'><h2 class='section-title'>ExpectedConditions<span><input type='button' value='+/- all' onclick='ToggleAll(this);' /></span></h2><div class='toggle_container_subtitle'>global with sharing class <a href='expectedconditions.html'>ExpectedConditions</a></div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>ExpectedConditions is a utility class that provides a list of canned ExpectedConditions to use when a test needs to wait for a certain condition to become true or false. ExpectedConditions are modeled after the Selenium Webdriver ExpectedConditions class. <p> For example, the sample code below uses a method from ExpectedCondition to wait for an HTML element containing a string to render after clicking the Save button. Once the element appears, the ExpectedCondition is satisfied and the test completes.  <pre><code>
+  public class TestWithExpectedCondition extends cinnamon.BaseTest {
     private CustomPageObject customPage;
-
-    public override void setUp(cinnamon.Context context) {
-        customPage = (CustomPageObject) context.getPageObject(CustomPageObject.class);
-        customPage.initializePageObject();
+      public override void setUp(cinnamon.Context context) {
+      customPage = (CustomPageObject) context.getPageObject(CustomPageObject.class);
+      customPage.initializePageObject();
     }
-
     public override void test(cinnamon.Context context) {
-        cinnamon.ElementLocator locator = new cinnamon.ElementLocator('div.title');
-        customPage.fillForm();
-        customPage.clickSave();
-
-        // this condition waits until div.title element that contains the text 'Hello World' appears
-        cinnamon.ExpectedCondition condition =
-            cinnamon.ExpectedConditions.textToBePresentInElement(locator, 'Hello World!');
-        customPage.getWait().until(condition);
+      cinnamon.ElementLocator locator = new cinnamon.ElementLocator('div.title');
+      customPage.fillForm();
+      customPage.clickSave();
+      // this condition waits until div.title element that contains the text 'Hello World' appears
+      cinnamon.ExpectedCondition condition = cinnamon.ExpectedConditions.textToBePresentInElement(locator, 'Hello World!');
+      customPage.getWait().until(condition);
     }
-}
-                    </code></pre>
-                </td>
-            </tr>
-            <tr>
-                <th>See</th>
-                <td><a href='expectedcondition.html'>ExpectedCondition</a></td>
-            </tr>
-        </table>
-		<h2 class='section-title methods'>Methods</h2>
-		<h2 class='trigger'>invisibilityOfElementLocated</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global static
-				<a href='expectedcondition.html'>ExpectedCondition</a>
-				invisibilityOfElementLocated(<a href='elementlocator.html'>ElementLocator</a>
-				locator)
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>An expectation for checking that a given element that matches the locator is either
-                        invisible or not present on the DOM. Visibility means that the element is not only displayed
-                        but also has a height and width that is greater than 0.
-                    </td>
-                </tr>
-                <tr>
-                    <th>Returns</th>
-                    <td>ExpectedCondition which can be passed to Wait.until method</td>
-                </tr>
-                <tr>
-                    <th colspan='2' class='paramHeader'>Parameters</th>
-                </tr>
-                <tr>
-                    <th class='param'>locator</th>
-                    <td>a locator element used to find the element</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>invisibilityOfElementWithText</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global static
-				<a href='expectedcondition.html'>ExpectedCondition</a>
-				invisibilityOfElementWithText(<a href='elementlocator.html'>ElementLocator</a>
-				locator,
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-				text)
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>Checks that element with innertext is not in the DOM, or that it has height and width = 0 An
-                        expectation for checking that a given element with text is either invisible or not present
-                        on the DOM.
-                    </td>
-                </tr>
-                <tr>
-                    <th>Returns</th>
-                    <td>ExpectedCondition which can be passed to Wait.until method</td>
-                </tr>
-                <tr>
-                    <th colspan='2' class='paramHeader'>Parameters</th>
-                </tr>
-                <tr>
-                    <th class='param'>locator</th>
-                    <td>a locator element used to find the element</td>
-                </tr>
-                <tr>
-                    <th class='param'>text</th>
-                    <td>a string representing the text to be present in the element</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>negate</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global static
-					<a href='expectedcondition.html'>ExpectedCondition</a>
-				negate(<a href='expectedcondition.html'>ExpectedCondition</a>
-				condition)
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>Returns the logical opposite of the ExpectedCondition passed to this method.</td>
-                </tr>
-                <tr>
-                    <th>Returns</th>
-                    <td>ExpectedCondition which can be passed to Wait.until method</td>
-                </tr>
-                <tr>
-                    <th colspan='2' class='paramHeader'>Parameters</th>
-                </tr>
-                <tr>
-                    <th class='param'>condition</th>
-                    <td>an expectation to be negated</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>textToBePresentInElement</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global static
-				<a href='expectedcondition.html'>ExpectedCondition</a>
-				textToBePresentInElement(<a href='elementlocator.html'>ElementLocator</a>
-				locator,
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-				text)
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>An expectation for checking if the given text is present in the element that matches the
-                        given locator Note that this condition evalutes to true when the given element is present in
-                        the DOM and its innertext value matches the text
-                    </td>
-                </tr>
-                <tr>
-                    <th>Returns</th>
-                    <td>ExpectedCondition which can be passed to Wait.until method</td>
-                </tr>
-                <tr>
-                    <th colspan='2' class='paramHeader'>Parameters</th>
-                </tr>
-                <tr>
-                    <th class='param'>locator</th>
-                    <td>a locator element used to find the element</td>
-                </tr>
-                <tr>
-                    <th class='param'>text</th>
-                    <td>a string representing the text to be present in the element</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>textToBePresentInElementLocated</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global static
-				<a href='expectedcondition.html'>ExpectedCondition</a>
-				textToBePresentInElementLocated(<a href='elementlocator.html'>ElementLocator</a>
-				locator,
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-				text)
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>An expectation for checking if the given text is present in the element that matches the
-                        given locator Note that this condition evalutes to true when the given element is present in
-                        the DOM and its innertext value matches the text
-                    </td>
-                </tr>
-                <tr>
-                    <th>Returns</th>
-                    <td>ExpectedCondition which can be passed to Wait.until method</td>
-                </tr>
-                <tr>
-                    <th colspan='2' class='paramHeader'>Parameters</th>
-                </tr>
-                <tr>
-                    <th class='param'>locator</th>
-                    <td>a locator element used to find the element</td>
-                </tr>
-                <tr>
-                    <th class='param'>text</th>
-                    <td>a string representing the text to be present in the element</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>visibilityOf</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global static
-				<a href='expectedcondition.html'>ExpectedCondition</a>
-				visibilityOf(<a href='elementlocator.html'>ElementLocator</a>
-				locator)
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>An expectation for checking that a given element is in the DOM and visible. Visibility means
-                        that the element is not only displayed but also has a height and width that is greater than
-                        0.
-                    </td>
-                </tr>
-                <tr>
-                    <th>Returns</th>
-                    <td>ExpectedCondition which can be passed to Wait.until method</td>
-                </tr>
-                <tr>
-                    <th colspan='2' class='paramHeader'>Parameters</th>
-                </tr>
-                <tr>
-                    <th class='param'>locator</th>
-                    <td>a locator element used to find the element</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>visibilityOfElementLocated</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global static
-				<a href='expectedcondition.html'>ExpectedCondition</a>
-				visibilityOfElementLocated(<a href='elementlocator.html'>ElementLocator</a>
-				locator)
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>An expectation for checking that a given element is in the DOM and visible. Visibility means
-                        that the element is not only displayed but also has a height and width that is greater than
-                        0.
-                    </td>
-                </tr>
-                <tr>
-                    <th>Returns</th>
-                    <td>ExpectedCondition which can be passed to Wait.until method</td>
-                </tr>
-                <tr>
-                    <th colspan='2' class='paramHeader'>Parameters</th>
-                </tr>
-                <tr>
-                    <th class='param'>locator</th>
-                    <td>a locator element used to find the element</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td>
-                </tr>
-            </table>
-		</div>
-	</td>
-</tr>
+  }
+ </code></pre></td></tr><tr><th>See</th><td><a href='expectedcondition.html'>ExpectedCondition</a></td></tr></table><h2 class='section-title methods'>Methods</h2><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>invisibilityOfElementLocated</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global static <a href='expectedcondition.html'>ExpectedCondition</a> invisibilityOfElementLocated(<a href='elementlocator.html'>ElementLocator</a> locator)</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>A method for checking that the element found by the ElementLocator parameter either isn't present in the DOM or isn't visible. Visibility means that the element is not only displayed but also has both a height and a width greater than 0.</td></tr> <tr><th>Returns</th><td>An ExpectedCondition (typically passed to the <code>Wait.until() method).</td></tr> <tr><th colspan='2' class='paramHeader'>Parameters</th></tr> <tr><th class='param'>locator</th><td>An ElementLocator that finds the element. </td></tr><tr><th>See</th><td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>invisibilityOfElementWithText</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global static <a href='expectedcondition.html'>ExpectedCondition</a> invisibilityOfElementWithText(<a href='elementlocator.html'>ElementLocator</a> locator, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> text)</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>Checks that element with innerText is not in the DOM, or that it has height and width = 0 An expectation for checking that a given element with text is either invisible or not present on the DOM.</td></tr> <tr><th>Returns</th><td>An ExpectedCondition (typically passed to the <code>Wait.until()</code> method).</td></tr> <tr><th colspan='2' class='paramHeader'>Parameters</th></tr> <tr><th class='param'>locator</th><td>a locator element used to find the element </td></tr><tr><th class='param'>text</th><td>a string representing the text to be present in the element </td></tr><tr><th>See</th><td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>negate</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global static <a href='expectedcondition.html'><a href='expectedcondition.html'>ExpectedCondition</a></a> negate(<a href='expectedcondition.html'><a href='expectedcondition.html'>ExpectedCondition</a></a> condition)</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>Returns the logical opposite of the ExpectedCondition passed to this method.</td></tr> <tr><th>Returns</th><td>The negated ExpectedCondition (typically passed to the <code>Wait.until()</code> method).</td></tr> <tr><th colspan='2' class='paramHeader'>Parameters</th></tr> <tr><th class='param'>condition</th><td>The condition to negate. </td></tr><tr><th>See</th><td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>textToBePresentInElement</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global static <a href='expectedcondition.html'>ExpectedCondition</a> textToBePresentInElement(<a href='elementlocator.html'>ElementLocator</a> locator, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> text)</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>A method for checking if a string of text is present in a particuar element. This condition evalutes to true when the given element is present in the DOM and its innerText value matches the inputted text.</td></tr> <tr><th>Returns</th><td>An ExpectedCondition (typically passed to the <code>Wait.until()</code> method).</td></tr> <tr><th colspan='2' class='paramHeader'>Parameters</th></tr> <tr><th class='param'>locator</th><td>An ElementLocator used to find the elemnt. </td></tr><tr><th class='param'>text</th><td>A string representing the text to match in the element. </td></tr><tr><th>See</th><td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>textToBePresentInElementLocated</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global static <a href='expectedcondition.html'>ExpectedCondition</a> textToBePresentInElementLocated(<a href='elementlocator.html'>ElementLocator</a> locator, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> text)</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>A method for checking if a string of text is present in a particuar element. This condition evalutes to true when the given element is present in the DOM and its innerText value matches the inputted text.</td></tr> <tr><th>Returns</th><td>An ExpectedCondition (typically passed to the <code>Wait.until()</code> method).</td></tr> <tr><th colspan='2' class='paramHeader'>Parameters</th></tr> <tr><th class='param'>locator</th><td>An ElementLocator used to find the element. </td></tr><tr><th class='param'>text</th><td>A string representing the text to match in the element. </td></tr><tr><th>See</th><td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>titleToContain</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global static <a href='expectedcondition.html'>ExpectedCondition</a> titleToContain(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> text)</div><table class='details' rules='all' border='1' cellpadding='6'></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>visibilityOf</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global static <a href='expectedcondition.html'>ExpectedCondition</a> visibilityOf(<a href='elementlocator.html'>ElementLocator</a> locator)</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>A method for checking whether a given element is both in the DOM and visible. Visibility means that the element is not only displayed, but also has both a height and a width greater than 0.</td></tr> <tr><th>Returns</th><td>An ExpectedCondition (typically passed to the <code>Wait.until()</code> method).</td></tr> <tr><th colspan='2' class='paramHeader'>Parameters</th></tr> <tr><th class='param'>locator</th><td>An ElementLocator that finds the element. </td></tr><tr><th>See</th><td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>visibilityOfElementLocated</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global static <a href='expectedcondition.html'>ExpectedCondition</a> visibilityOfElementLocated(<a href='elementlocator.html'>ElementLocator</a> locator)</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>A method for checking that a given element is both in the DOM and visible. Visibility means that the element is not only displayed but also has both height and a width greater than 0.</td></tr> <tr><th>Returns</th><td>An ExpectedCondition (typically passed to the <code>Wait.until()</code> method).</td></tr> <tr><th colspan='2' class='paramHeader'>Parameters</th></tr> <tr><th class='param'>locator</th><td>An ElementLocator that finds the element. </td></tr><tr><th>See</th><td><a href='expectedcondition.html'>ExpectedCondition</a>, <a href='wait.html'>Wait</a></td></tr></table></div></td><tr><td class='classCell'><h2 class='section-title'>ExpectedConditions.TitleToContainCondition<span><input type='button' value='+/- all' onclick='ToggleAll(this);' /></span></h2><div class='toggle_container_subtitle'>global with sharing class TitleToContainCondition implements <a href='expectedcondition.html'>ExpectedCondition</a></div><table class='details' rules='all' border='1' cellpadding='6'></table><h2 class='section-title methods'>Methods</h2><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>apply</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> apply()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>TitleToContainCondition</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global TitleToContainCondition(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> text)</div><table class='details' rules='all' border='1' cellpadding='6'></table></div></td></tr><tr><td class='classCell'><h2 class='section-title'>ExpectedConditions.BaseCondition<span><input type='button' value='+/- all' onclick='ToggleAll(this);' /></span></h2><div class='toggle_container_subtitle'>global virtual class BaseCondition implements <a href='expectedcondition.html'>ExpectedCondition</a></div><table class='details' rules='all' border='1' cellpadding='6'></table><h2 class='section-title methods'>Methods</h2><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>apply</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global virtual <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> apply()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div></td></tr><tr><td class='classCell'><h2 class='section-title'>ExpectedConditions.InDOMCondition<span><input type='button' value='+/- all' onclick='ToggleAll(this);' /></span></h2><div class='toggle_container_subtitle'>global with sharing class InDOMCondition extends BaseCondition</div><table class='details' rules='all' border='1' cellpadding='6'></table><h2 class='section-title methods'>Methods</h2><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>apply</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global override <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> apply()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div></td></tr><tr><td class='classCell'><h2 class='section-title'>ExpectedConditions.Negate<span><input type='button' value='+/- all' onclick='ToggleAll(this);' /></span></h2><div class='toggle_container_subtitle'>global with sharing class Negate extends BaseCondition</div><table class='details' rules='all' border='1' cellpadding='6'></table><h2 class='section-title methods'>Methods</h2><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>apply</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global override <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> apply()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>Negate</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global Negate(<a href='expectedcondition.html'>ExpectedCondition</a> condition)</div><table class='details' rules='all' border='1' cellpadding='6'></table></div></td></tr><tr><td class='classCell'><h2 class='section-title'>ExpectedConditions.VisibleCondition<span><input type='button' value='+/- all' onclick='ToggleAll(this);' /></span></h2><div class='toggle_container_subtitle'>global with sharing class VisibleCondition extends BaseCondition</div><table class='details' rules='all' border='1' cellpadding='6'></table><h2 class='section-title methods'>Methods</h2><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>apply</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global override <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> apply()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div></td></tr><tr><td class='classCell'><h2 class='section-title'>ExpectedConditions.InnerTextCondition<span><input type='button' value='+/- all' onclick='ToggleAll(this);' /></span></h2><div class='toggle_container_subtitle'>global with sharing class InnerTextCondition extends BaseCondition</div><table class='details' rules='all' border='1' cellpadding='6'></table><h2 class='section-title methods'>Methods</h2><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>apply</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global override <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> apply()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>InnerTextCondition</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global InnerTextCondition()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>InnerTextCondition</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global InnerTextCondition(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> text)</div><table class='details' rules='all' border='1' cellpadding='6'></table></div></td></tr><tr><td class='classCell'><h2 class='section-title'>ExpectedConditions.CompositeCondition<span><input type='button' value='+/- all' onclick='ToggleAll(this);' /></span></h2><div class='toggle_container_subtitle'>global with sharing class CompositeCondition extends BaseCondition</div><table class='details' rules='all' border='1' cellpadding='6'></table><h2 class='section-title methods'>Methods</h2><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>apply</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global override <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> apply()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>CompositeCondition</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global CompositeCondition()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>CompositeCondition</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global CompositeCondition(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> locator)</div><table class='details' rules='all' border='1' cellpadding='6'></table></div></td></tr></tr></table></div></div></td></tr></table><hr/><center id='footer'><a href='https://gitlab.com/StevenWCox/sfapexdoc/wikis/Home'>Powered By SfApexDoc version 1.2.4</a></center></body></html>
