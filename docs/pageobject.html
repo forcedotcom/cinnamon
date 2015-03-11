@@ -3,23 +3,37 @@ layout: doc
 title: Cinnamon Documentation Page
 ---
 <tr>
-	<td class='leftmenus' rowspan='100'>
-		<div onclick="gotomenu('assert.html');">Assert</div>
-		<div onclick="gotomenu('basetest.html');">BaseTest</div>
-		<div onclick="gotomenu('context.html');">Context</div>
-		<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
-		<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
-		<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
-		<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
-		<div onclick="gotomenu('pageobject.html');">PageObject</div>
-		<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
-		<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
-		<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
-		<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
-		<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
-		<div onclick="gotomenu('wait.html');">Wait</div>
-		<div onclick="gotomenu('webelement.html');">WebElement</div>
-	</td>
+  <td class='leftmenus' rowspan='100'>
+    <div onclick="gotomenu('assert.html');">Assert</div>
+    <div onclick="gotomenu('baseexplicitwaittest.html');">BaseExplicitWaitTest</div>
+    <div onclick="gotomenu('basetest.html');">BaseTest</div>
+    <div onclick="gotomenu('capabilities.html');">Capabilities</div>
+    <div onclick="gotomenu('context.html');">Context</div>
+    <div onclick="gotomenu('cookie.html');">Cookie</div>
+    <div onclick="gotomenu('cookiemanager.html');">CookieManager</div>
+    <div onclick="gotomenu('csslocator.html');">CSSLocator</div>
+    <div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
+    <div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
+    <div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
+    <div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
+    <div onclick="gotomenu('pageobject.html');">PageObject</div>
+    <div onclick="gotomenu('remotealert.html');">RemoteAlert</div>
+    <div onclick="gotomenu('remotemouse.html');">RemoteMouse</div>
+    <div onclick="gotomenu('remotetouch.html');">RemoteTouch</div>
+    <div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+    <div onclick="gotomenu('remotewebdriverserviceprovider.html');">RemoteWebDriverServiceProvider</div>
+    <div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
+    <div onclick="gotomenu('standardlayoutlocator.html');">StandardLayoutLocator</div>
+    <div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+    <div onclick="gotomenu('testutil.html');">TestUtil</div>
+    <div onclick="gotomenu('visualforcebyhtmltaglocator.html');">VisualforceByHtmlTagLocator</div>
+    <div onclick="gotomenu('visualforcechildlocator.html');">VisualforceChildLocator</div>
+    <div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
+    <div onclick="gotomenu('wait.html');">Wait</div>
+    <div onclick="gotomenu('webelement.html');">WebElement</div>
+    <div onclick="gotomenu('windowsize.html');">WindowSize</div>
+  </td>
+
 	<td class='classCell'>
 		<h2 class='section-title'>
 			PageObject
@@ -28,272 +42,139 @@ title: Cinnamon Documentation Page
 			</span>
 		</h2>
 		<div class='toggle_container_subtitle'>
-			global virtual with sharing class
-			<a href='pageobject.html'>PageObject</a>
+			global virtual with sharing class <a href='pageobject.html'>PageObject</a>
 		</div>
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-                <td>PageObject is an abstract base class used to define a Selenium PageObject class for a given UI page.  All PageObject classes in Cinnamon must inherit from this class.<br><br>
-                    To instantiate a PageObject class, call the <code>Context.getPageObject()</code> method with the type of PageObject class passed in as an argument.<p>
-                    <pre><code>
-public class TestCustomPage extends BaseTest {
-    private CustomPageObject customPage;
-
-    public override void setUp(Context context) {
-        customPage = (CustomPageObject) context.getPageObject(CustomPageObject.class);
-        customPage.initializePageObject();
-    }
-
-    public override void test(Context context) {}
-}
-                    </code></pre>
-                </td>
-			</tr>
-		</table>
-		<h2 class='trigger'>Properties</h2>
-		<div class='toggle_container'>
-			<table class='properties' border='1' rules='all' cellpadding='6'>
-				<tr>
-					<th class='clsPropertyName'>selenium</th>
-					<td>
-						<div class='clsPropertyDeclaration'>global selenium1.DefaultSelenium selenium</div>
-						<div class='clsPropertyDescription'>The Selenium client used to issue Selenium commands.</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-	<h2 class='section-title methods'>Methods</h2>
-		<h2 class='trigger'>getDeclaredWebElements</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global virtual List&lt;<a href='webelement.html'>WebElement</a>&gt; getDeclaredWebElements()
-			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'>
-				<tr>
-					<th>Returns</th>
-					<td>A list of WebElements to be declared.</td>
-				</tr>
-			</table>
-		</div>
-		<h2 class='trigger'>getElement</h2>s
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global
-				<a href='webelement.html'>WebElement</a>
-				getElement(<a href='elementlocator.html'>ElementLocator</a>
-				locator)
-			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'>
-				<tr>
-					<th>Description</th>
-					<td>
-						Returns the WebElement that represents the UI component or DOM element from the ElementLocator.
-					</td>
-				</tr>
-				<tr>
-					<th>Returns</th>
-					<td>A WebElement object.</td>
-				</tr>
-				<tr>
-					<th colspan='2' class='paramHeader'>Parameters</th>
-				</tr>
-				<tr>
-					<th class='param'>locator</th>
-					<td>The ElementLocator object used to locate the specified UI component.</td>
-				</tr>
-			</table>
-		</div>
-		<h2 class='trigger'>getElement</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global
-				<a href='webelement.html'>
-					<a href='webelement.html'>WebElement</a>
-				</a>
-				getElement(<a href='elementlocator.html'>ElementLocator</a>
-				locator,
-				<a href='webelement.html'>
-					<a href='webelement.html'>WebElement</a>
-				</a>
-				parent)
-			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'>
-				<tr>
-					<th>Description</th>
-					<td>
-						Returns a WebElement that represents a UI component or DOM element.
-					</td>
-				</tr>
-				<tr>
-					<th>Returns</th>
-					<td>A WebElement object.</td>
-				</tr>
-				<tr>
-					<th colspan='2' class='paramHeader'>Parameters</th>
-				</tr>
-				<tr>
-					<th class='param'>locator</th>
-					<td>ElementLocator used to locate the UI component.</td>
-				</tr>
-				<tr>
-					<th class='param'>parent</th>
-					<td>A parent WebElement.</td>
-				</tr>
-			</table>
-		</div>
-		<h2 class='trigger'>getLocation</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global virtual
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-				getLocation()
-			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'>
-				<tr>
-					<th>Description</th>
-					<td>Returns the absolute URL of the current page.</td>
-				</tr>
-				<tr>
-					<th>Returns</th>
-					<td>The absolute URL of the current page.</td>
-				</tr>
-			</table>
-		</div>
-		<h2 class='trigger'>getPageObjectInstanceFor</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global
-				<a href='pageobject.html'>PageObject</a>
-				getPageObjectInstanceFor(<a href='https://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_type.htm'>Type</a> pageObjectType)
-			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
-		</div>
-		<h2 class='trigger'>getPathAndQuery</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global virtual
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-				getPathAndQuery()
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>Returns the initial URL path for the PageObject. This method is often used to implement
-                        <code>BaseTest.getStartingPath()</code> to indicate the first URL the browser loads.
-                    </td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>getPathAndQuery</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global virtual
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-				getPathAndQuery(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_map.htm'>Map</a>&lt;<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-				, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>&gt; params)
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>Return the initial URL path and query part for the Page Object. This method is often used to
-                        implement <code>BaseTest.getStartingPath()</code> to indicate the first URL the browser loads. For example:<p>
-                        <pre><code>
-public with sharing class TeamDetailPageObject extends cinnamon.PageObject{
-    public override String getPathAndQuery(Map&lt;String, String&gt; params) {
-        PageReference page = new ApexPages.StandardController(params.get('team')).edit();
-        return page.getUrl();
-    }
-}
-
-public abstract with sharing class ScrumTeamBaseTest extends cinnamon.BaseTest{
-    public static String TEAM_NAME = 'Cinnamon';
-        public override void setup(cinnamon.Context context) {
-        String teamId = MyTestUtil.createTeam(TEAM_NAME);
-        context.put('teamId', teamId);
-    }
-
-    public override String getStartingPath(cinnamon.Context context) {
-        Map&lt;String, String&gt; params = new Map&lt;String, String&gt;();
-        params.put('team', context.get('teamId'));
-        return getPageObject(context).getPathAndQuery(params);
-    }
-}
-                        </code></pre>
-                    </td>
-                </tr>
-                <tr>
-                    <th colspan='2' class='paramHeader'>Parameters</th>
-                </tr>
-                <tr>
-                    <th class='param'>params</th>
-                    <td>A Map that contains values that may be used during the construction of the URL.</td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>getRemoteWebDriver</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global
-				<a href='remotewebdriver.html'>RemoteWebDriver</a>
-				getRemoteWebDriver()
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>Returns a RemoteWebDriver object.</td>
-                </tr>
-                <tr>
-                    <th>Returns</th>
-                    <td>A RemoteWebDriver object.</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='remotewebdriver.html'>RemoteWebDriver</a></td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>getWait</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global
-				<a href='wait.html'>Wait</a>
-				getWait()
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>Returns a Wait object.</td>
-                </tr>
-                <tr>
-                    <th>Returns</th>
-                    <td>Wait object used for explicit waits.</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='wait.html'>Wait</a></td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>initializePageObject</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>global virtual void initializePageObject()</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>Initializes this PageObject object. This method must be invoked if this PageObject needs to be
-                        initialized after being instantiated.
-                    </td>
-                </tr>
-            </table>
-		</div>
-		<h2 class='trigger'>testElementSelectors</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/apex_methods_system_map.htm'>Map</a>&lt;<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>,
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>boolean</a>&gt; testElementSelectors()
-			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
-		</div>
-	</td>
-</tr>
+				<td>PageObject is an abstract base class that is used to define a specific PageObject class for a UI page. All PageObject classes in Cinnamon must inherit from this class. <p>  To instantiate a PageObject class, pass the type of PageObject class in to the <code>Context.getPageObject()</code> method as an argument.  
+					<pre><code>
+   public class TestCustomPage extends BaseTest {
+       private CustomPageObject customPage;
+       public override void setUp(Context context) {
+           customPage = (CustomPageObject) context.getPageObject(CustomPageObject.class);
+           customPage.initializePageObject();
+       }
+       public override void test(Context context) {}
+   }
+ 					</code></pre>
+ 				</td>
+ 			</tr>
+ 		</table>
+ 		<h2 class='section-title methods'>Methods</h2>
+ 		<h2 class='trigger'>
+ 			<input type='button' value='+'/>&nbsp;&nbsp;
+ 			<a href='#'>getDeclaredWebElements</a>
+ 		</h2>
+ 		<div class='toggle_container'>
+ 			<div class='toggle_container_subtitle'>
+ 				global virtual List&lt;<a href='webelement.html'>WebElement</a>&gt; getDeclaredWebElements()
+ 			</div>
+ 			<table class='details' rules='all' border='1' cellpadding='6'>
+ 				<tr>
+ 					<th>Returns</th>
+ 					<td>A list of WebElements to declare.</td>
+ 				</tr> 
+ 			</table>
+ 		</div>
+ 		<h2 class='trigger'>
+ 			<input type='button' value='+'/>&nbsp;&nbsp;
+ 			<a href='#'>getElement</a>
+ 		</h2>
+ 		<div class='toggle_container'>
+ 			<div class='toggle_container_subtitle'>
+ 				global <a href='webelement.html'>WebElement</a> getElement(<a href='elementlocator.html'>ElementLocator</a> locator)
+ 			</div>
+ 			<table class='details' rules='all' border='1' cellpadding='6'>
+ 				<tr>
+ 					<th>Description</th>
+ 					<td>Returns a WebElement that represents a UI component or the DOM element to use.</td>
+ 				</tr> 
+ 				<tr>
+ 					<th>Returns</th>
+ 					<td>A WebElement object.</td>
+ 				</tr> 
+ 				<tr>
+ 					<th colspan='2' class='paramHeader'>Parameters</th>
+ 				</tr> 
+ 				<tr>
+ 					<th class='param'>locator</th>
+ 					<td>The ElementLocator used to locate a specific UI component. </td>
+ 				</tr>
+ 			</table>
+ 		</div>
+ 		<h2 class='trigger'>
+ 			<input type='button' value='+'/>&nbsp;&nbsp;
+ 			<a href='#'>getElement</a>
+ 		</h2>
+ 		<div class='toggle_container'>
+ 			<div class='toggle_container_subtitle'>
+ 				global <a href='webelement.html'><a href='webelement.html'>WebElement</a></a> getElement(<a href='elementlocator.html'>ElementLocator</a> locator, <a href='webelement.html'><a href='webelement.html'>WebElement</a></a> parent)
+ 			</div>
+ 			<table class='details' rules='all' border='1' cellpadding='6'>
+ 				<tr>
+ 					<th>Description</th>
+ 					<td>Returns a WebElement that represents a UI component or DOM element.</td>
+ 				</tr> 
+ 				<tr>
+ 					<th>Returns</th>
+ 					<td>A WebElement object.</td>
+ 				</tr> 
+ 				<tr>
+ 					<th colspan='2' class='paramHeader'>Parameters</th>
+ 				</tr> 
+ 				<tr>
+ 					<th class='param'>locator</th>
+ 					<td>The ElementLocator used to locate a specific UI component. </td>
+ 				</tr>
+ 				<tr>
+ 					<th class='param'>parent</th>
+ 					<td>A parent WebElement. </td>
+ 				</tr>
+ 			</table>
+ 		</div>
+ 		<h2 class='trigger'>
+ 			<input type='button' value='+'/>&nbsp;&nbsp;
+ 			<a href='#'>getLocation</a>
+ 		</h2>
+ 		<div class='toggle_container'>
+ 			<div class='toggle_container_subtitle'>global virtual <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> getLocation()</div>
+ 			<table class='details' rules='all' border='1' cellpadding='6'>
+ 				<tr>
+ 					<th>Description</th>
+ 					<td>Returns the absolute URL of the current page.</td>
+ 				</tr> 
+ 				<tr>
+ 					<th>Returns</th>
+ 					<td>The absolute URL of the current page</td>
+ 				</tr> 
+ 			</table>
+ 		</div>
+ 		<h2 class='trigger'>
+ 			<input type='button' value='+'/>&nbsp;&nbsp;
+ 			<a href='#'>getPageObjectInstanceFor</a>
+ 		</h2>
+ 		<div class='toggle_container'>
+ 			<div class='toggle_container_subtitle'>
+ 				global <a href='pageobject.html'>PageObject</a> getPageObjectInstanceFor(Type pageObjectType)
+ 			</div>
+ 			<table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>Instantiate the PageObject object specified by the Type parameter.</td></tr> <tr><th>Returns</th><td>An instantiated PageObject object.</td></tr> <tr><th colspan='2' class='paramHeader'>Parameters</th></tr> <tr><th class='param'>pageObjectType</th><td>A Type element that indicates which PageObject to instantiate. </td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>getPathAndQuery</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global virtual <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> getPathAndQuery()</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>Returns the initial URL path for the PageObject.  This method is often used to indicate the first URL the browser loads when implementing <code>BaseTest.getStartingPath()</code>.</td></tr> </table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>getPathAndQuery</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global virtual <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a></a> getPathAndQuery(Map&lt;<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a></a>, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a></a>&gt; params)</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>Return the initial URL path and query part for the Page Object.  This method is often used to indicate the first URL the browser loads when implementing <code>BaseTest.getStartingPath()</code>. For example:  <pre><code>
+   public with sharing class TeamDetailPageObject extends cinnamon.PageObject{
+      public override String getPathAndQuery(Map<String, String> params) {
+      PageReference page = new ApexPages.StandardController(params.get('team')).edit();
+      return page.getUrl();
+      }
+   }
+  public abstract with sharing class ScrumTeamBaseTest extends cinnamon.BaseTest{
+      public static String TEAM_NAME = 'Cinnamon';
+      public override void setup(cinnamon.Context context) {
+          String teamId = MyTestUtil.createTeam(TEAM_NAME);
+          context.put('teamId', teamId);
+      }
+      public override String getStartingPath(cinnamon.Context context) {
+          Map<String, String> params = new Map<String, String>();
+       params.put('team', context.get('teamId'));
+       return getPageObject(context).getPathAndQuery(params);
+      }
+  }
+ </code></pre></td></tr> <tr><th colspan='2' class='paramHeader'>Parameters</th></tr> <tr><th class='param'>params</th><td>A Map that contains values that may be used during the construction of the URL. </td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>getRemoteWebDriver</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global <a href='remotewebdriver.html'>RemoteWebDriver</a> getRemoteWebDriver()</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>Returns a RemoteWebDriver object.</td></tr> <tr><th>Returns</th><td>A RemoteWebDriver object.</td></tr> <tr><th>See</th><td>getRemoteWebDriver</td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>getWait</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global <a href='wait.html'>Wait</a> getWait()</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>Returns a Wait object.</td></tr> <tr><th>Returns</th><td>Wait object used for explicit waits.</td></tr> <tr><th>See</th><td><a href='wait.html'>Wait</a></td></tr></table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>initializePageObject</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global virtual void initializePageObject()</div><table class='details' rules='all' border='1' cellpadding='6'><tr><th>Description</th><td>Initialize this PageObject object. This method must be invoked if this PageObject needs to be initialized after being instantiated.</td></tr> </table></div><h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>testElementSelectors</a></h2><div class='toggle_container'><div class='toggle_container_subtitle'>global Map&lt;<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>boolean</a>&gt; testElementSelectors()</div><table class='details' rules='all' border='1' cellpadding='6'></table></div></td></tr>

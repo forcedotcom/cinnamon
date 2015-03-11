@@ -1,0 +1,195 @@
+---
+layout: doc
+title: Cinnamon Documentation Page
+---
+<tr>
+	<td class='leftmenus' rowspan='100'>
+		<div onclick="gotomenu('assert.html');">Assert</div>
+		<div onclick="gotomenu('baseexplicitwaittest.html');">BaseExplicitWaitTest</div>
+		<div onclick="gotomenu('basetest.html');">BaseTest</div>
+		<div onclick="gotomenu('capabilities.html');">Capabilities</div>
+		<div onclick="gotomenu('context.html');">Context</div>
+		<div onclick="gotomenu('cookie.html');">Cookie</div>
+		<div onclick="gotomenu('cookiemanager.html');">CookieManager</div>
+		<div onclick="gotomenu('csslocator.html');">CSSLocator</div>
+		<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
+		<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
+		<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
+		<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
+		<div onclick="gotomenu('pageobject.html');">PageObject</div>
+		<div onclick="gotomenu('remotealert.html');">RemoteAlert</div>
+		<div onclick="gotomenu('remotemouse.html');">RemoteMouse</div>
+		<div onclick="gotomenu('remotetouch.html');">RemoteTouch</div>
+		<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+		<div onclick="gotomenu('remotewebdriverserviceprovider.html');">RemoteWebDriverServiceProvider</div>
+		<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
+		<div onclick="gotomenu('standardlayoutlocator.html');">StandardLayoutLocator</div>
+        <div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+        <div onclick="gotomenu('testutil.html');">TestUtil</div>
+		<div onclick="gotomenu('visualforcebyhtmltaglocator.html');">VisualforceByHtmlTagLocator</div>
+		<div onclick="gotomenu('visualforcechildlocator.html');">VisualforceChildLocator</div>
+		<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
+		<div onclick="gotomenu('wait.html');">Wait</div>
+		<div onclick="gotomenu('webelement.html');">WebElement</div>
+		<div onclick="gotomenu('windowsize.html');">WindowSize</div>
+	</td>
+
+	<td class='classCell'>
+		<h2 class='section-title'>
+			Capabilities
+			<span>
+				<input type='button' value='+/- all' onclick='ToggleAll(this);' />
+			</span>
+		</h2>
+		<div class='toggle_container_subtitle'>
+			global with sharing class <a href='capabilities.html'>Capabilities</a>
+		</div>
+		<table class='details' rules='all' border='1' cellpadding='6'>
+			<tr>
+				<th>Description</th>
+				<td>Implements WebDriver's Capability interface for browser capabilities. For more information, visit <a href="https://dvcs.w3.org/hg/webdriver/raw-file/tip/webdriver-spec.html#capabilities" target="_blank">this page</a>.</td>
+			</tr>
+		</table>
+		<h2 class='section-title methods'>Methods</h2>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>Capabilities</a>
+		</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global <a href='capabilities.html'>Capabilities</a>()
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'></table>
+		</div>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>Capabilities</a>
+		</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global <a href='capabilities.html'>Capabilities</a>(Map&lt;<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>,Object&gt; originalCapabilities)
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Constructor.</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>originalCapabilities</th>
+					<td>A map of capabilities for the session. </td>
+				</tr>
+			</table>
+		</div>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>Capabilities</a>
+		</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global <a href='capabilities.html'>Capabilities</a>(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a></a> platform, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a></a> browserName, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a></a> browserVersion)
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Constructor.</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>platform</th>
+					<td>The platform (OS) on which the session is running. </td>
+				</tr>
+				<tr>
+					<th class='param'>browserName</th>
+					<td>The name of the web browser on which the session is running. </td>
+				</tr>
+				<tr>
+					<th class='param'>browserVersion</th>
+					<td>The version of the web browser on which the session is running. </td>
+				</tr>
+			</table>
+		</div>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>get</a>
+		</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global object get(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> capabilityName)
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Gets a particular capability from the capabilities map.</td>
+				</tr> 
+				<tr>
+					<th>Returns</th>
+					<td>The capability from the capabilities map.</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>capabilityName</th>
+					<td>The name of the capability. </td>
+				</tr>
+			</table>
+		</div>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>has</a>
+		</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>boolean</a> has(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> capabilityName)
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>A method for determining whether or not the session has a particular capability.</td>
+				</tr> 
+				<tr>
+					<th>Returns</th>
+					<td>True if the session has the given capability, false otherwise.</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>capabilityName</th>
+					<td>The name of the capability for which to check. </td>
+				</tr>
+			</table>
+			</div>
+			<h2 class='trigger'>
+				<input type='button' value='+'/>&nbsp;&nbsp;
+				<a href='#'>set</a>
+			</h2>
+			<div class='toggle_container'>
+				<div class='toggle_container_subtitle'>
+					global void set(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a> capabilityName, <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'><a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a></a> capability)
+				</div>
+				<table class='details' rules='all' border='1' cellpadding='6'>
+					<tr>
+						<th>Description</th>
+						<td>Inserts a new capability into the capabilities map.</td>
+					</tr> 
+					<tr>
+						<th colspan='2' class='paramHeader'>Parameters</th>
+					</tr> 
+					<tr>
+						<th class='param'>capabilityName</th>
+						<td>The name of the capability you're inserting (the key in the map). </td>
+					</tr>
+					<tr>
+						<th class='param'>capability</th>
+						<td>The capability you're inserting (the value in the map). </td>
+					</tr>
+				</table>
+			</div>
+	</td>
+</tr>

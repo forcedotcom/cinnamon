@@ -5,21 +5,35 @@ title: Cinnamon Documentation Page
 <tr>
 	<td class='leftmenus' rowspan='100'>
 		<div onclick="gotomenu('assert.html');">Assert</div>
+		<div onclick="gotomenu('baseexplicitwaittest.html');">BaseExplicitWaitTest</div>
 		<div onclick="gotomenu('basetest.html');">BaseTest</div>
+		<div onclick="gotomenu('capabilities.html');">Capabilities</div>
 		<div onclick="gotomenu('context.html');">Context</div>
+		<div onclick="gotomenu('cookie.html');">Cookie</div>
+		<div onclick="gotomenu('cookiemanager.html');">CookieManager</div>
+		<div onclick="gotomenu('csslocator.html');">CSSLocator</div>
 		<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
 		<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
 		<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
 		<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
 		<div onclick="gotomenu('pageobject.html');">PageObject</div>
+		<div onclick="gotomenu('remotealert.html');">RemoteAlert</div>
+		<div onclick="gotomenu('remotemouse.html');">RemoteMouse</div>
+		<div onclick="gotomenu('remotetouch.html');">RemoteTouch</div>
 		<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+		<div onclick="gotomenu('remotewebdriverserviceprovider.html');">RemoteWebDriverServiceProvider</div>
 		<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
-		<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
-		<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+		<div onclick="gotomenu('standardlayoutlocator.html');">StandardLayoutLocator</div>
+        <div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+        <div onclick="gotomenu('testutil.html');">TestUtil</div>
+		<div onclick="gotomenu('visualforcebyhtmltaglocator.html');">VisualforceByHtmlTagLocator</div>
+		<div onclick="gotomenu('visualforcechildlocator.html');">VisualforceChildLocator</div>
 		<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
 		<div onclick="gotomenu('wait.html');">Wait</div>
 		<div onclick="gotomenu('webelement.html');">WebElement</div>
+		<div onclick="gotomenu('windowsize.html');">WindowSize</div>
 	</td>
+
 	<td class='classCell'>
 		<h2 class='section-title'>
 			ExpectedCondition
@@ -28,46 +42,44 @@ title: Cinnamon Documentation Page
 			</span>
 		</h2>
 		<div class='toggle_container_subtitle'>
-			global interface
-			<a href='expectedcondition.html'>ExpectedCondition</a>
+			global interface <a href='expectedcondition.html'>ExpectedCondition</a>
 		</div>
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-                <td>ExpectedCondition models a condition that is expected to eventually evaluate to something that turns true or false.<br>
-                    Examples include determining if a web page has loaded or that a certain element becomes visible or invisible.
-                </td>
+				<td>ExpectedCondition models a condition that evaluates to true or false at some point during test execution. <p> For example, you can use ExpectedCondition to test if a web page has loaded or if a certain element on the page becomes visible or invisible.</td>
+			</tr>
+			<tr>
+				<th>See</th>
+				<td><a href='wait.html'>Wait</a></td>
 			</tr>
 		</table>
 		<h2 class='section-title methods'>Methods</h2>
-		<h2 class='trigger'>apply</h2>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;
+			<a href='#'>apply</a>
+		</h2>
 		<div class='toggle_container'>
 			<div class='toggle_container_subtitle'>
-				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a>
-				apply()
+				<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> apply()
 			</div>
 			<table class='details' rules='all' border='1' cellpadding='6'>
 				<tr>
 					<th>Description</th>
-                    <td>This method returns a javascript snippet that gets sent and executed on a remote selenium server. The javascript should test for the expected condition and be formatted as an anonymous,
-                        self-executing function, explicitly returning a boolean.<br><br>
-                        <p>
-                        For example: to test if an element is in the DOM:</p>
-                        <pre><code>
-(function(){
-    var el = selenium.browserbot.findElementOrNull('#id');
-    return (el != null);
-}())
-                        </code></pre>
-                    </td>
-				</tr>
-				<tr>
-					<th>Returns</th>
-					<td>
-						a string value that represents a javascript snippet to be executed on selenium server.
-					</td>
-				</tr>
-			</table>
-		</div>
-	</td>
-</tr>
+					<td>The returned String is a JavaScript snippet that is then executed on the Selenium server. The JavaScript tests for the expected condition and is formatted as an anonymous, self-executing function that explicitly returns a boolean. For example, to test if an element is in the DOM, use:  
+						<pre><code>
+ (function(){
+   var el = document.querySelector('#id');
+   return (el != null);
+ }())
+ 						</code></pre>
+ 					</td>
+ 				</tr> 
+ 				<tr>
+ 					<th>Returns</th>
+ 					<td>A JavaScript snippet to execute on the Selenium server.</td>
+ 				</tr> 
+ 			</table>
+ 		</div>
+ 	</td>
+ </tr>

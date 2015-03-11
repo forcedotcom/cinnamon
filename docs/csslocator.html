@@ -33,32 +33,58 @@ title: Cinnamon Documentation Page
 		<div onclick="gotomenu('webelement.html');">WebElement</div>
 		<div onclick="gotomenu('windowsize.html');">WindowSize</div>
 	</td>
+
 	<td class='classCell'>
 		<h2 class='section-title'>
-			ElementLocator
+			CSSLocator
 			<span>
 				<input type='button' value='+/- all' onclick='ToggleAll(this);' />
 			</span>
 		</h2>
 		<div class='toggle_container_subtitle'>
-			global abstract with sharing class <a href='elementlocator.html'>ElementLocator</a>
+			global with sharing class <a href='csslocator.html'>CSSLocator</a> extends <a href='elementlocator.html'>ElementLocator</a>
 		</div>
-		<table class='details' rules='all' border='1' cellpadding='6'>
-			<tr>
-				<th>Description</th>
-				<td>ElementLocator is an abstract class that represents locators for DOM nodes in a page. Subclasses should abstract away the complexities of mapping high-level abstraction nodes, such as apex:inputField, to low-level specifications of how nodes are located in WebDriver.</td>
-			</tr>
-		</table>
+		<table class='details' rules='all' border='1' cellpadding='6'></table>
 		<h2 class='section-title methods'>Methods</h2>
+		<h2 class='trigger'>
+			<input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>CSSLocator</a>
+		</h2>
+		<div class='toggle_container'>
+			<div class='toggle_container_subtitle'>
+				global <a href='csslocator.html'>CSSLocator</a>(<a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> locator)
+			</div>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Constructor</td>
+				</tr> 
+				<tr>
+					<th colspan='2' class='paramHeader'>Parameters</th>
+				</tr> 
+				<tr>
+					<th class='param'>locator</th>
+					<td>A CSS selector used to locate a given element. </td>
+				</tr>
+			</table>
+		</div>
 		<h2 class='trigger'>
 			<input type='button' value='+'/>&nbsp;&nbsp;
 			<a href='#'>getLocator</a>
 		</h2>
 		<div class='toggle_container'>
 			<div class='toggle_container_subtitle'>
-				global virtual <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> getLocator()
+				global override <a href='http://www.salesforce.com/us/developer/docs/apexcode/Content/langCon_apex_primitives.htm'>String</a> getLocator()
 			</div>
-			<table class='details' rules='all' border='1' cellpadding='6'></table>
+			<table class='details' rules='all' border='1' cellpadding='6'>
+				<tr>
+					<th>Description</th>
+					<td>Returns the CSS selector associated with this ElementLocator object.</td>
+				</tr> 
+				<tr>
+					<th>Returns</th>
+					<td>the CSS selector associated with this ElementLocator object.</td>
+				</tr> 
+			</table>
 		</div>
 	</td>
 </tr>

@@ -5,71 +5,84 @@ title: Cinnamon Documentation Page
 <tr>
 	<td class='leftmenus' rowspan='100'>
 		<div onclick="gotomenu('assert.html');">Assert</div>
-		<div onclick="gotomenu('basetest.html');">BaseTest</div>
+		<div onclick="gotomenu('baseexplicitwaittest.html');">BaseExplicitWaitTest</div>
+		<div onclick="gotomenu('basetest.html');">BaseTest</div><div onclick="gotomenu('capabilities.html');">Capabilities</div>
 		<div onclick="gotomenu('context.html');">Context</div>
+		<div onclick="gotomenu('cookie.html');">Cookie</div><div onclick="gotomenu('cookiemanager.html');">CookieManager</div>
+		<div onclick="gotomenu('csslocator.html');">CSSLocator</div>
 		<div onclick="gotomenu('elementlocator.html');">ElementLocator</div>
 		<div onclick="gotomenu('expectedcondition.html');">ExpectedCondition</div>
 		<div onclick="gotomenu('expectedconditions.html');">ExpectedConditions</div>
 		<div onclick="gotomenu('orgundertest.html');">OrgUnderTest</div>
 		<div onclick="gotomenu('pageobject.html');">PageObject</div>
+		<div onclick="gotomenu('remotealert.html');">RemoteAlert</div>
+		<div onclick="gotomenu('remotemouse.html');">RemoteMouse</div>
+		<div onclick="gotomenu('remotetouch.html');">RemoteTouch</div>
 		<div onclick="gotomenu('remotewebdriver.html');">RemoteWebDriver</div>
+		<div onclick="gotomenu('remotewebdriverserviceprovider.html');">RemoteWebDriverServiceProvider</div>
 		<div onclick="gotomenu('selectoptionadapter.html');">SelectOptionAdapter</div>
-		<div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
-		<div onclick="gotomenu('visualforcebyidlocator.html');">VisualforceByIdLocator</div>
+		<div onclick="gotomenu('standardlayoutlocator.html');">StandardLayoutLocator</div>
+        <div onclick="gotomenu('tablewebelement.html');">TableWebElement</div>
+        <div onclick="gotomenu('testutil.html');">TestUtil</div>
+		<div onclick="gotomenu('visualforcebyhtmltaglocator.html');">VisualforceByHtmlTagLocator</div>
+		<div onclick="gotomenu('visualforcechildlocator.html');">VisualforceChildLocator</div>
 		<div onclick="gotomenu('visualforcelocator.html');">VisualforceLocator</div>
 		<div onclick="gotomenu('wait.html');">Wait</div>
 		<div onclick="gotomenu('webelement.html');">WebElement</div>
+		<div onclick="gotomenu('windowsize.html');">WindowSize</div>
 	</td>
+
 	<td class='classCell'>
-		<h2 class='section-title'>
-			Wait
+		<h2 class='section-title'>Wait
 			<span>
 				<input type='button' value='+/- all' onclick='ToggleAll(this);' />
 			</span>
 		</h2>
 		<div class='toggle_container_subtitle'>
-			global with sharing class
+			global with sharing class 
 			<a href='wait.html'>Wait</a>
 		</div>
 		<table class='details' rules='all' border='1' cellpadding='6'>
 			<tr>
 				<th>Description</th>
-                <td>Wait is a class that allows tests to wait until some ExpectedCondition turns true.
-                    See the sample code below on how to use this class:<p>
-                    <pre><code>
-cinnamon.ExpectedCondition condition =
-    cinnamon.ExpectedConditions.textToBePresentInElement(locator, 'h1.title');
+					<td>Wait is a class that allows tests to wait until some ExpectedCondition is true.  See the code below for an example of how to use this class. <p>  
+						<pre><code>
+cinnamon.ExpectedCondition condition = cinnamon.ExpectedConditions.textToBePresentInElement(locator, 'h1.title');
 cinnamon.Wait wait = accountPageObject.getWait();
 wait.until(condition);
-                    </code></pre>
-                    Tests can get a Wait object by invoking PageObject.getWait() method.
-                </td>
-            </tr>
-		</table>
-		<h2 class='section-title methods'>Methods</h2>
-		<h2 class='trigger'>until</h2>
-		<div class='toggle_container'>
-			<div class='toggle_container_subtitle'>
-				global void until(<a href='expectedcondition.html'>ExpectedCondition</a>
-				condition)
-			</div>
-            <table class='details' rules='all' border='1' cellpadding='6'>
-                <tr>
-                    <th>Description</th>
-                    <td>Until method keeps waiting until the specified condition turns true or time runs out.</td>
-                </tr>
-                <tr>
-                    <th colspan='2' class='paramHeader'>Parameters</th>
-                </tr>
-                <tr>
-                    <th class='param'>condition</th>
-                    <td>the condition to be evaluated</td>
-                </tr>
-                <tr>
-                    <th>See</th>
-                    <td><a href='expectedcondition.html'>ExpectedCondition</a></td>
-                </tr>
-            </table>
-		</div>
-	</td>
-</tr>
+ 						</code></pre>  
+ 						Tests can get a Wait object by invoking the <code>PageObject.getWait()</code> method.
+ 					</td>
+ 			</tr>
+ 			<tr>
+ 				<th>See</th>
+ 					<td>
+ 						<a href='pageobject.html'>PageObject</a>, 
+ 						<a href='expectedconditions.html'>ExpectedConditions</a>
+ 					</td>
+ 			</tr>
+ 		</table>
+ 		<h2 class='section-title methods'>Methods</h2>
+ 		<h2 class='trigger'><input type='button' value='+'/>&nbsp;&nbsp;<a href='#'>until</a></h2>
+ 		<div class='toggle_container'>
+ 			<div class='toggle_container_subtitle'>global void until(<a href='expectedcondition.html'>ExpectedCondition</a> condition)</div>
+ 			<table class='details' rules='all' border='1' cellpadding='6'>
+ 				<tr>
+ 					<th>Description</th>
+ 						<td>Suspends test execution until the specified condition is true or time runs out.</td>
+ 				</tr> 
+ 				<tr>
+ 					<th colspan='2' class='paramHeader'>Parameters</th>
+ 				</tr> 
+ 				<tr>
+ 					<th class='param'>condition</th>
+ 						<td>The condition to evaluate. </td>
+ 				</tr>
+ 				<tr>
+ 					<th>See</th>
+ 						<td><a href='expectedcondition.html'>ExpectedCondition</a></td>
+ 				</tr>
+ 			</table>
+ 		</div>
+ 	</td>
+ </tr>
